@@ -1,0 +1,18 @@
+Issue
+	Checkout Page Progressing text showing when stripe throws declined error.
+
+
+File Path 
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/code/Codazon/OneStepCheckout/view/frontend/web/js/view/checkout-agreements.js
+
+
+---------------Solution-------------------- 
+
+add below code on click set intervel trigger for every 1 sec which check that if there is error then disable progress button  
+
+    var checkingError = setInterval(function(){
+	   if ($('.message.message-error.error').length > 0) {
+		self.isPlaceOrderActionAllowed(false);
+		clearInterval(checkingError);
+	   }
+ }, 1000);

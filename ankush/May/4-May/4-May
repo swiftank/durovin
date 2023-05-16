@@ -1,0 +1,24 @@
+
+SELECT * FROM vw_pinterest_product_feed INTO OUTFILE '/tmp/mysqlfile/pinterestdata.csv` FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+SELECT * INTO OUTFILE '/var/www/html/orders.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' FROM pinterest_view
+SELECT * INTO OUTFILE '/var/lib/mysql-files/orders.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' FROM pinterest_view;
+
+
+rm -rf /tmp/mysqlfile/pinterestdata.csv;  
+rm -rf  /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/pinterestdata.csv;
+  mysql magento<  /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/script.txt; 
+  mv /tmp/mysqlfile/pinterestdata.csv /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/
+  
+  rm -rf /tmp/mysqlfile/pinterestdata.csv;  
+  rm -rf  /var/www/vhosts/pofai.co.uk/httpdocs/pub/pinterestdata/pinterestdata.csv;
+  mysql magento<  /var/www/vhosts/pofai.co.uk/httpdocs/pub/pinterestdata/script.txt; 
+  mv /tmp/mysqlfile/pinterestdata.csv /var/www/vhosts/pofai.co.uk/httpdocs/pub/pinterestdata/
+  
+  rm -rf /tmp/mysqlfile/pinterestdata.csv;rm -rf  /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/pinterestdata.csv;mysql magento<  /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/script.txt; mv /tmp/mysqlfile/pinterestdata.csv /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/
+  
+  
+  
+rm -rf /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/pinterestdata.csv;mysql magento<  /var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata/script.txt;
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view

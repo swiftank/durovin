@@ -1,0 +1,18 @@
+Issue
+	Sign in User not able to checkout. System throwing error please update your adddress
+
+
+File Path 
+/var/www/html/durovin/app/code/Codazon/OneStepCheckout/view/frontend/web/js/view/checkout-agreements.js - Vendor Path
+/var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/js/view/checkout-agreements.js - System Path
+
+
+
+---------------Code changed-------------------- 
+
+if(checkoutConfig.isCustomerLoggedIn){
+    quote.billingAddress(quote.shippingAddress())
+}else
+{
+   quote.billingAddress(checkoutConfig.shippingAddress); //update shippingAddress to billing address on payment step, this trigger update text on address of payment step
+}

@@ -1,0 +1,30 @@
+
+/var/www/html/durovin/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml - Add to Cart
+
+/var/www/vhosts/pofai.co.uk/7927729929/httpdocs/vendor/magento/module-catalog/view/frontend/templates/product/image_with_borders.phtml
+
+/var/www/html/durovin/vendor/stripe/module-payments/view/frontend/web/template/payment/element.html
+
+
+
+ //  if (quote.shippingAddress() && quote.billingAddress() && $("input[name='billing-address-same-as-shipping']:checked").val() !== undefined) {
+                    //     quote.billingAddress(quote.shippingAddress()); //this will set the billing address same as shipping address.
+                    // }
+                     console.log('debug', quote.shippingAddress());
+                     console.log('debug', quote.billingAddress());
+                     console.log('debug', $("input[name='billing-address-same-as-shipping']:checked").val());
+                     
+Magento_Catalog::category/products.phtml
+Magento_Catalog::product/list.phtml
+
+/var/www/html/durovin/vendor/magento/module-checkout/view/frontend/web/js/view/billing-address.js
+/var/www/html/durovin/app/code/Codazon/OneStepCheckout/view/frontend/web/js/view/shipping-method.js
+
+SELECT *
+INTO OUTFILE '/var/www/html/orders.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM pinterest_view
+
+SELECT * INTO OUTFILE '/var/lib/mysql-files/orders.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' FROM pinterest_view;

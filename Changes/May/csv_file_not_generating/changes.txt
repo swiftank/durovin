@@ -1,0 +1,11 @@
+Issue
+	Pinterestdata.csv file not generating through crone from plesk
+
+
+File Path 
+/var/www/vhosts/durovinbathrooms.com/httpdocs/pub/pinterestdata
+
+
+---------------Solution-------------------- 
+
+add mysqlfile directory in /tmp directory and give permission 777 

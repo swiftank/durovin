@@ -1,0 +1,42 @@
+minisearch-autocomplete-top-search
+/var/www/html/durovin/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Smile_ElasticsuiteCore/js/form-mini.js
+vendor/magento/module-search/Controller/Ajax/Suggest.php
+/var/www/html/durovin/vendor/magento/module-search/Block/Adminhtml/Dashboard/Last.php
+/var/www/html/durovin/vendor/smile/elasticsuite/src/module-elasticsuite-core/Model/Autocomplete/Terms/DataProvider.php
+
+// {"username":"li@durovinbathrooms.co.uk","password": "Li.302468"}
+
+
+_onPropertyChange
+/var/www/html/durovin/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Smile_ElasticsuiteCore/js/form-mini.js
+
+  this.currentRequest = $.ajax({
+                            method: "GET",
+                            url: 'http://durovin.com/index.php/rest/V1/blog/post/list/:type/:term/1/1/1000',
+                            cache: true,
+                            dataType: 'json',
+                            // data: {q: value},
+                            beforeSend: function() { if (this.currentRequest !== null) { this.currentRequest.abort(); }}.bind(this),
+                            success: $.proxy(function (data) {
+                                var posts = JSON.parse(data);
+                                posts = posts['posts'];
+                                console.log('debug',  posts);
+                                var newHtml = ''
+                                newHtml += '<dl role="listbox" class="autocomplete-list">';
+                                newHtml += '<dt role="listbox" class="autocomplete-list-title title-category">Blog</dt>';
+                                for( var a = 0; a <  posts.length ; a++ ){
+                                     newHtml += '<dd class="">' +  posts[a].title + '</dd>';
+                                    console.log('debug',  posts[a].title);
+                                }
+                                newHtml += '</dl>';
+                                $('.smile-elasticsuite-autocomplete-result').append(newHtml);
+                          
+                                
+                            },this)
+                        });
+                        
+https://magefan.com/blog/load-data-from--magento-2-database
+
+ $objectManager =   \Magento\Framework\App\ObjectManager::getInstance();
+$connection = $objectManager->get('Magento\Framework\App\ResourceConnection')->getConnection('\Magento\Framework\App\ResourceConnection::DEFAULT_CONNECTION'); 
+$result1 = $connection->fetchAll("SELECT * FROM magefan_blog_post where is_active = 1")

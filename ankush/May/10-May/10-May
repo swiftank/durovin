@@ -1,0 +1,71 @@
+
+
+Primary school: Basic arithmetic operations (addition, subtraction, multiplication, and division), fractions, decimals, percentages, basic geometry, measurement, and data analysis.
+
+Middle school: Advanced arithmetic operations, algebraic equations, geometry (angles, triangles, circles, and coordinate geometry), probability, statistics, and trigonometry.
+
+High school: Calculus (limits, derivatives, and integrals), advanced algebra, geometry (three-dimensional geometry and vectors), statistics, and probability.
+
+College/university: Advanced calculus (multivariable calculus, differential equations, and complex analysis), linear algebra, abstract algebra, topology, discrete mathematics, and number theory.
+
+Note that the exact topics covered may vary depending on the specific education system and the level of study. It's always best to consult your institution's syllabus or curriculum to get a more detailed understanding of the maths topics covered.
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml
+/var/www/html/durovin/vendor/magento/module-catalog/Pricing/Render/FinalPriceBox.php
+
+/var/www/html/durovin/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+<?php echo 'dfdf'; exit; ?>
+
+/var/www/html/durovin/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+/var/www/html/durovin/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+ 
+ /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product
+ 
+ /var/www/html/durovin/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+ 
+ /var/www/html/durovin/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+ 
+ 
+      $('.newAddToCartRelated').each(function(index) {
+                $(this).on("click", function(e) {
+                    e.preventDefault();
+                    dataLayer.push({
+                        'event': 'add_to_cart',
+                        'currency': "GBP",
+                        'value': '' + $(this).attr('data-pr-price') + '',
+                        'items': [{
+                            'item_name': 'list-' + $(this).attr(
+                                'data-pr-name') + '',
+                            'price': '' + $(this).attr('data-pr-price') + '',
+                            'item_id': '' + $(this).attr('data-pr-sku') + '',
+                            'quantity': '1',
+                        }]
+
+                    });
+                    console.log('layer', $('#form-'+ $(this).attr('data-pr-sku') ));
+                    $('#form-'+ $(this).attr('data-pr-sku').submit();
+                    console.log('layer', dataLayer);
+                    return false;
+                });
+            })
+            
+            
+            Declined Card - 
+            
+            4000 0000 0000 0002
+            
+            /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/template/checkout
+            
+            
+              setInterval(function(){
+                                if (afterClickErr.length > 0 ||  billingDetails.length == 0) {
+                                    this.isPlaceOrderActionAllowed(false);
+                                    console.log('debug', 'sdsds');
+                                }
+                              }, 10000);
+            
+  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
+
+
+

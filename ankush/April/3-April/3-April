@@ -1,0 +1,33 @@
+
+
+StaticPath: /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/css - custom_style.css
+StaticPath: /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Magento_Checkout/template/minicart - content.html
+
+Real_Path: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/web/css - custom_style.css
+Real_Path: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Checkout/web/template/minicart - content.html
+
+Need to add class in content.html
+Css Style Need to  add in  `custom_styles.css`
+
+.custom_viewcart_btn_block .action.viewcart{
+    display: block;
+    width: 100%;
+    background: #282828;
+    border: 1px solid #282828;
+    color: #ffffff;
+    line-height: 2.2rem;
+    padding: 14px 17px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.custom_viewcart_btn_block .action.viewcart:hover{
+    background: #ffffff;
+    border: 1px solid #282828;
+    color: #282828;
+}
+
+.custom_viewcart_btn_block .secondary{
+    margin: 0 10px 15px;
+}
+

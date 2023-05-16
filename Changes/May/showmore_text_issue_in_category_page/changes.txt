@@ -1,0 +1,58 @@
+Issue
+	Show hide Grey clock is not hide/show in category page 
+
+
+File Path 
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/web/css/custom_style.css
+
+
+---------------Solution-------------------- 
+Add below css code in above css path
+
+.showmoretext {
+    height: 80px;
+    overflow: hidden
+}
+
+.showmorecontainer {
+    position: relative
+}
+
+.showmorecontainer label {
+    position: absolute;
+    top: 100%
+}
+
+.showmorecontainer input {
+    display: none
+}
+
+.showmorecontainer label:after {
+    content: "--Show More--";
+    color: blue
+}
+
+.showmorecontainer input:checked+label:after {
+    content: "--Show Less--";
+    color: blue
+}
+
+.showmorecontainer input:checked~div {
+    height: 100%
+}
+
+.showmorecontainer a:link {
+    color: blue;
+    text-decoration: underline
+}
+
+.showmorecontainer a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline
+}
+
+.showmorecontainer h1 {
+    font: 500 20px/1.35 PT Sans,Helvetica Neue,Verdana,Arial,sans-serif;
+    margin: 0 0 20px
+}

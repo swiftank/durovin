@@ -1,0 +1,86 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product - BlogSearch Folder
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion - Smile_ElasticsuiteCore
+
+
+https://codepen.io/gzuzkstro/pen/NBWZPP
+
+Google Tag Manager
+
+https://developers.google.com/analytics/devguides/collection/ga4/tag-options
+https://www.bil.ac.uk/student-talk/?ub_medium=product&ub_source=University%20Popcard&ub_campaign=&ub_content=
+
+https://support.google.com/tagmanager/answer/9442095?hl=en&ref_topic=6333310&sjid=15994124483947338568-EU
+https://support.google.com/analytics/answer/9234069 
+
+https://support.google.com/analytics/topic/9756175?visit_id=638170625860414102-173611176&rd=1
+
+
+Debug
+https://tagassistant.google.com/
+https://analytics.google.com/analytics/web/?authuser=1#/a263951869p368538435/admin/streams/table/
+https://analytics.google.com/analytics/web/?authuser=1#/a263951869p368538435/admin/debugview/overview
+
+
+
+
+
+https://analytics.google.com/analytics/web/?authuser=1#/a263951869p368538435/admin
+
+https://support.google.com/tagassistant/answer/10039345#controls&zippy=%2Cin-this-article - Bug
+
+https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?sjid=15994124483947338568-EU&client_type=gtag#implementation
+https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtag#add_payment_info
+
+gtag("event", "view_item_list", {
+  item_list_id: "related_products",
+  item_list_name: "Related products",
+  items: [
+    {
+      item_id: "SKU_12345",
+      item_name: "Stan and Friends Tee",
+      affiliation: "Google Merchandise Store",
+      coupon: "SUMMER_FUN",
+      discount: 2.22,
+      index: 0,
+      item_brand: "Google",
+      item_category: "Apparel",
+      item_category2: "Adult",
+      item_category3: "Shirts",
+      item_category4: "Crew",
+      item_category5: "Short sleeve",
+      item_list_id: "related_products",
+      item_list_name: "Related Products",
+      item_variant: "green",
+      location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+      price: 9.99,
+      quantity: 1
+    }
+  ]
+});
+
+gtag("event", "add_to_cart", {
+  currency: "USD",
+  value: 7.77,
+  items: [
+    {
+      item_id: "SKU_12345",
+      item_name: "Stan and Friends Tee",
+      affiliation: "Google Merchandise Store",
+      coupon: "SUMMER_FUN",
+      discount: 2.22,
+      index: 0,
+      item_brand: "Google",
+      item_category: "Apparel",
+      item_category2: "Adult",
+      item_category3: "Shirts",
+      item_category4: "Crew",
+      item_category5: "Short sleeve",
+      item_list_id: "related_products",
+      item_list_name: "Related Products",
+      item_variant: "green",
+      location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+      price: 9.99,
+      quantity: 1
+    }
+  ]
+});

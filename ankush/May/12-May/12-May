@@ -1,0 +1,72 @@
+
+            Declined Card - 
+            
+            4000 0000 0000 0002
+            
+            /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/template/checkout
+            /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/js/view
+              setInterval(function(){
+                                if (afterClickErr.length > 0 ||  billingDetails.length == 0) {
+                                    this.isPlaceOrderActionAllowed(false);
+                                    console.log('debug', 'sdsds');
+                                }
+                              }, 10000);
+                              
+         Add To cart                     
+        /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml    
+        
+        G-R1TYTTL8NE                  
+            
+            .showmoretext {
+  height: 80px;
+  overflow: hidden
+}
+
+.showmorecontainer {
+  position: relative
+}
+
+.showmorecontainer label {
+  position: absolute;
+  top: 100%
+}
+
+.showmorecontainer input {
+  display: none
+}
+
+.showmorecontainer label:after {
+  content: "--Show More--";
+  color: blue
+}
+
+.showmorecontainer input:checked+label:after {
+  content: "--Show Less--";
+  color: blue
+}
+
+.showmorecontainer input:checked~div {
+  height: 100%
+}
+
+.showmorecontainer a:link {
+  color: blue;
+  text-decoration: underline
+}
+
+.showmorecontainer a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline
+}
+
+.showmorecontainer h1 {
+  font: 500 20px/1.35 PT Sans,Helvetica Neue,Verdana,Arial,sans-serif;
+  margin: 0 0 20px
+}
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/web/css
+
+
+
+

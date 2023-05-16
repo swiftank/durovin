@@ -1,0 +1,10 @@
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml
+/var/www/html/durovin/vendor/magento/module-catalog/Pricing/Render/FinalPriceBox.php
+
+/var/www/html/durovin/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+<?php echo 'dfdf'; exit; ?>
+
+/var/www/html/durovin/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+ 

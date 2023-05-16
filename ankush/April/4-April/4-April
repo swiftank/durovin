@@ -1,0 +1,106 @@
+Issue - Ravenna 56 Left Right Image Issue - Done
+Solution - Added Left and Right images in products from admin backend.
+
+
+Issue - Add Blog in Search Bar
+
+file path: /var/www/html/durovin/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Smile_ElasticsuiteCore/js/form-mini.js
+functionname: _onPropertyChange
+
+
+//@version=4 
+strategy("Support and Resistance Breakout Strategy", overlay=true)
+
+// Indicator Inputs 
+toggleBreaks  = input(true, title = "Show Breaks" ) 
+leftBars  = input(15, title = "Left Bars ") 
+rightBars  = input(15, title = "Right Bars") 
+volumeThresh  = input(20, title = "Volume Threshold")
+
+// Support and Resistance Levels 
+highUsePivot = fixnan(pivothigh(leftBars, rightBars)[1]) 
+lowUsePivot = fixnan(pivotlow(leftBars, rightBars)[1])
+
+// Volume % 
+short = ema(volume, 5) 
+long = ema(volume, 10) 
+osc = 100 * (short - long) / long
+
+// 20 EMA 
+ema20 = ema(close, 20)
+
+// Breakout Signals 
+breakoutUp = crossover(close, highUsePivot) 
+breakoutDown = crossunder(close, lowUsePivot)
+
+// Stop Loss and Take Profit 
+ 
+sell_sl = valuewhen(breakoutUp, high[1], 0) 
+buy_sl = valuewhen(breakoutDown, low[1], 0) 
+tp_pips = input(title="Take Profit (pips)", defval=10)
+
+// Buy Signal if breakoutUp 
+strategy.entry("Buy", strategy.long) 
+strategy.exit("Buy Close", "Buy", limit=tp_pips,stop=buy_sl)
+
+// Sell Signal if breakoutDown 
+strategy.entry("Sell", strategy.short) 
+strategy.exit("Sell Close", "Sell", limit=tp_pips, stop=sell_sl)
+
+
+
+  this.currentRequest = $.ajax({
+                            method: "GET",
+                            url: 'http://durovin.com/index.php/rest/V1/blog/post/list/:type/:term/1/1/1000',
+                            cache: true,
+                            dataType: 'json',
+                            // data: {q: value},
+                            beforeSend: function() { if (this.currentRequest !== null) { this.currentRequest.abort(); }}.bind(this),
+                            success: $.proxy(function (data) {
+                                var posts = JSON.parse(data);
+                                posts = posts['posts'];
+                                console.log('debug',  posts);
+                                var newHtml = ''
+                                newHtml += '<dl role="listbox" class="autocomplete-list">';
+                                newHtml += '<dt role="listbox" class="autocomplete-list-title title-category">Blog</dt>';
+                                for( var a = 0; a <  posts.length ; a++ ){
+                                     newHtml += '<dd class="">' +  posts[a].title + '</dd>';
+                                    console.log('debug',  posts[a].title);
+                                }
+                                newHtml += '</dl>';
+                                $('.smile-elasticsuite-autocomplete-result').append(newHtml);
+                          
+                                
+                            },this)
+                        });
+                        
+  this.searchForm.removeClass('processing');
+	var newHtml = "";
+	var seeStyle = "display:block;color:#0a4882";
+	newHtml += '<dl role="listbox" class="autocomplete-list">';
+	// newHtml += '<dt role="listbox" class="autocomplete-list-title title-category">Blog</dt>';
+	newHtml += '<dd style="background: #e8e8e8;"><a style="'+ seeStyle +'" href="/news/search/'+ value +'">Search for `<u>' + value + '</u>` in Blogs </a></dd>';
+	newHtml += '</dl>';
+	$('.smile-elasticsuite-autocomplete-result').append(newHtml);
+	
+/var/www/html/durovin/vendor/smile/elasticsuite/src/module-elasticsuite-core/view/frontend/templates/search/form.mini.phtml
+
+cms- Route
+cms- Module
+index- Controller
+index- Action
+cms_index_index- Full Action
+Magento_Cms- Controller Module
+
+
+
+wget http://archive.ubuntukylin.com/software/pool/partner/weixin_2.1.4_amd64.deb
+dpkg -i weixin_2.1.4_amd64.deb
+
+apt install weixin
+
+weixin	
+
+
+<frontName>/<controler_folder_name>/<controller_class_name>
+

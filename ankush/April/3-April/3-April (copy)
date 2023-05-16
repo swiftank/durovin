@@ -1,0 +1,96 @@
+My Cart Popup Button 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98997695-1"></script>
+<script async>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-98997695-1');
+  gtag('config', 'G-XE0GMHMNXQ');
+</script>
+<!--End Global site tag (gtag.js) - Google Analytics -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WX47SRL');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- addthis social share -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e8fdcf06e84734" async="async"></script>
+<!-- addthis social share -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHK8BD3');</script>
+<!-- End Google Tag Manager -->
+
+
+Footer
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX47SRL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHK8BD3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+StaticPath: /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/css - custom_style.css
+StaticPath: /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Magento_Checkout/template/minicart - content.html
+
+Real_Path: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/web/css - custom_style.css
+Real_Path: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Checkout/web/template/minicart - content.html
+
+Need to add class in content.html
+Css Style Need to  add in  `custom_styles.css`
+
+.custom_viewcart_btn_block .action.viewcart{
+    display: block;
+    width: 100%;
+    background: #282828;
+    border: 1px solid #282828;
+    color: #ffffff;
+    line-height: 2.2rem;
+    padding: 14px 17px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.custom_viewcart_btn_block .action.viewcart:hover{
+    background: #ffffff;
+    border: 1px solid #282828;
+    color: #282828;
+}
+
+.custom_viewcart_btn_block .secondary{
+    margin: 0 10px 15px;
+}
+
+https://www.cherryservers.com/blog/how-to-use-cron-to-automate-linux-jobs-on-ubuntu-20-04
+
+[minute] [hour] [day of month] [month] [day of week] [command]
+
+[0-59] [0-23] [1-31] [1-12 or names] [0-6 or Sun-Sat] [command]
+
+44 3 * * * echo "hello world" > hello.txt - Every Day at 3:44 am
+
+crontab -r - terminate schedule tasks 
+crontab -l - list of crons
+tail ~/greetings.txt
+
+https://www.durovinbathrooms.com/rectangular-pivot-hinged-shower-enclosure-clear-glass
+
+

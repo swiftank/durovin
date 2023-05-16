@@ -1,0 +1,138 @@
+$rows = $connection->fetchAll("SELECT title FROM magefan_blog_post where is_active = 1 AND title LIKE  '%" . $query['q'] . "%' ");
+ ALTER TABLE `dbName`.`tableName` CHANGE COLUMN `old_columnName` `new_columnName` VARCHAR(45) NULL DEFAULT NULL ;
+ ALTER TABLE `durovin2`.`magefan_blog_post` CHANGE COLUMN `identifier` `short_title` VARCHAR(100) ;
+  ALTER TABLE `durovin2`.`magefan_blog_post` CHANGE COLUMN `short_title` `identifier` VARCHAR(100) ;
+$query = $this->context->getRequest()->getParams('q');
+        $objectManager =   \Magento\Framework\App\ObjectManager::getInstance();
+        $connection = $objectManager->get('Magento\Framework\App\ResourceConnection')->getConnection('\Magento\Framework\App\ResourceConnection::DEFAULT_CONNECTION'); 
+        $rows = $connection->fetchAll("SELECT title FROM magefan_blog_post where is_active = 1 AND title LIKE  '%" . $query['q'] . "%' OR content LIKE '%" . $query['q'] . "%' ");
+        $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        $resultJson->setData(["data" => $rows]);
+        return $resultJson;
+   
+$query = $this->context->getRequest()->getParams('q');
+        $objectManager =   \Magento\Framework\App\ObjectManager::getInstance();
+        $connection = $objectManager->get('Magento\Framework\App\ResourceConnection')->getConnection('\Magento\Framework\App\ResourceConnection::DEFAULT_CONNECTION'); 
+        $rows = $connection->fetchAll("SELECT title FROM magefan_blog_post where (is_active = 1 AND title LIKE  '%" . $query['q'] . "%')  OR  (is_active = 1 AND content LIKE  '%" . $query['q'] . "%') LIMIT 5");
+        $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        $resultJson->setData(["data" => $rows]);
+        return $resultJson;
+           
+_fetchBlogPosts : function(params){
+            $.ajax({
+                url: "/ajax/blog/search",
+                data: {q: params},
+                dataType: 'json',
+                success: function(data, status, xhr) {
+                    var posts = data.data;
+                    var newHtml = ''
+                    newHtml += '<dl role="listbox" class="autocomplete-list">';
+                    newHtml += '<dt role="listbox" class="autocomplete-list-title title-category">Blog</dt>';
+                    
+                    for( var a = 0; a <  posts.length ; a++ ){
+                         newHtml += '<dd>' +  posts[a].title + '</dd>';
+                    }
+                    newHtml += '<dd><center><a href="/news/search/'+ params +'" style="color:#0a4882">See more results of `<b>'+ params +'</b></a>`</center></dd>';
+                    newHtml += '</dl>';
+                    $('.smile-elasticsuite-autocomplete-result').append(newHtml);
+                },
+                error: function () {
+                    // xhr, status, errorThrown - Params Error 
+                    console.log('Error happens. Try again.');
+                }
+            });
+        },
+        
+               
+ /var/www/html/durovin/vendor/smile/elasticsuite/src/module-elasticsuite-core/view/frontend/web/js/form-mini.js
+ /var/www/html/durovin/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Smile_ElasticsuiteCore/js/form-mini.js
+ /var/www/html/durovin/vendor/smile/elasticsuite/src/module-elasticsuite-core/view/frontend/web/js/form-mini.js
+ /var/www/html/durovin/app/code/Product/Blogsearch/Controller/Blog/Search.php
+ 
+
+
+
+
+
+Bugs Need To fix In Blog Search.
+	
+	1. Limit By 5 Blog.
+	2. Add See More Results in Blog and redirect to search Page.
+	3. Override `form-mini.js` file in module
+	4. Blog Title click pending.
+	5. Empty search blog title is showing.
+	6. Blog Append two times in some cases.
+	7. Need to hide if blog search results lower than 5. 
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 

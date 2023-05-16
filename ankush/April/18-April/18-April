@@ -1,0 +1,129 @@
+/var/www/html/durovin/vendor/magento/module-theme/view/base/templates/root.phtml
+/var/www/html/durovin/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGKM8WGPNH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGKM8WGPNH');
+</script>
+
+Measure Ment Id - G-FGKM8WGPNH
+
+
+-----------------------Pofai Google Analytics ----------------------------
+pofai - Pofai Website
+https://analytics.google.com/analytics/web/?authuser=1#/p368924210/realtime/overview
+
+https://tagmanager.google.com/?authuser=1#/container/accounts/6092865125/containers/113005868/workspaces/2
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T5T7JWF');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5T7JWF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+Google Analytics Propery Pofai Webiste 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1TYTTL8NE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R1TYTTL8NE');
+</script>
+
+https://tagassistant.google.com/
+
+
+Measurement Id = G-R1TYTTL8NE
+
+[
+                  {
+                  'item_name': 'Sample Product 1',
+                  'item_id': '123456',
+                  'price': '35.25',
+                  'item_brand': 'Your Brand Name',
+                  'item_category': 'Category Name',
+                  'item_category_2': 'Category level1',
+                  'item_category_3': 'Category level2',
+                  'item_category_4': 'Category level3',
+                  'item_variant': 'Variant',
+                  'item_list_name': 'Search Results',
+                  'item_list_id': 'SR12',
+                  'index': 1,
+                  'quantity': '1'
+                  }
+                ]
+                
+                
+ dataLayer.push({
+	'event':'purchase',
+    	'items': {
+                'item_name': 'pofai.co.uk',
+                'order_value':'<?php echo $order->getGrandTotal(); ?>',    // Fetch total value dynamically
+                'order_id':'<?php echo $block->getOrderId(); ?>',   // Fetch Order id dynamically
+                "email": "<?php echo $order->getCustomerEmail(); ?>"
+            },
+	
+}); 
+
+
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<!doctype html>
+<html <?= /* @noEscape */ $htmlAttributes ?>>
+    <head <?= /* @noEscape */ $headAttributes ?>>
+        <?= /* @noEscape */ $requireJs ?>
+        <?= /* @noEscape */ $headContent ?>
+        <?= /* @noEscape */ $headAdditional ?>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1TYTTL8NE"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R1TYTTL8NE');
+        </script>
+        
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T5T7JWF');</script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <body data-container="body"
+          data-mage-init='{"loaderAjax": {}, "loader": { "icon": "<?= /* @noEscape */ $loaderIcon ?>"}}'
+        <?= /* @noEscape */ $bodyAttributes ?>>
+        <?= /* @noEscape */ $layoutContent ?>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5T7JWF"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    </body>
+</html>
+
+
+             

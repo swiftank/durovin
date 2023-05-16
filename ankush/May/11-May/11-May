@@ -1,0 +1,19 @@
+
+            Declined Card - 
+            
+            4000 0000 0000 0002
+            
+            /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/template/checkout
+            
+            /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/js/view
+              setInterval(function(){
+                                if (afterClickErr.length > 0 ||  billingDetails.length == 0) {
+                                    this.isPlaceOrderActionAllowed(false);
+                                    console.log('debug', 'sdsds');
+                                }
+                              }, 10000);
+            
+
+
+
+

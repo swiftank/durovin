@@ -1,0 +1,41 @@
+<form id='form_id' action="">
+<button id='ajaxcall' tyle='submit'>Ajax Call</button>
+</form>
+
+
+<script>
+    // require(['jquery', 'ajax'], function($, ajax) {
+    //     ajax();
+    // });
+
+    require([
+    "jquery",
+    "mage/mage"
+],function($) {
+    $(document).ready(function() {
+        $('#form_id').mage(
+            'validation',
+            { 
+                submitHandler: function(form) {
+                    $.ajax({
+                        url: "/page/ajax/request",
+                        data: $('#form_id').serialize(),
+                        type: 'POST',
+                        dataType: 'json',
+                        beforeSend: function() {
+                            // show some loading icon
+                        },
+                        success: function(data, status, xhr) {
+                            // data contains your controller response
+                        },
+                        error: function (xhr, status, errorThrown) {
+                            console.log('Error happens. Try again.');
+                            console.log(errorThrown);
+                        }
+                    });
+                }
+            }
+        );
+    });
+});
+</script>  

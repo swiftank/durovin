@@ -1,0 +1,192 @@
+/var/www/html/durovin/vendor/magento/module-theme/view/base/templates/root.phtml
+/var/www/html/durovin/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+ dataLayer.push({
+    'event': 'purchase',
+    pr
+    'items': [{
+        'item_name': 'pofai',
+        'item_id': "<?php echo $block->getOrderId(); ?>",
+        'price': '35.25',
+        'item_brand': 'Your Brand Name',
+        'item_category': 'Category Name',
+        'item_category_2': 'Category level1',
+        'item_category_3': 'Category level2',
+        'item_category_4': 'Category level3',
+        'item_variant': 'Variant',
+        'item_list_name': 'Search Results',
+        'item_list_id': 'SR12',
+        'item_order_id': "<?php echo $block->getOrderId(); ?>",
+        'item_customer_email': "<?php echo $order->getCustomerEmail(); ?>",
+        'index': 1,
+        'quantity': '1'
+    },
+]
+})
+
+
+
+SELECT  base_total_paid, increment_id, order_items.name, order_items.sku, order_items.base_original_price , order_items.order_id as order_id FROM `sales_order` orders
+JOIN sales_order_item  order_items 
+ON orders.entity_id = order_items.order_id
+where entity_id = '4051';
+
+
+SELECT cat.product_id, GROUP_CONCAT( cat.category_id ) , product.sku
+FROM catalog_category_product AS cat, catalog_product_entity AS product
+WHERE cat.product_id = product.entity_id
+GROUP BY cat.product_id;
+
+
+SELECT DISTINCT cc.entity_id as id, cc.value as path, cc1.value as name    
+  FROM catalog_category_entity_varchar cc    
+  JOIN catalog_category_entity_varchar cc1 ON cc.entity_id=cc1.entity_id    
+  JOIN eav_entity_type ee ON cc.entity_type_id=ee.entity_type_id
+  JOIN catalog_category_entity cce ON cc.entity_id=cce.entity_id
+  WHERE cc.attribute_id = '57' AND cc1.attribute_id = '41' AND ee.entity_model = 'catalog/category'; 
+  
+  
+  
+ SELECT entity_id AS "CATEGORY ID", ccev1.value as "CATEGORY NAME", CONCAT(ccev2.value) AS "CATEGORY PATH"
+FROM catalog_category_entity AS cce
+JOIN catalog_category_entity_varchar AS ccev1 USING (entity_id)
+JOIN catalog_category_entity_varchar AS ccev2 USING (entity_id)
+JOIN eav_attribute AS ea1 ON ea1.attribute_id = ccev1.attribute_id
+JOIN eav_attribute AS ea2 ON ea2.attribute_id = ccev2.attribute_id
+WHERE ea1.attribute_code = 'name' AND ea1.entity_type_id = 3 AND ea2.attribute_code = 'url_path'
+ORDER BY entity_id; 
+
+
+
+SELECT e.entity_id AS 'id',
+       v1.value AS 'name',
+       e.sku,
+       d1.value AS 'price',
+       t1.value AS 'short_description',
+       t2.value AS 'description',
+       v2.value AS 'image',
+       v3.value AS 'thumbnail',
+       mg.value AS 'media_gallery',
+       cids.category_ids AS 'category_ids',
+       cids.category_names AS 'category_names'
+FROM catalog_product_entity e
+LEFT JOIN catalog_product_entity_varchar v1 ON e.entity_id = v1.entity_id
+AND v1.store_id = 0
+AND v1.attribute_id =
+  (SELECT attribute_id
+   FROM eav_attribute
+   WHERE attribute_code = 'name'
+     AND entity_type_id =
+       (SELECT entity_type_id
+        FROM eav_entity_type
+        WHERE entity_type_code = 'catalog_product'))
+LEFT JOIN catalog_product_entity_text t1 ON e.entity_id = t1.entity_id
+AND t1.store_id = 0
+AND t1.attribute_id =
+  (SELECT attribute_id
+   FROM eav_attribute
+   WHERE attribute_code = 'short_description'
+     AND entity_type_id =
+       (SELECT entity_type_id
+        FROM eav_entity_type
+        WHERE entity_type_code = 'catalog_product'))
+LEFT JOIN catalog_product_entity_text t2 ON e.entity_id = t2.entity_id
+AND t2.store_id = 0
+AND t2.attribute_id =
+  (SELECT attribute_id
+   FROM eav_attribute
+   WHERE attribute_code = 'description'
+     AND entity_type_id =
+       (SELECT entity_type_id
+        FROM eav_entity_type
+        WHERE entity_type_code = 'catalog_product'))
+LEFT JOIN catalog_product_entity_varchar v2 ON e.entity_id = v2.entity_id
+AND v2.store_id = 0
+AND v2.attribute_id =
+  (SELECT attribute_id
+   FROM eav_attribute
+   WHERE attribute_code = 'image'
+     AND entity_type_id =
+       (SELECT entity_type_id
+        FROM eav_entity_type
+        WHERE entity_type_code = 'catalog_product'))
+LEFT JOIN catalog_product_entity_varchar v3 ON e.entity_id = v3.entity_id
+AND v3.store_id = 0
+AND v3.attribute_id =
+  (SELECT attribute_id
+   FROM eav_attribute
+   WHERE attribute_code = 'thumbnail'
+     AND entity_type_id =
+       (SELECT entity_type_id
+        FROM eav_entity_type
+        WHERE entity_type_code = 'catalog_product'))
+LEFT JOIN catalog_product_entity_decimal d1 ON e.entity_id = d1.entity_id
+AND d1.store_id = 0
+AND d1.attribute_id =
+  (SELECT attribute_id
+   FROM eav_attribute
+   WHERE attribute_code = 'price'
+     AND entity_type_id =
+       (SELECT entity_type_id
+        FROM eav_entity_type
+        WHERE entity_type_code = 'catalog_product'))
+LEFT JOIN
+  (SELECT m1.entity_id,
+          GROUP_CONCAT(m2.value) AS value
+   FROM catalog_product_entity_media_gallery_value_to_entity m1
+   INNER JOIN catalog_product_entity_media_gallery m2 ON m2.value_id = m1.value_id
+   AND m2.attribute_id =
+     (SELECT attribute_id
+      FROM eav_attribute
+      WHERE attribute_code = 'media_gallery'
+        AND entity_type_id =
+          (SELECT entity_type_id
+           FROM eav_entity_type
+           WHERE entity_type_code = 'catalog_product'))
+   GROUP BY m1.entity_id) mg ON e.entity_id = mg.entity_id
+LEFT JOIN
+  (SELECT product_id,
+          GROUP_CONCAT(c.category_id SEPARATOR ',') AS category_ids,
+          GROUP_CONCAT(cv.value SEPARATOR ',') AS category_names
+   FROM catalog_category_product c
+   INNER JOIN catalog_category_entity_varchar cv ON c.category_id = cv.entity_id
+   AND cv.store_id = 0
+   AND cv.attribute_id =
+     (SELECT attribute_id
+      FROM eav_attribute
+      WHERE attribute_code = 'name'
+        AND entity_type_id =
+          (SELECT entity_type_id
+           FROM eav_entity_type
+           WHERE entity_type_code = 'catalog_category'))
+   GROUP BY product_id) cids ON e.entity_id = cids.product_id 
+   
+   
+   
+   ------------------------------------Fetch Categories
+   
+   SELECT entity_id, category_ids, (LENGTH(category_ids) - LENGTH(REPLACE(category_ids, ',', '')) + 1) as category_cnt FROM ( SELECT entity_id, GROUP_CONCAT(category_id) as category_ids FROM ( SELECT `e`.entity_id, `at_category_id`.`category_id` FROM `catalog_product_entity` AS `e` LEFT JOIN `catalog_category_product` AS `at_category_id` ON (at_category_id.`product_id`=e.entity_id) ) sub_query GROUP BY entity_id ) final_query HAVING category_cnt > 2;
+   
+   
+   ------------------------------------Fetch Name Categories
+   
+   SELECT entity_id AS "CATEGORY ID", ccev1.value as "CATEGORY NAME", CONCAT(ccev2.value) AS "CATEGORY PATH"
+FROM catalog_category_entity AS cce
+JOIN catalog_category_entity_varchar AS ccev1 USING (entity_id)
+JOIN catalog_category_entity_varchar AS ccev2 USING (entity_id)
+JOIN eav_attribute AS ea1 ON ea1.attribute_id = ccev1.attribute_id
+JOIN eav_attribute AS ea2 ON ea2.attribute_id = ccev2.attribute_id
+WHERE ea1.attribute_code = 'name' AND ea1.entity_type_id = 3 AND ea2.attribute_code = 'url_path'
+ORDER BY entity_id;
+
+
+
+
+----------------------------------------------------
+
+/var/www/html/durovin/vendor/magento/module-checkout/Controller/Onepage/Success.php
+
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magento/module-checkout/Controller/Onepage
+
+
+
+

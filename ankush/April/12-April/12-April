@@ -1,0 +1,151 @@
+
+
+See all 50 blog search results
+newHtml += '<dd><center><a href="/news/search/'+ params +'" style="color:#0a4882">See more results of `<b>'+ params +'</b></a>`</center></dd>';
+$query = $this->context->getRequest()->getParams('q');
+        $objectManager =   \Magento\Framework\App\ObjectManager::getInstance();
+        $connection = $objectManager->get('Magento\Framework\App\ResourceConnection')->getConnection('\Magento\Framework\App\ResourceConnection::DEFAULT_CONNECTION'); 
+        $count = $connection->fetchAll("SELECT COUNT(post_id) as postcount FROM magefan_blog_post where (is_active = 1 AND title LIKE  '%" . $query['q'] . "%')  OR  (is_active = 1 AND content LIKE  '%" . $query['q'] . "%')");
+        $rows = $connection->fetchAll("SELECT title FROM magefan_blog_post where (is_active = 1 AND title LIKE  '%" . $query['q'] . "%')  OR  (is_active = 1 AND content LIKE  '%" . $query['q'] . "%') LIMIT 3");
+        $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        $resultJson->setData(["data" => $rows , "count" => $count[0]['postcount']]);
+        return $resultJson;
+
+ _fetchBlogPosts : function(params){
+            $.ajax({
+                url: "/ajax/blog/search",
+                data: {q: params},
+                dataType: 'json',
+                success: function(data, status, xhr) {
+                    var posts = data.data;
+                    var postcount = data.count
+                    var newHtml = ''
+                    newHtml += '<dl role="listbox" class="autocomplete-list">';
+                    newHtml += '<dt role="listbox" class="autocomplete-list-title title-category">Blog</dt>';
+                    for( var a = 0; a <  posts.length ; a++ ){
+                         newHtml += '<dd>' +  posts[a].title + '</dd>';
+                    }
+                    
+                    if( parseInt(postcount) > 3 ){
+                        newHtml += '<dd><center><a style="color:#0a4882" href="/news/search/'+ params +'">see all `'+ postcount +'` blog search results </a></center></dd>';
+                    }
+                    
+                    newHtml += '</dl>';
+                    if(!parseInt(postcount) <= 0 ){
+                        $('.smile-elasticsuite-autocomplete-result').append(newHtml);
+                    }
+                    
+                },
+                error: function () {
+                    // xhr, status, errorThrown - Params Error 
+                    console.log('Error happens. Try again.');
+                }
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+  _fetchBlogPosts : function(params){
+            $.ajax({
+                url: "/ajax/blog/search",
+                data: {q: params},
+                dataType: 'json',
+                success: function(data, status, xhr) {
+                    var posts = data.data;
+                    var postcount = data.count;
+                    var newHtml = ''
+                    newHtml += '<dl role="listbox" class="autocomplete-list">';
+                    newHtml += '<dt role="listbox" class="autocomplete-list-title title-category">Blog</dt>';
+                    for( var a = 0; a <  posts.length ; a++ ){
+                         newHtml += '<dd><a href="/news/post/'+ posts[a].identifier +'">' +  posts[a].title + '</a></dd>';
+                    }
+                       
+                    newHtml += '<dd><center><a style="color:#0a4882" href="/news/search/'+ params +'">see all `'+ postcount +'` blog search results </a></center></dd>';
+                    newHtml += '</dl>';
+                    $('.smile-elasticsuite-autocomplete-result').append(newHtml);
+                    
+                },
+                error: function () {
+                    // xhr, status, errorThrown - Params Error 
+                    console.log('Error happens. Try again.');
+                }
+            });
+        },
+
+
+
+
+
+
+
+Bugs Need To fix In Blog Search.
+	
+	1. Limit By 3 Blog - Done.
+	2. Add See More Results in Blog and redirect to search Page - Done .
+	4. Blog Title click pending - Done.
+	7. Need to hide if blog search results lower than 5  - Done
+		
+	3. Override `form-mini.js` file in module
+	5. Empty search blog title is showing.
+	6. Blog Append two times in some cases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 

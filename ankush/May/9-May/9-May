@@ -1,0 +1,103 @@
+
+We are a progressive and dynamic IT service company that has creatively operated within the international market of web & mobile development since 2008. Our main focus and expertise lies in filling the technical void that barges you and your team’s online growth. We have immense experience in working on varied genre of technologies. We always look forward in learning latest technologies and provide very high quality services. A few of our specialties are below but we are not limited to just these: 
+
+Front-end: HTML5, CSS3, JADE/HAML/HandleBars, SASS/SCSS, LESS, Bootstrap/Zurb, JavaScript, jQuery/Plugins, Gulp, Grunt.
+
+Content Management System (CMS): WordPress, Magento, Shopify, Joomla, Squarespace, WooCommerce.
+
+eCommerce Platforms: Magento, WooCommerce, Shopify, BigCommerce, Custom online shops
+
+Backend Languages: PHP/MySql, JavaScript
+
+PHP Frameworks: LARAVEL, Codeigniter, Yii, CakePHP
+
+NodeJS Development: Angular JS, VueJS, React JS, Meteor JS 
+
+Mobile Application Development: iOS, Android
+
+Cross-platform Mobile Application development: React Native 
+
+Hybrid Mobile Applications: PhoneGap, Ionic, Swift
+
+Payment Gateways (Instant & subscriptions): PayPal, Authorize.net, Stripe, Amazon payments, Brain Tree.
+
+Rest API: Crypto Currency, CEX.IO, Bitfinex, Polonix, Bitthumb, Google, Instagram, Google Maps, Facebook, LogMyCalls, Weather, Youtube, Google Play
+
+Databases: Apache, MySQL, SQLite Database Administration, SQL Development
+
+Code Version: GitHub, SVN
+
+UI/UX Design: Wireframe, Interface Design, Mobile UX, Website Template Designing, Logo Designing, Landing page Designing, Branding.
+
+Our front-end developers are competent of converting designs into pixel perfect and UI fulfilled web pages. We always take care of building a great user experience into websites because we believe that it’s the key to success. 
+
+Our backend developers are specialized in creating cutting edge web and mobile applications. We are expert in creating complicated projects and really enjoy ourselves when it’s a lot challenge in work. Our clients love our work and we always take care of their requirements and work is always our first priority.
+
+What make us different?
+
+-We offer an integrated design and development team, spearheading a full cycle of every project from idea to launch. We make sure to shape the website/web app/ mobile according to client’s will. 
+- Our developers make sure to make websites “SEO friendly” from the scratch to make sure your website’s presence sound and to seek maximum audience. 
+
+- Our English-speaking experts bring high-end technologies to achieve your business goals.
+
+-A client first approach which is driven by commitment of resolving their queries foremost.
+
+-Access to a project manager and quality assurance specialist, which are provided for each project at no cost.
+
+-Quick response and always keeping the client in the loop. 
+
+Our belief of refining world wide web with our high-end web and mobile development persuasions to cast your ideas with utter perfection in the virtual world and to embark your presence providing your business an exponential growth.
+
+Let us help you. Contact us today.
+
+
+
+ React, Redux, Redux-saga, React Hooks, React Native
+ - PHP Frameworks ( Laravel, CakePHP, CodeIgniter)
+ - Javascript (ES6/ES7), Babel, Webpack, Typescript, JQuery, Vue.js, Angular, Node.js
+ - MySQL, HTML5, CSS3, SCSS, BootStrap
+ - Test: Jest, Mocha, Enzyme
+ - AWS services: EC2, Lambda, S3, CloudFront, RDS, SES, SQS, SNS, Cloud Trail, Elastic Cache, Elastic Search
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml
+/var/www/html/durovin/vendor/magento/module-catalog/Pricing/Render/FinalPriceBox.php
+
+/var/www/html/durovin/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+<?php echo 'dfdf'; exit; ?>
+
+/var/www/html/durovin/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+/var/www/html/durovin/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+ 
+ /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product
+ 
+ /var/www/html/durovin/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+ 
+ /var/www/html/durovin/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+ 
+ 
+      $('.newAddToCartRelated').each(function(index) {
+                $(this).on("click", function(e) {
+                    e.preventDefault();
+                    dataLayer.push({
+                        'event': 'add_to_cart',
+                        'currency': "GBP",
+                        'value': '' + $(this).attr('data-pr-price') + '',
+                        'items': [{
+                            'item_name': 'list-' + $(this).attr(
+                                'data-pr-name') + '',
+                            'price': '' + $(this).attr('data-pr-price') + '',
+                            'item_id': '' + $(this).attr('data-pr-sku') + '',
+                            'quantity': '1',
+                        }]
+
+                    });
+                    console.log('layer', $('#form-'+ $(this).attr('data-pr-sku') ));
+                    $('#form-'+ $(this).attr('data-pr-sku').submit();
+                    console.log('layer', dataLayer);
+                    return false;
+                });
+            })
+            
+            4000 0000 0000 0002

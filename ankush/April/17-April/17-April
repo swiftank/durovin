@@ -1,0 +1,101 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product - BlogSearch Folder
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion - Smile_ElasticsuiteCore
+
+
+https://codepen.io/gzuzkstro/pen/NBWZPP
+
+Google Tag Manager
+
+https://developers.google.com/analytics/devguides/collection/ga4/tag-options
+https://www.bil.ac.uk/student-talk/?ub_medium=product&ub_source=University%20Popcard&ub_campaign=&ub_content=
+
+https://support.google.com/tagmanager/answer/9442095?hl=en&ref_topic=6333310&sjid=15994124483947338568-EU
+https://support.google.com/analytics/answer/9234069 
+
+https://support.google.com/analytics/topic/9756175?visit_id=638170625860414102-173611176&rd=1
+
+
+Debug
+https://tagassistant.google.com/
+https://analytics.google.com/analytics/web/?authuser=1#/a263951869p368538435/admin/streams/table/
+https://analytics.google.com/analytics/web/?authuser=1#/a263951869p368538435/admin/debugview/overview
+
+
+
+
+
+https://analytics.google.com/analytics/web/?authuser=1#/a263951869p368538435/admin
+
+https://support.google.com/tagassistant/answer/10039345#controls&zippy=%2Cin-this-article - Bug
+
+https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?sjid=15994124483947338568-EU&client_type=gtag#implementation
+https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtag#add_payment_info
+
+https://www.analyticsmania.com/post/recommended-events-in-google-analytics-4/
+https://www.simoahava.com/analytics/custom-parameter-reporting-google-analytics-app-web/
+
+//     dataLayer.push({
+//         event: 'view_item_list',
+//         'ecommerce': {  
+//         'items': [
+//                   {
+//                   'item_name': 'Sample Product 1',
+//                   'item_id': '123456',
+//                   'price': '35.25',
+//                   'item_brand': 'Your Brand Name',
+//                   'item_category': 'Category Name',
+//                   'item_category_2': 'Category level1',
+//                   'item_category_3': 'Category level2',
+//                   'item_category_4': 'Category level3',
+//                   'item_variant': 'Variant',
+//                   'item_list_name': 'Search Results',
+//                   'item_list_id': 'SR12',
+//                   'index': 1,
+//                   'quantity': '1'
+//                   }
+//                 ]
+//         }
+// });
+https://www.pofai.co.uk/?gtm_debug=1681742635104
+dataLayer.push({
+        event: 'add_payment_info',
+        'ecommerce': {
+             'items': [
+                  {
+                  'item_name': 'Shower Drain',
+                  'item_id': '982114112',
+                  'price': '35.25',
+                  'item_brand': 'Durovin Bathroom',
+                  'item_category': 'Showers',
+                  'item_list_id': 'SR12',
+                  'index': 1,
+                  'quantity': '1'
+                  }
+                ], 
+        }
+});
+
+
+  dataLayer.push({
+        event: 'add_to_wishlist',
+        'products': [
+                  {
+                  'item_name': 'Sample Product 1',
+                  'item_id': '123456',
+                  'price': '35.25',
+                  'item_brand': 'Your Brand Name',
+                  'item_category': 'Category Name',
+                  'item_category_2': 'Category level1',
+                  'item_category_3': 'Category level2',
+                  'item_category_4': 'Category level3',
+                  'item_variant': 'Variant',
+                  'item_list_name': 'Search Results',
+                  'item_list_id': 'SR12',
+                  'index': 1,
+                  'quantity': '1'
+                  }
+                ]
+});
+
+Measurement id - G-QT3SFLWFCD
+

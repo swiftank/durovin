@@ -1,0 +1,35 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magento/module-checkout/Block/Onepage/Success.php
+
+
+customer_address_entity          |
+| customer_address_entity_datetime |
+| customer_address_entity_decimal  |
+| customer_address_entity_int      |
+| customer_address_entity_text     |
+| customer_address_entity_varchar  |
+| customer_entity                  |
+| customer_entity_datetime         |
+| customer_entity_decimal          |
+| customer_entity_int              |
+| customer_entity_text             |
+| customer_entity_varchar     
+
+
+DISTINCT  - different Values
+SELECT  * FROM `customer_address_entity` where city = 'LONDON' AND (region = 'Surrey' OR region = 'Kent');
+SELECT  * FROM `customer_address_entity` where not city = 'LONDON' AND NOT city = 'BATTLE';
+SELECT  * FROM `customer_address_entity` ORDER BY city ASC;
+SELECT  * FROM `customer_address_entity` WHERE company IS NOT NULL;
+SELECT  MAX(entity_id) as small FROM `customer_address_entity`;
+SELECT * from sku_category where sku LIKE '%0';
+SELECT * from customer_address_entity where city IN ('London','Southall');
+SELECT * FROM Customers
+The following SQL statement selects all customers that are from the same countries as the suppliers:
+
+The following SQL statement selects all customers that are from the same countries as the suppliers:
+WHERE Country IN (SELECT Country FROM Suppliers); ? 
+
+
+
+/var/www/html/durovin/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml - Add to Cart

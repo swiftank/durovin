@@ -1,0 +1,31 @@
+
+/var/www/html/durovin/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml - Add to Cart
+
+/var/www/vhosts/pofai.co.uk/7927729929/httpdocs/vendor/magento/module-catalog/view/frontend/templates/product/image_with_borders.phtml
+
+/var/www/html/durovin/vendor/stripe/module-payments/view/frontend/web/template/payment/element.html
+
+
+
+ //  if (quote.shippingAddress() && quote.billingAddress() && $("input[name='billing-address-same-as-shipping']:checked").val() !== undefined) {
+                    //     quote.billingAddress(quote.shippingAddress()); //this will set the billing address same as shipping address.
+                    // }
+                     console.log('debug', quote.shippingAddress());
+                     console.log('debug', quote.billingAddress());
+                     console.log('debug', $("input[name='billing-address-same-as-shipping']:checked").val());
+                     quote.billingAddress(quote.shippingAddress)
+Magento_Catalog::category/products.phtml
+Magento_Catalog::product/list.phtml
+
+/var/www/html/durovin/vendor/magento/module-checkout/view/frontend/web/js/view/billing-address.js
+/var/www/html/durovin/app/code/Codazon/OneStepCheckout/view/frontend/web/js/view/shipping-method.js
+
+/var/www/html/durovin/vendor/magento/module-checkout/view/frontend/web/js/view/billing-address.js
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Codazon/OneStepCheckout/view/frontend/web/js/view/
+
+
+
+	
+	/var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/js/view/checkout-agreements.js

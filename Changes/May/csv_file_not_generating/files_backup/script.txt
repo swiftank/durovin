@@ -1,0 +1,5 @@
+SELECT * FROM vw_pinterest_product_feed
+INTO OUTFILE '/tmp/mysqlfile/pinterestdata.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
