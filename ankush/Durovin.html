@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        tr:nth-child(odd) {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        tr:nth-child(even) {
+            display: none;
+            padding: 20px;
+        }
+        
+        .fntfm {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #myInput {
+            background-image: url('https://www.w3schools.com/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+        
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+        
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(odd) :hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        
+        .wrapper {
+            width: 99%;
+            margin: auto;
+        }
+        
+        .active {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2 class="fntfm">Durovin Website</h2>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Type in a name">
+
+        <table id="myTable">
+
+            <tr>
+                <td>Set Search Engine In Magento</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        php -f bin/magento config:show catalog/search/engine <br>
+	                    php -f bin/magento config:set catalog/search/engine 'mysql'
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Elastic Search If Not Working Need to Try </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        ./elasticsearch -E xpack.security.enabled=false   
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento Module Index Commands </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        php bin/magento indexer:info<br>
+                        php bin/magento indexer:status<br>
+                        php bin/magento indexer:reset cataloginventory_stock<br>
+                        php bin/magento indexer:reindex cataloginventory_stock<br>
+                        php bin/magento indexer:reset<br>
+                        php bin/magento indexer:status <br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Install Magento Url Link </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        https://www.thecoachsmb.com/6-steps-to-install-magento-2-4-3-on-xampp-windows-using-composer/
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento Common Commands </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        php bin/magento setup:upgrade<br>
+                        php bin/magento setup:di:compile<br>
+                        php bin/magento setup:static-content:deploy -f<br>
+                        php bin/magento index:reindex<br>
+                        php bin/magento cache:clean<br>
+                        php bin/magento cache:flush<br><br>
+                        Commands Link - <br>
+                        https://magento.stackexchange.com/questions/223371/magento-2-list-of-command-shortcuts
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento All Module Enable Command </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        php bin/magento module:enable --all<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Import Mysql Database Command </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        mysql -u username -p database_name < file.sql<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Adobe Magento Public Key And Password - Ankush </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        Public Key: 87e518ece4e18bc6eb2b026f15575e91<br>
+                        Private Key: b4987c97a806aacf3143526e666fe449<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento Show Search Engine Command </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        php bin/magento config:show catalog/search/engine<br>
+                     
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Durovinbathrooms Plesk Credentials </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                       url: 109.228.40.52:8443<br>
+                        user: admin <br>
+                        passsword: Durovin_Master@132
+                     
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Durovinbathrooms SSH Credentials </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                       host: 109.228.40.52<br>
+                        user: root <br>
+                        passsword: duro_bath@com* or Durovin.159753<br><br>
+
+                        user: pofai
+                        bathroom@com+
+                     
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pofai Plesk Credentials</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                       url: Durovinbathroom.co.uk:8443<br>
+                        user: admin <br>
+                        passsword: durovin_ebay@pofai+
+                     
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pofai SSH Credentials</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                       host: 92.205.21.186<br>
+                        user: mguser <br>
+                        passsword: Durovin.159753
+                     
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>DurovinBathrooms Magento Admin </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                       url: https://www.durovinbathrooms.com/admin_17chqr<br>
+                        user: jli <br>
+                        passsword: Durovin.123
+                     
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mysql Show Innodb Varaiables </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        show variables like 'innodb_buffer%'<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mysql Set Innodb Mode </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        set innodb_strict_mode = 0<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mysql Show Innodb Strict Mode </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        show variables like '%strict%'<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mysql Set Innodb Strict Mode Globaly</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        SET GLOBAL innodb_strict_mode = 0; <br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mysql Set Innodb Strict Mode</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        SET innodb_strict_mode = 0; <br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento Lang Specific Deploy Commands</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        php bin/magento setup:upgrade<br>
+                        php bin/magento setup:di:compile<br>
+                        php bin/magento setup:static-content:deploy -f en_GB -t Codazon/fastest_westylefashion<br>
+                        php bin/magento setup:static-content:deploy -f en_GB en_US --area adminhtml<br>
+                        php bin/magento index:reindex<br>
+                        php bin/magento cache:clean<br>
+                        php bin/magento cache:flush <br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento Disable Maintainance Mode Command</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        php bin/magento maintenance:disable<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pofai Project theme Path</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        Parent - /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion<br><br>
+                        Child - /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/westylefashion<br>
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pofai Custom Styles Path</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/web/css/custom_style.css<br><br>
+                        /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Theme/layout/default.xml<br><br>
+
+                       
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento Template Hints</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        https://www.durovinshowroom.co.uk/?templatehints=magento<br><br>
+                       
+                  </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Magento Static Folder Path</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+                        Parent - /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_fashion/en_GB<br><br>
+                        Child - /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB<br><br>
+                  </code>
+                </td>
+            </tr>
+
+
+			<tr>
+                <td>Magento Email Template Link</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+					https://www.fmeextensions.com/blog/magento-2-add-custom-variable-to-email-template/<br><br>
+					https://support.dotdigital.com/hc/en-gb/articles/360017202719-Magento-variables-for-transactional-email-templates<br><br>
+					https://meetanshi.com/blog/list-of-default-variables-used-in-magento-2-email-templates/<br><br>
+					https://magento.stackexchange.com/questions/362924/customer-name-not-displayed-in-confirmation-mail-in-magento-2-4<br><br>
+                  </code>
+                </td>
+            </tr>
+
+			<tr>
+                <td>Rsync command</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+						rsync -a --exclude 'cache' --exclude '.well-known' --exclude '_cache' --exclude 'backups' pofai@109.228.40.52:/var/www/vhosts/durovinbathrooms.com/httpdocs/ ./<br>
+						Password: bathroom@com+
+                  </code>
+                </td>
+            </tr>
+			
+			<tr>
+                <td>Mount Public Directory in Ubuntu command</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+						sudo -S mount -t cifs -w -o username=durovin -o password=3698 //192.168.1.64/public /media/Data/
+                  </code>
+                </td>
+            </tr>
+			
+			<tr>
+                <td>Magento Admin Pofai</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+						User: jli <br>
+						Password: durovin123<br><br>
+                  </code>
+                </td>
+            </tr>
+			
+			<tr>
+                <td>Magento Admin DurovinBathrooms</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+						User: jli <br>
+						Password: Durovin.123<br><br>
+                  </code>
+                </td>
+            </tr>
+
+<tr>
+                <td>Ubuntu History Command </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+						history n<br><br>
+                  </code>
+                </td>
+            </tr>
+
+        
+<tr>
+    <td>Copy Folder Ubuntu Command</td>
+</tr>
+<tr>
+    <td>
+        <code>
+            cp souce_dir_name target_dir_name -r<br><br>
+      </code>
+    </td>
+</tr> 
+
+<tr>
+    <td>Frontend Username Password Pofai</td>
+</tr>
+<tr>
+    <td>
+        <code>
+            username: li@durovinbathrooms.co.uk<br> password: Li.302468
+      </code>
+    </td>
+</tr> 
+
+<tr>
+    <td>Get Controller Action Name in Magento</td>
+</tr>
+<tr>
+<td>
+<pre lang="html">   
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$request = $objectManager->get('\Magento\Framework\App\Request\Http');
+echo $request->getRouteName() . '- Route';           //customer
+echo $request->getModuleName() . '- Module';          //customer
+echo $request->getControllerName() . '- Controller ';      //account
+echo $request->getActionName() . '- Action ';          //login
+echo $request->getFullActionName() . '- Full Action';      //customer_account_login
+echo $request->getControllerModule() . '- Controller Module';    //Magento_Customer 
+</pre>
+</td>
+</tr> 
+
+<tr>
+    <td>Add js file in theme Magento</td>
+</tr>
+<tr>
+<td>
+<pre lang="html">   
+1. Need to create `filename.js` file `app/design/frontend/Vendor/theme/web/js/filename.js`
+2. Need to create `requirejs-config.js` file in `app/design/frontend/Vendor/theme` 
+3. Might need to clean and flush cache.
+</pre>
+</td>
+</tr> 
+
+<tr>
+    <td>Durovin Live Commands</td>
+</tr>
+<tr>
+<td>
+<pre lang="html">   
+php bin/magento maintenance:enable
+rm -rf generated
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
+php bin/magento index:reindex
+php bin/magento cache:clean
+php bin/magento cache:flush
+php bin/magento maintenance:disable
+
+
+</pre>
+</td>
+</tr> 
+        </table>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        var tds = document.querySelectorAll("tr:nth-child(odd)");
+        var tdeven = document.querySelectorAll("tr:nth-child(even)");
+        tds.forEach(function(item, idx) {
+            item.addEventListener('click', function() {
+                hideAllRows(tdeven, tds);
+                tds[idx].nextElementSibling.style.display = 'block';
+                tds[idx].classList.add('active');
+
+            });
+        });
+
+        function hideAllRows(rows, rows2) {
+            rows.forEach(function(item, idx) {
+                item.style.display = 'none';
+            });
+            rows2.forEach(function(item, idx) {
+                item.classList.remove('active');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+

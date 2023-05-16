@@ -1,0 +1,106 @@
+Feature:  GA4 Add to cart event need to add
+
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+File name : /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+
+
+Solution Added Add to cart events
+
+
+------------------------------------Add to cart Event single product view -------------------------------------------
+  $('[id="product_addtocart_form"]').mage('validation', {
+        radioCheckboxClosest: '.nested',
+        submitHandler: function(form) {
+            var widget = $(form).catalogAddToCart({
+                bindSubmit: false
+            });
+
+            widget.catalogAddToCart('submitForm', $(form));
+
+            /**
+             * Google Analytics Add to Cart Event for single product view page
+             *  Author: Ankush
+             */
+            gtag("event", "add_to_cart", {
+                'value': parseFloat($('.price-final_price .price')[0].innerText.replace('£','')),
+                'currency': "GBP",
+                items: [{
+                    'item_name': '787-<?php echo $_product['name']; ?>',
+                    'item_list_id': '<?php echo $_product['sku']; ?>',
+                    'price': parseFloat($('.price-final_price .price')[0].innerText.replace('£','')),
+                    'quantity': 1
+
+                }]
+
+            });
+            
+            return false;
+        }
+    });
+
+
+    ------------------------------------Add to cart Event also bought section -------------------------------------------
+     /**
+     * Google Analytics Add to Cart Event for also bought section
+     *  Author: Ankush
+     */
+    $('.newAddToCartRelated').each(function(index) {
+        $(this).on("click", function(e) {
+            e.preventDefault();
+            gtag('event', 'add_to_cart', {
+                'currency': "GBP",
+                'value': parseFloat($(this).attr('data-pr-price')) ,
+                'items': [{
+                    'item_name': '786-' + $(this).attr(
+                            'data-pr-name') +
+                        '',
+                    'price': parseFloat($(this).attr('data-pr-price')),
+                    'item_id': '' + $(this).attr('data-pr-sku') + '',
+                    'quantity': 7,
+                }]
+
+
+            });
+            $(this).parents('form:first').submit();
+            return false;
+        });
+    })
+    
+    
+    
+    
+    ------------------------------------View Item Event -------------------------------------------
+       /**
+     * Google Analytics View Item Event for product view page
+     *  Author: Ankush
+     */
+    gtag("event", "view_item", {
+                'value': parseFloat($('.price-final_price .price')[0].innerText.replace('£','')),
+                'currency': "GBP",
+                items: [{
+                    'item_name': '<?php echo $_product['name']; ?>',
+                    'item_list_id': '<?php echo $_product['sku']; ?>',
+                    'price': parseFloat($('.price-final_price .price')[0].innerText.replace('£','')),
+                    'quantity': 1
+
+                }]
+
+        });
+
+
+------------------------------------Data attributes Added -------------------------------------------
+
+<button type="submit"
+ data-pr-sku='<?= $block->escapeHtml($_item->getSku())?>'
+ data-pr-name='<?= $block->escapeHtml($_item->getName()) ?>'
+ data-pr-price='<?= $block->escapeHtml($_item->getPrice()) ?>'
+							title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+							class="newAddToCartRelated action tocart primary show-tooltip">
+						<span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+					</button>
+ 
