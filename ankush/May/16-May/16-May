@@ -2,6 +2,11 @@
 Add To cart                     
 	/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml  
         
-G-R1TYTTL8NE
+/var/www/html/durovin/app/code/Codazon/MegaMenu/view/adminhtml/web/css/demo_menu.css
 
+need to add it in custom_style.css in next deploy
 
+.textcolour.level-top a span{
+    color:red;
+    }
+    

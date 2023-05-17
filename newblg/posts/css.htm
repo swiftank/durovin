@@ -1,0 +1,19 @@
+<h1>This is Css File</h1>
+
+http://www.example.org/test.php?whatever=something
+http://www.example.org/test/something
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/?test/(.*?)/?$ /test.php?whatever=$1 [L]
+
+
+And in order to redirect the query string URL to the nicer looking one:
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /test\.php\?whatever=([^\&\ ]+)
+RewriteRule ^/?test\.php$ /test/%1? [L,R=301]
+
+
+https://stackoverflow.com/questions/13003319/htaccess-rewrite-query-string-as-path
