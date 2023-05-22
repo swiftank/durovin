@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/classic/galleria.classic.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/classic/galleria.classic.min.js"></script>
+
+
+<style>
+    body {
+        margin: 20px auto;
+    }
+
+    #galleria {
+        height: 600px;
+    }
+</style>
+    </head>
+    <body>
+        
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="button" onClick='importImages("nifty/5-minute/")' class="btn btn-primary">Nifty 5 Minute</button>
+            &nbsp;  &nbsp;
+            <button type="button" onClick='importImages("nifty/15-minute/")' class="btn btn-primary">Nifty 15 Minute</button>
+            &nbsp;  &nbsp;
+            <button type="button" onClick='importImages("banknifty/5-minute/")' class="btn btn-primary">BankNifty 5 Minute</button>
+            &nbsp;  &nbsp;
+            <button type="button" onClick='importImages("banknifty/15-minute/")' class="btn btn-primary">BankNifty 5 Minute</button>
+
+            <div style='margin-top:25px' id="galleria2" class="galleria"></div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+   
+
+    Galleria.configure({
+        transition: "fade",
+        imageCrop: false,
+        lightbox: true,
+        responsive: true,
+        showInfo: true,
+        height: 600,
+    });
+
+    Galleria.run();
+
+    var dat = ['17-May','18-May','19-May', '22-May'];
+    var url = sessionStorage.getItem('chart');
+    var html = '<div style="margin-top:25px" id="galleria" class="galleria">';
+            dat.forEach(function(currentValue, index, arr){
+                html += '<img src="./'+ url + currentValue +'.png"> <div>';
+            });
+            html += '<div>'
+    document.getElementById('galleria2').innerHTML = html;
+
+    function importImages(stockAndTime){
+        sessionStorage.setItem('chart', stockAndTime);
+        window.location.reload();
+    }
+</script>
+    </body>
+</html>
+

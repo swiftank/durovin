@@ -1,0 +1,17 @@
+
+    /var/www/vhosts/durovinbathrooms.com/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+    
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+File name : /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+/var/www/html/durovin/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+https://andersnoren.se/ https://themeisle.com/themes/neve/starter-sites/?utm_source=themeisle&utm_medium=product&utm_campaign=themesneve
+pictory.ai
+https://codepen.io/ConnorGaunt/pen/OReXZB
+console.log('debug', catgryItems[i].getElementsByClassName("product-item-info")[0].getAttribute('data-pr-name'));
+  catgryItems.each(function( i, val ){
+        console.log('debug', catgryItems[i].getElementsByClassName("product-item-info")[0].getAttribute('data-pr-sku'));
+    });
+

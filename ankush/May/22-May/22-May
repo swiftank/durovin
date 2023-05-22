@@ -1,0 +1,54 @@
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+ $('.newAddToCart').each(function(index) {
+
+        $(this).on("click", function() {
+            gtag("event", "add_to_cart", {
+                currency: "GBP",
+                value: '' + $(this).attr('data-pr-price') + '',
+                items: [{
+                    'item_name': 'list-' + $(this).attr('data-pr-name') + '',
+                    'price': '' + $(this).attr('data-pr-price') + '',
+                    'item_id': '' + $(this).attr('data-pr-sku') + '',
+                    'quantity': '1',
+
+                }]
+            });
+        });
+    })
+
+    var catgryItems = $('.item.product.product-item');
+
+    var urlCat = window.location.pathname.toString().split("/").splice(1, 10);
+    var items = [];
+    var categories = {}
+    
+    if(urlCat.length > 1){
+        var indx = 1
+        $(urlCat).each(function(i, val) {
+            categories[i == 0 ? 'item_category' : 'item_category'+ indx ] = val;
+            indx += 1;
+
+        });
+    }else{
+        categories = { 'item_category' : urlCat[0] }
+    }
+
+    catgryItems.each(function(i, val) {
+        var dat = {
+            item_id: ""+ "" + catgryItems[i].getElementsByClassName("product-item-info")[0].getAttribute('data-pr-sku') + "",
+            item_name: "" + catgryItems[i].getElementsByClassName("product-item-info")[0].getAttribute('data-pr-name') + "",
+            index: i,
+            item_list_id: ""+ urlCat[0] +"",
+            item_list_name: ""+ urlCat[0].replace(/-/g, " ").toUpperCase() +"",
+        }
+        items.push({...categories, ...dat});  
+
+    });
+
+    console.log('debug', items);
+    
+G-R1TYTTL8NE
+  
+
