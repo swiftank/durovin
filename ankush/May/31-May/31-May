@@ -1,0 +1,480 @@
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+https://andersnoren.se/ https://themeisle.com/themes/neve/starter-sites/?utm_source=themeisle&utm_medium=product&utm_campaign=themesneve
+<script type="text/javascript">
+require(['jquery'], function($) {
+    $(document).ready(function() {
+        //loop through all the labels found
+        $('.product-label').each(function(index) {
+            //set default background color & font color
+            if ($(this).attr('data-background-color')) {
+                $(this).css("background-color", $(this).attr('data-background-color'));
+            } else {
+                $(this).css("background-color", '#ff0000');
+            }
+            if ($(this).attr('data-color')) {
+                $(this).css("color", $(this).attr('data-color'));
+            } else {
+                $(this).css("color", '#ffffff');
+            }
+
+            //assign css according to shapes found
+            if ($(this).attr('data-shape')) {
+                $(this).addClass($(this).attr('data-shape'));
+            }
+        });
+    });
+
+    /**
+     * Google Analytics Add to Cart Event for category Pages
+     *  Author: Ankush
+     */
+    $('.newAddToCart').each(function(index) {
+
+        $(this).on("click", function() {
+            gtag("event", "add_to_cart", {
+                currency: "GBP",
+                value: '' + $(this).attr('data-pr-price') + '',
+                items: [{
+                    'item_name': 'list-' + $(this).attr('data-pr-name') + '',
+                    'price': '' + $(this).attr('data-pr-price') + '',
+                    'item_id': '' + $(this).attr('data-pr-sku') + '',
+                    'quantity': '1',
+
+                }]
+            });
+        });
+    })
+
+
+    /**
+     *  View_Item_List Google Analytics 4 event for category pages.
+     *  Author: Ankush Kumar
+     */
+
+    var catgryItems = $('.item.product.product-item');
+    var urlCat = window.location.pathname.toString().split("/").splice(1, 10);
+    var items = [];
+    var categories = {}
+    if (urlCat.length > 1) {
+        var indx = 1
+        $(urlCat).each(function(i, val) {
+            categories[i == 0 ? 'item_category' : 'item_category' + indx] = val;
+            indx += 1;
+
+        });
+    } else {
+        categories = {
+            'item_category': urlCat[0]
+        }
+    }
+
+    /**
+     *  Getting Product details 
+     *  Author: Ankush Kumar
+     */
+    catgryItems.each(function(i, val) {
+
+        var dat = {
+            item_id: "" + "" + catgryItems[i].getElementsByClassName("product-item-info")[0]
+                .getAttribute('data-pr-sku') + "",
+            item_name: "" + catgryItems[i].getElementsByClassName("product-item-info")[0]
+                .getAttribute('data-pr-name') + "",
+            index: i,
+            item_list_id: "" + "" + location.pathname + location.search.substr(1) + "",
+            item_list_name: "" + $('#page-title-heading span[data-ui-id="page-title-wrapper"]')
+                .text() +
+                "",
+        }
+        items.push({
+            ...categories,
+            ...dat
+        });
+
+        /**
+         *  Trigger Select_Item event on item click  Product category page 
+         *  Author: Ankush Kumar
+         */
+
+
+        $(this).on("click", function(e) {
+            if (parseInt($(this).find('.product-item-info').attr('data-offer'))) {
+
+                var promname = 'Empty Promotion';
+                switch (true) {
+                    case window.location.href.indexOf("clearance") > -1:
+                        promname = 'Clearance Promotion';
+
+                        break;
+                    case window.location.href.indexOf("on-sale") > -1:
+                        promname = 'On Sale Promotion';
+
+                        break;
+                    default:
+                        promname = 'Offers Promotion';
+
+                }
+
+                gtag("event", "select_promotion", {
+                    creative_name: promname,
+                    creative_slot: "offers",
+                    promotion_id: "" + location.pathname + location.search.substr(
+                        1) + "",
+                    promotion_name: promname,
+                    items: items[$(this).index()]
+                })
+            } else {
+                gtag("event", "select_item", {
+                    item_list_id: "" + "" + location.pathname + location.search.substr(
+                        1) + "",
+                    item_list_name: "" + $(
+                            '#page-title-heading span[data-ui-id="page-title-wrapper"]')
+                        .text() +
+                        "",
+                    items: items[$(this).index()]
+                })
+            };
+            console.log('debug', dataLayer);
+
+
+        })
+
+    });
+
+
+    /**
+     *  Trigger event when customer lands first time on page 
+     *  Author: Ankush Kumar
+     */
+    var hasVisited = sessionStorage.getItem('visited');
+    if (hasVisited != window.location.href) {
+        sessionStorage.setItem('visited', window.location.href);
+        var promname = 'Empty Promotion';
+        switch (true) {
+            case window.location.href.indexOf("clearance") > -1:
+                promname = 'Clearance Promotion';
+
+                break;
+            case window.location.href.indexOf("on-sale") > -1:
+                promname = 'On Sale Promotion';
+
+                break;
+            default:
+                promname = 'Offers Promotion';
+
+        }
+
+        if (window.location.href.indexOf("offers") > -1) {
+
+            gtag("event", "view_promotion", {
+                creative_name: promname,
+                creative_slot: "offers",
+                promotion_id: "" + location.pathname + location.search.substr(
+                    1) + "",
+                promotion_name: promname,
+                items: items
+            });
+
+        } else {
+            gtag("event", "view_item_list", {
+                item_list_id: "" + "" + location.pathname + location.search.substr(1) + "",
+                item_list_name: "" + $('#page-title-heading span[data-ui-id="page-title-wrapper"]')
+                    .text() +
+                    "",
+                items: items
+            });
+
+        }
+        console.log('debugAll', dataLayer);
+
+    }
+
+});
+</script>
+
+
+
+----------------------------------------
+
+<script type="text/javascript">
+require(['jquery'], function($) {
+    $(document).ready(function() {
+        //loop through all the labels found
+        $('.product-label').each(function(index) {
+            //set default background color & font color
+            if ($(this).attr('data-background-color')) {
+                $(this).css("background-color", $(this).attr('data-background-color'));
+            } else {
+                $(this).css("background-color", '#ff0000');
+            }
+            if ($(this).attr('data-color')) {
+                $(this).css("color", $(this).attr('data-color'));
+            } else {
+                $(this).css("color", '#ffffff');
+            }
+
+            //assign css according to shapes found
+            if ($(this).attr('data-shape')) {
+                $(this).addClass($(this).attr('data-shape'));
+            }
+        });
+    });
+
+    /**
+     * Google Analytics Add to Cart Event for category Pages
+     *  Author: Ankush
+     */
+    $('.newAddToCart').each(function(index) {
+
+        $(this).on("click", function() {
+            gtag("event", "add_to_cart", {
+                currency: "GBP",
+                value: '' + $(this).attr('data-pr-price') + '',
+                items: [{
+                    'item_name': 'list-' + $(this).attr('data-pr-name') + '',
+                    'price': '' + $(this).attr('data-pr-price') + '',
+                    'item_id': '' + $(this).attr('data-pr-sku') + '',
+                    'quantity': '1',
+
+                }]
+            });
+        });
+    })
+
+
+    /**
+     *  View_Item_List Google Analytics 4 event for category pages.
+     *  Author: Ankush Kumar
+     */
+
+    var catgryItems = $('.item.product.product-item');
+    var urlCat = window.location.pathname.toString().split("/").splice(1, 10);
+    var items = [];
+    var categories = {}
+    if (urlCat.length > 1) {
+        var indx = 1
+        $(urlCat).each(function(i, val) {
+            categories[i == 0 ? 'item_category' : 'item_category' + indx] = val;
+            indx += 1;
+
+        });
+    } else {
+        categories = {
+            'item_category': urlCat[0]
+        }
+    }
+
+    /**
+     *  Getting Product details 
+     *  Author: Ankush Kumar
+     */
+    catgryItems.each(function(i, val) {
+
+        var dat = {
+            item_id: "" + "" + catgryItems[i].getElementsByClassName("product-item-info")[0]
+                .getAttribute('data-pr-sku') + "",
+            item_name: "" + catgryItems[i].getElementsByClassName("product-item-info")[0]
+                .getAttribute('data-pr-name') + "",
+            index: i,
+            item_list_id: "" + "" + location.pathname + location.search.substr(1) + "",
+            item_list_name: "" + $('#page-title-heading span[data-ui-id="page-title-wrapper"]')
+                .text() +
+                "",
+        }
+        items.push({
+            ...categories,
+            ...dat
+        });
+
+        /**
+         *  Trigger Select_Item event on item click  Product category page 
+         *  Author: Ankush Kumar
+         */
+
+
+        $(this).on("click", function(e) {
+            if (parseInt($(this).find('.product-item-info').attr('data-offer'))) {
+
+                var promname = 'Empty Promotion';
+                switch (true) {
+                    case window.location.href.indexOf("clearance") > -1:
+                        promname = 'Clearance Promotion';
+
+                        break;
+                    case window.location.href.indexOf("on-sale") > -1:
+                        promname = 'On Sale Promotion';
+
+                        break;
+                    default:
+                        promname = 'Offers Promotion';
+
+                }
+
+                gtag("event", "select_promotion", {
+                creative_name: "Summer Banner",
+                creative_slot: "featured_app_1",
+                promotion_id: "P_12345",
+                promotion_name: "Summer Sale",
+                items: [
+                    {
+                    item_id: "SKU_12345",
+                    item_name: "Stan and Friends Tee",
+                    affiliation: "Google Merchandise Store",
+                    coupon: "SUMMER_FUN",
+                    creative_name: "summer_banner2",
+                    creative_slot: "featured_app_1",
+                    discount: 2.22,
+                    index: 0,
+                    item_brand: "Google",
+                    item_category: "Apparel",
+                    item_category2: "Adult",
+                    item_category3: "Shirts",
+                    item_category4: "Crew",
+                    item_category5: "Short sleeve",
+                    item_list_id: "related_products",
+                    item_list_name: "Related Products",
+                    item_variant: "green",
+                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    price: 9.99,
+                    promotion_id: "P_12345",
+                    promotion_name: "Summer Sale",
+                    quantity: 1
+                    }
+                ],
+                });
+
+            } else {
+                gtag("event", "select_item", {
+                item_list_id: "related_products",
+                item_list_name: "Related products",
+                items: [
+                    {
+                    item_id: "SKU_12345",
+                    item_name: "Stan and Friends Tee",
+                    affiliation: "Google Merchandise Store",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
+                    item_brand: "Google",
+                    item_category: "Apparel",
+                    item_category2: "Adult",
+                    item_category3: "Shirts",
+                    item_category4: "Crew",
+                    item_category5: "Short sleeve",
+                    item_list_id: "related_products",
+                    item_list_name: "Related Products",
+                    item_variant: "green",
+                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    price: 9.99,
+                    quantity: 1
+                    }
+                ]
+                });
+
+            };
+            console.log('debug', dataLayer);
+
+
+        })
+
+    });
+
+
+    /**
+     *  Trigger event when customer lands first time on page 
+     *  Author: Ankush Kumar
+     */
+    var hasVisited = sessionStorage.getItem('visited');
+    if (hasVisited != window.location.href) {
+        sessionStorage.setItem('visited', window.location.href);
+        var promname = 'Empty Promotion';
+        switch (true) {
+            case window.location.href.indexOf("clearance") > -1:
+                promname = 'Clearance Promotion';
+
+                break;
+            case window.location.href.indexOf("on-sale") > -1:
+                promname = 'On Sale Promotion';
+
+                break;
+            default:
+                promname = 'Offers Promotion';
+
+        }
+
+        if (window.location.href.indexOf("offers") > -1) {
+
+            gtag("event", "view_promotion", {
+                creative_name: "Summer Banner",
+                creative_slot: "featured_app_1",
+                promotion_id: "P_12345",
+                promotion_name: "Summer Sale",
+                items: [
+                    {
+                    item_id: "SKU_12345",
+                    item_name: "Stan and Friends Tee",
+                    affiliation: "Google Merchandise Store",
+                    coupon: "SUMMER_FUN",
+                    creative_name: "summer_banner2",
+                    creative_slot: "featured_app_1",
+                    discount: 2.22,
+                    index: 0,
+                    item_brand: "Google",
+                    item_category: "Apparel",
+                    item_category2: "Adult",
+                    item_category3: "Shirts",
+                    item_category4: "Crew",
+                    item_category5: "Short sleeve",
+                    item_list_id: "related_products",
+                    item_list_name: "Related Products",
+                    item_variant: "green",
+                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    price: 9.99,
+                    promotion_id: "P_12345",
+                    promotion_name: "Summer Sale",
+                    quantity: 1
+                    }
+                ]
+                });
+
+        } else {
+            gtag("event", "view_item_list", {
+                item_list_id: "related_products",
+                item_list_name: "Related products",
+                items: [
+                    {
+                    item_id: "SKU_12345",
+                    item_name: "Stan and Friends Tee",
+                    affiliation: "Google Merchandise Store",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
+                    item_brand: "Google",
+                    item_category: "Apparel",
+                    item_category2: "Adult",
+                    item_category3: "Shirts",
+                    item_category4: "Crew",
+                    item_category5: "Short sleeve",
+                    item_list_id: "related_products",
+                    item_list_name: "Related Products",
+                    item_variant: "green",
+                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    price: 9.99,
+                    quantity: 1
+                    }
+                ]
+                });
+
+        }
+        console.log('debugAll', dataLayer);
+
+    }
+
+});
+</script>
+
+durovin
+Durovin!@3698
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magento/module-checkout/view/frontend/templates/onepage.phtml

@@ -1,0 +1,46 @@
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+https://andersnoren.se/ https://themeisle.com/themes/neve/starter-sites/?utm_source=themeisle&utm_medium=product&utm_campaign=themesneve
+
+This role is temporary position.
+Salary is the issue
+Can i work parttime in shop
+
+
+
+    // gtag("event", "view_item", {
+    //             'value': parseFloat($('.price-final_price .price')[0].innerText.replace('£','')),
+    //             'currency': "GBP",
+    //             items: [{
+    //                 'item_name': '<?php echo $_product['name']; ?>',
+    //                 'item_list_id': '<?php echo $_product['sku']; ?>',
+    //                 'price': parseFloat($('.price-final_price .price')[0].innerText.replace('£','')),
+    //                 'quantity': 1
+
+    //             }]
+
+    //     });
+    
+    
+     if (window.location.href.indexOf("offer") > -1) {
+
+        var name = 'Empty Promotion';
+
+        switch (true) {
+            case window.location.href.indexOf("clearance") > -1:
+                name = 'Clearance Promotion';
+                break;
+            case window.location.href.indexOf("on-sale") > -1:
+                name = 'On Sale Promotion';
+                break;
+            default:
+                name = 'Offers Promotion';
+        }
+
+        gtag("event", "view_promotion", {
+            creative_name: name,
+            creative_slot: "offers",
+            promotion_id: name + "-promotion",
+            promotion_name: name,
+        });
+    }

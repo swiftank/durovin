@@ -1,0 +1,59 @@
+
+Feature:  GA4 Add to cart event need to add
+
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+File name : /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+
+'item_category':  "<?php $_product->getData('document_source')['category'][1]['name']; ?>",
+
+/vendor/magento/module-checkout/Block/Onepage/Success.php
+
+/var/www/html/durovin_new/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+/var/www/html/durovin_new/vendor/magento/module-checkout/Controller/Onepage/Success.php
+/var/www/html/durovin_new/vendor/magento/module-checkout/Block/Onepage/Success.php
+
+https://meetanshi.com/blog/get-order-information-by-order-id-in-magento-2/
+
+
+     $(this).parents('form:first').submit();
+            var catArray = JSON.parse(localStorage.getItem("categories"));
+            var newArr = [];
+            var id = <?php echo $_product['category_id']; ?>;
+            if( catArray === null ){
+                newArr.push({'id': id, 'name': '<?php echo $category->getName(); ?>'});
+                localStorage.setItem("categories", JSON.stringify(newArr));
+            }else{
+             var matched = catArray.find(i => i.id == id); 
+              console.log('debugs',matched)
+              
+                if(catArray.find(i => i.id == id) == 'undefined'){
+                    var newAr = [...catArray];
+                    newAr.push({'id': id, 'name': '<?php echo $category->getName(); ?>'});
+                    localStorage.setItem("categories", JSON.stringify(newAr));
+                }else if(matched.id != id){
+                    var newAr = [...catArray];
+                    newAr.push({'id': id, 'name': '<?php echo $category->getName(); ?>'});
+                    localStorage.setItem("categories", JSON.stringify(newAr));
+                }
+               
+            }
+            
+            
+            <?php
+	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$order = $objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($block->getOrderId()); 
+    $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$request = $objectManager->get('\Magento\Framework\App\Request\Http');
+echo $request->getRouteName() . '<br />';           //customer
+echo $request->getModuleName() . '<br />';          //customer
+echo $request->getControllerName() . '<br />';      //account
+echo $request->getActionName() . '<br />';          //login
+echo $request->getFullActionName() . '<br />';      //customer_account_login
+echo $request->getControllerModule() . '<br />';    //Magento_Customer
+?>

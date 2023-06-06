@@ -1,0 +1,65 @@
+Feature:  GA4 Add to cart event need to add
+
+
+File name: /var/www/vhosts/durovinbathrooms.com/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml 
+
+
+
+
+ <div 
+                data-pr-sku='<?= $block->escapeHtml($_product->getSku())?>'
+                data-pr-name='<?= $block->escapeHtml($_product->getName()) ?>'
+                class="product-item-info" data-container="product-<?= /* @escapeNotVerified */ $viewMode ?>">
+    
+    
+    ------------------------------------View Item Event -------------------------------------------
+       /**
+ /**
+     *  View_Item_List Google Analytics 4 event for category pages.
+     *  Author: Ankush Kumar
+     */
+
+     var catgryItems = $('.item.product.product-item');
+    var urlCat = window.location.pathname.toString().split("/").splice(1, 10);
+    var items = [];
+    var categories = {}
+    if(urlCat.length > 1){
+        var indx = 1
+        $(urlCat).each(function(i, val) {
+            categories[i == 0 ? 'item_category' : 'item_category'+ indx ] = val;
+            indx += 1;
+
+        });
+    }else{
+        categories = { 'item_category' : urlCat[0] }
+    }
+
+     /**
+     *  Getting Product details 
+     *  Author: Ankush Kumar
+     */
+    catgryItems.each(function(i, val) {
+        var dat = {
+            item_id: ""+ "" + catgryItems[i].getElementsByClassName("product-item-info")[0].getAttribute('data-pr-sku') + "",
+            item_name: "" + catgryItems[i].getElementsByClassName("product-item-info")[0].getAttribute('data-pr-name') + "",
+            index: i,
+        }
+        items.push({...categories, ...dat});  
+
+    });
+
+
+    /**
+     *  Trigger event when customer lands first time on page 
+     *  Author: Ankush Kumar
+     */
+    var hasVisited = sessionStorage.getItem('visited');
+    if (hasVisited != window.location.href) {
+        sessionStorage.setItem('visited', window.location.href);
+        gtag("event", "view_item_list", {
+            item_list_id: "" + "" + location.pathname+location.search.substr(1) + "",
+            item_list_name: "" + $('#page-title-heading span[data-ui-id="page-title-wrapper"]').text() + "",
+            items: items
+        });
+        
+    }
