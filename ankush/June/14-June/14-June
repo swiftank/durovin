@@ -1,0 +1,52 @@
+
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+File name : /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+/vendor/magento/module-checkout/Block/Onepage/Success.php
+/var/www/html/durovin_new/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+/var/www/html/durovin_new/vendor/magento/module-checkout/Controller/Onepage/Success.php
+/var/www/html/durovin_new/vendor/magento/module-checkout/Block/Onepage/Success.php
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/testrepo
+
+/var/www/html/durovinbathrooms/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Checkout/templates - success
+
+/var/www/html/durovinbathrooms/pub/media/blog/cache/400x/magefan_blog/how_to_design_a_gothic_bathroom.png
+
+
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml
+/var/www/html/durovinbathrooms/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+
+-------------------------
+
+CHeckout Page path 
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/view/frontend/templates/onepage.phtml
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$lastOrder = $objectManager->get('Magento\Checkout\Model\Session')->getLastRealOrder();
+$entityId = $lastOrder->getEntityId();
+$status = $lastOrder->getStatus();
+$orderId = $lastOrder->getIncrementId();
+echo $orderId . ' - ' . $status . ' - ' . $entityId;
+
+
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$lastOrder = $objectManager->get('Magento\Checkout\Model\Session')->getLastRealOrder();
+$orderId = $lastOrder->getIncrementId();
+echo $orderId ;
+echo '<pre>';
+print_r($objectManager->get('Magento\Checkout\Model\Session')->debug());
+?>
+
+/var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/js/view
+/var/www/html/durovinbathrooms/app/code/Durovin/Payment/view/frontend/web/template/payment/element.html
+
+https://stackoverflow.com/questions/38879742/is-it-possible-to-display-a-custom-message-in-the-beforeunload-popup

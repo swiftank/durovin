@@ -1,0 +1,47 @@
+
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+File name : /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+
+
+/vendor/magento/module-checkout/Block/Onepage/Success.php
+
+/var/www/html/durovin_new/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+/var/www/html/durovin_new/vendor/magento/module-checkout/Controller/Onepage/Success.php
+/var/www/html/durovin_new/vendor/magento/module-checkout/Block/Onepage/Success.php
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/testrepo
+
+
+
+
+/var/www/html/durovinbathrooms/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Checkout/templates - success
+
+/var/www/html/durovinbathrooms/pub/media/blog/cache/400x/magefan_blog/how_to_design_a_gothic_bathroom.png
+
+
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml
+/var/www/html/durovinbathrooms/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+
+-------------------------
+
+CHeckout Page path 
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/view/frontend/templates/onepage.phtml
+
+<?php $category = $_objectManager->create('Magento\Catalog\Model\Category')->load($_product->getCategory()['entity_id']); ?>
+<?php  echo $_product->getCategory()['name']; ?>
+
+
+/var/www/html/durovinbathrooms/app/code/Codazon/OneStepCheckout/view/frontend/web/js/view/checkout-agreements.js
+
+/var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Codazon_OneStepCheckout/js/view
+
+           setTimeout(function () {
+                confirm("Your are on this page more than 2 minutes \n Please react out customer support team.")
+           }, 15000);

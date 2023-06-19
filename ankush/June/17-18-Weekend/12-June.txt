@@ -1,0 +1,12 @@
+
+Feature:  GA4 Add to cart event need to add
+
+
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+File name : /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml
+File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml
+
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml 
+
+'item_category':  "<?php $_product->getData('document_source')['category'][1]['name']; ?>",

@@ -1,0 +1,322 @@
+
+
+Product Categories Page 
+/var/www/html/durovinbathrooms/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml -  Done
+
+
+Product Detail Page
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml - Done 
+
+Shopping Cart Page 
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Checkout/templates/cart.phtml - Done
+
+Detail Page Slider Items 
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml - 
+
+
+Chekout page 
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/view/frontend/templates/onepage.phtml - Done
+
+
+
+Purchase Page 
+/var/www/html/durovinbathrooms/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+
+
+
+
+Events on Pages 
+
+	Category Page
+		| view-item-list
+		| add-to-cart
+		| select-item
+		| select-promotion
+		
+	Product Detail Page 
+		| view-item
+		| view-offer
+		| add-to-cart
+		| add-to-cart - slider 
+		
+	Shopping Cart Page 
+		| view-cart
+
+	Checkout Page 
+		| begin-checkout
+	
+	Success Page 
+		| purchase	
+		
+		
+
+
+-----------------Category Page Data Layers ------------------
+
+			View Item List 
+			{
+				item_list_id: "hinged_&_pivot_shower_enclosures",
+				item_list_name: "Hinged & Pivot Shower Enclosures",
+
+				items:[{
+					index: 0,
+					item_category: "Hinged & Pivot Shower Enclosures",
+					item_id: "Ravenna28 Frosted",
+					item_list_id: "hinged_&_pivot_shower_enclosures",
+					item_list_name: "Hinged & Pivot Shower Enclosures",
+					item_name: "Frameless Frosted L Shape Rectangular Shower Enclosure With Frosted Shower Doors UK| Ravenna 28 Frosted",
+					price: 236.25,
+					quantity: 1,
+				}]
+			} 
+
+			Select Item{
+				item_list_id: 'wall_hung_ceramic_basins', 
+				item_list_name: 'Wall Hung Ceramic Basins',
+
+				items:[{
+					index: 9
+					item_category: "Wall Hung Ceramic Basins"
+					item_id: "G25"
+					item_list_id: "wall_hung_ceramic_basins"
+					item_list_name: "Wall Hung Ceramic Basins"
+					item_name: "Cloakroom Small Oval Ceramic Bathroom Basin 420 x 280mm RH Tap| HY3052L "
+					price: 47.02
+					quantity: 1
+				}],
+			} 
+
+			Select Promotion{
+				creative_name "Offers Promotion",
+				creative_slot: "offers",
+				promotion_id: "bathroom-basins/ceramic-basins/wallhung",
+				promotion_name: "Offers Promotion",
+				items: [{
+					index: 11
+					item_category: "Wall Hung Ceramic Basins"
+					item_id: "D46"
+					item_list_id: "wall_hung_ceramic_basins"
+					item_list_name: "Wall Hung Ceramic Basins"
+					item_name: "Large Wall Hung D Shape Curved Ceramic Basin 800 x 480mm | Brussel 5021"
+					price: 84.79
+					quantity: 1
+				}],
+			}
+
+			Add to cart {
+				currency: "GBP",
+				value: 84.79
+				items:[
+					{
+						"item_id": "D46",
+						"item_name": "Large Wall Hung D Shape Curved Ceramic Basin 800 x 480mm | Brussel 5021",
+						"index": 11,
+						"quantity": 1,
+						"item_category": "Wall Hung Ceramic Basins",
+						"item_list_id": "wall_hung_ceramic_basins",
+						"item_list_name": "Wall Hung Ceramic Basins",
+						"price": 84.79
+					}
+				]
+			}
+
+
+-----------------Product Detail Page Data Layer--------------------------------
+
+			Add to cart {
+				currency: "GBP",
+				value: 84.79
+				items:[
+					{
+						"item_name": "Mini Cloakroom Wall Hung or Countertop Compact Ceramic Sink 400 x 280mm RH Tap| Brussel 3084",
+						"item_id": "B35",
+						"item_list_id": "wall_hung_ceramic_basins",
+						"item_category": "Wall Hung Ceramic Basins",
+						"item_list_name": "Wall Hung Ceramic Basins",
+						"price": 47.07,
+						"quantity": 1
+					}
+				]
+			}
+
+			Add to cart - Slider{
+				currency: "GBP",
+				value: 84.79
+				items:[
+					{
+						"item_name": "Chrome Square Bathroom Basin Waste Bottle Trap",
+						"price": 19.56,
+						"item_list_id": "wall_hung_ceramic_basins",
+						"item_list_name": "Wall Hung Ceramic Basins'",
+						"item_id": "A63",
+						"quantity": 1,
+						"item_category": "Wall Hung Ceramic Basins"
+					}
+				]
+			}
+
+			
+
+			View Item {
+				currency: "GBP",
+				value: 84.79
+				items:[
+					{
+						"item_name": "Double Ended Roll Top Freestanding Acrylic Bath Tub 1770 x 690mm",
+						"item_id": "H03",
+						"item_list_id": "shower_bath_tub",
+						"item_category": "Shower Bath Tub",
+						"item_list_name": "Shower Bath Tub",
+						"price": 551.25,
+						"quantity": 1
+					}
+				]
+			}
+
+			View Offer {
+				currency: "GBP",
+				value: 84.79
+				items:[
+					{
+						"item_name": "Double Ended Roll Top Freestanding Acrylic Bath Tub 1770 x 690mm",
+						"item_id": "H03",
+						"item_list_id": "shower_bath_tub",
+						"item_category": "Shower Bath Tub",
+						"item_list_name": "Shower Bath Tub",
+						"price": 551.25,
+						"quantity": 1
+					}
+				]
+			}
+
+----------------Shopping Cart Page Data Layer--------------------------------
+
+			View cart {
+				value: 245.64
+				currency: "GBP",
+				[
+					{
+						"item_id": "A58",
+						"item_name": "Round Unslotted Pop Up Basin Waste Plug With Removable Click Clack",
+						"index": 0,
+						"quantity": 1,
+						"item_category": "Bottle Traps",
+						"item_list_id": "bottle_traps",
+						"item_list_name": "Bottle Traps",
+						"price": 10.29
+					},
+					{
+						"item_id": "B35",
+						"item_name": "Mini Cloakroom Wall Hung or Countertop Compact Ceramic Sink 400 x 280mm RH Tap| Brussel 3084",
+						"index": 1,
+						"quantity": 5,
+						"item_category": "Wall Hung Ceramic Basins",
+						"item_list_id": "wall_hung_ceramic_basins",
+						"item_list_name": "Wall Hung Ceramic Basins",
+						"price": 47.07
+					}
+				]
+			}
+
+
+----------------Checkout Page Data Layer--------------------------------
+
+			begin checkout {
+				value: 708.75,
+				currency: "GBP",
+				items:[
+					{
+						"item_id": "B57&B64&B53&B93",
+						"item_name": "Frameless Frosted L Shape Rectangular Shower Enclosure With Frosted Shower Doors UK| Ravenna 28 Frosted",
+						"index": 0,
+						"quantity": 3,
+						"item_category": "Square & Rectangular Shower Cubicles",
+						"item_list_id": "square_&_rectangular_shower_cubicles",
+						"item_list_name": "Square & Rectangular Shower Cubicles",
+						"price": 236.25
+					}
+				]
+			}			
+					
+
+
+
+-------------------------------------------------------------
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Pixelpro/Helloworld/Controller/Index
+
+
+
+1. Pixelpro/Helloworld
+2. registration file 
+
+<?php
+\Magento\Framework\Component\ComponentRegistrar::register(
+   \Magento\Framework\Component\ComponentRegistrar::MODULE,
+   'Pixelpro_Helloworld',
+   __DIR__
+);
+
+3. etc/module.xml
+<?xml version="1.0"?>
+	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+	<module name="Pixelpro_Helloworld" setup_version="1.0.0"></module>
+</config>
+
+php bin/magento module:enable
+
+sudo chmod 777 -R ./
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+php bin/magento cache:clean
+php bin/magento cache:flush
+
+
+4. etc/frontend/routes.xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="helloworld" frontName="helloworld">
+            <module name="Pixelpro_Helloworld" />
+        </route>
+    </router>
+</config>
+
+5. Controller/Index/Test
+
+<?php
+
+namespace Pixelpro\Helloworld\Controller\Index;
+
+
+class Test extends \Magento\Framework\App\Action\Action
+{
+    /**
+     * @var \Magento\Framework\App\Action\Contex
+     */
+    protected $_pageFactory;
+    /**
+     * @param \Magento\Framework\App\Action\Context $context
+     */
+    public function __construct( \Magento\Framework\App\Action\Context $context, \Magento\Framework\View\Result\PageFactory $pageFactory) {
+        $this->_pageFactory  = $pageFactory;
+        return parent::__construct($context);
+    }
+    
+    public function execute()
+    {
+        echo 'hellow world';
+        exit;
+    }
+
+
+}
+
+
+php bin/magento cache:clean
+php bin/magento cache:flush
+
+
+
+
+				

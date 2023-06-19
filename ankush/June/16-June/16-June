@@ -1,0 +1,54 @@
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/view/frontend/templates/cart.phtml
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/view/frontend/templates/onepage.phtml
+<script>
+/**
+ *  Trigger event when customer lands on Cart page 
+ *  Author: Ankush Kumar
+ */
+
+var checkInterval = setInterval(function() {
+        var dat = JSON.parse(localStorage.getItem('mage-cache-storage'));
+        var arrayItems = dat.cart;
+
+        var items = [];
+        var data = {};
+        var categories = JSON.parse(localStorage.getItem("categories"));
+        categories = categories === null ? [] : categories;
+
+
+        if (dat.cart) {
+            arrayItems.items.forEach(function(item, idx, arr) {
+                var matched = categories.find(i => (i.product_name == item.product_name));
+
+                if (matched !== undefined) {
+                    data = {
+                        item_id: "" + item.product_sku + "",
+                        item_name: "" + item.product_name + "",
+                        index: idx,
+                        quantity: item.qty,
+                        item_category: "" + matched.category_name + "",
+                        item_list_id: "" + matched.category_name.replace(/\s+/g, '_').toLowerCase() + "",
+                        item_list_name: "" + matched.category_name + "",
+                        price: Number(item.product_price_value),
+
+                    }
+
+                    items.push(data);
+
+                }
+
+            })
+
+            localStorage.removeItem('update_cart');
+            checkUpdateCart = false;
+            clearInterval(checkInterval);
+            gtag("event", "view_cart", {
+                currency: 'GBP',
+                value: dat.cart.subtotalAmount,
+                items: items
+            });
+        }
+
+
+    });
+</script>
