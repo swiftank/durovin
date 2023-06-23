@@ -1,0 +1,256 @@
+<script>
+    var output = document.getElementById('output');
+    var eventname = document.getElementById('event_name');
+
+    // View Item List Event
+    document.getElementById('view_item_list').addEventListener('click', function () {
+      var data = {
+        item_list_id: "dummy_products",
+        item_list_name: "Dummy products",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'view_item_list';
+     
+      gtag("event", "view_item_list", data);
+      
+    });
+
+    // View Item List Event
+    document.getElementById('select_item').addEventListener('click', function () {
+      var data = {
+        item_list_id: "dummy_products",
+        item_list_name: "Dummy products",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'select_item';
+      gtag("event", "select_item", data);
+    });
+
+    // View Item List Event
+    document.getElementById('view_item').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'view_item';
+      gtag("event", "view_item", data);
+    });
+
+    // View Item List Event
+    document.getElementById('add_to_cart').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'add_to_cart';
+      gtag("event", "add_to_cart", data);
+    });
+
+    // View Item List Event
+    document.getElementById('view_cart').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'view_cart';
+      gtag("event", "view_cart", data);
+    });
+
+    // View Item List Event
+    document.getElementById('begin_checkout').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'begin_checkout';
+      gtag("event", "begin_checkout", data);
+    });
+
+    // View Item List Event
+    document.getElementById('purchase').addEventListener('click', function () {
+      var data = {
+        transaction_id: "T_12345",
+        value: 20.77,
+        tax: 4.90,
+        currency: "GBP",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          },]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'purchase';
+      gtag("event", "purchase", data);
+    });
+
+  
+  </script>
+  
+  UPDATE `catalog_eav_attribute` SET `is_visible` = '1' WHERE `catalog_eav_attribute`.`attribute_id` = YourAttributeId;
+  https://medium.com/nerd-for-tech/how-to-display-products-by-custom-attribute-in-magento-2-dc7d88de41f
+  
+  /var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/short_description.phtml
+  /var/www/html/durovinbathrooms/app/code/Codazon/QuickShop/view/frontend/templates/product/view/attribute.phtml
+  
+  echo $_product->getResource()->getAttribute('ankush')->getFrontend()->getValue($_product);
+  
+  
+  ---------------------------------------------------------
+  Views in Magento 
+  Block, Layout, Template
+  
+  Note: http://durovinnew.com/bathroom-basins/ceramic-basins/wallhung/counter-top-wall-hung-rectangle-ceramic-basin-179
+  
+  /var/www/html/durovinbathrooms/vendor/magento/module-checkout/Controller/Onepage/SaveOrder.php
+  /tmp/fz3temp-2/Success.php
+  /vendor/magento/module-checkout/Block/Onepage/Success.php
+  
+      public function orderItems(){
+        $order = $this->_checkoutSession->getLastRealOrder();
+        $order_entity_id = $order->getEntityId();
+        $items = [
+            'currency' => 'GBP',
+            'transaction_id' => $order['increment_id'],
+            'value' => $order['grand_total'],
+            'tax' => $order['tax_amount'],
+            'items' => [],
+        ];
+
+        $objectManager =   \Magento\Framework\App\ObjectManager::getInstance();
+        $connection = $objectManager->get('Magento\Framework\App\ResourceConnection')->getConnection('\Magento\Framework\App\ResourceConnection::DEFAULT_CONNECTION'); 
+        $query = 'SELECT  order_items.qty_ordered as quantity, order_items.product_id, order_items.name as item_name, order_items.sku as item_id, order_items.base_original_price as price FROM sales_order orders JOIN sales_order_item  order_items ON orders.entity_id = order_items.order_id where entity_id = ' . $order_entity_id;
+        $rows = $connection->fetchAll($query);
+
+        if(count( $rows ) > 0){
+            foreach($rows as $i => $row){
+                $query2 = 'SELECT name from sku_category WHERE sku LIKE "'. $row['item_id'] .'" '; 
+                $product = $objectManager->create('Magento\Catalog\Model\Product')->load($row['product_id']);
+                $cats = $connection->fetchAll($query2);
+                $rows[$i]['category_name'] =  count($cats) >= 1  ? $cats[0]['name'] :  'Not Found - '.$rows[$i]['item_id']  ;
+                $rows[$i]['categories'] =  $product['category_ids'];
+               
+                if( $rows[$i]['price'] == ''  ){
+                    unset($rows[$i]);
+                }
+            }
+        }
+
+        $items['items'] = $rows;
+        $items = json_encode($items);
+        return  $items;
+    }
+  
+  
+  /**
+     * Fetch Order Data For Event in Success Page
+     * author: Ankush 
+     * google analytics purchase event
+     * @return Object
+     */
+    public function orderItems(){
+        $order = $this->_checkoutSession->getLastRealOrder();
+        $order_entity_id = $order->getEntityId();
+        $items = [
+            'currency' => 'GBP',
+            'transaction_id' => $order['increment_id'],
+            'value' => $order['grand_total'],
+            'tax' => $order['tax_amount'],
+            'items' => [],
+        ];
+
+        $objectManager =   \Magento\Framework\App\ObjectManager::getInstance();
+        $connection = $objectManager->get('Magento\Framework\App\ResourceConnection')->getConnection('\Magento\Framework\App\ResourceConnection::DEFAULT_CONNECTION'); 
+        $query = 'SELECT  order_items.qty_ordered as quantity, order_items.product_id, order_items.name as item_name, order_items.sku as item_id, order_items.base_original_price as price FROM sales_order orders JOIN sales_order_item  order_items ON orders.entity_id = order_items.order_id where entity_id = ' . $order_entity_id;
+        $rows = $connection->fetchAll($query);
+        $items['items'] = $rows;
+        $items = json_encode($items);
+        return  $items;
+    }
+}
+  
+  
+  

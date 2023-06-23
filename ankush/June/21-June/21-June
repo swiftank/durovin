@@ -1,0 +1,189 @@
+<script>
+    var output = document.getElementById('output');
+    var eventname = document.getElementById('event_name');
+
+    // View Item List Event
+    document.getElementById('view_item_list').addEventListener('click', function () {
+      var data = {
+        item_list_id: "dummy_products",
+        item_list_name: "Dummy products",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'view_item_list';
+     
+      gtag("event", "view_item_list", data);
+      
+    });
+
+    // View Item List Event
+    document.getElementById('select_item').addEventListener('click', function () {
+      var data = {
+        item_list_id: "dummy_products",
+        item_list_name: "Dummy products",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'select_item';
+      gtag("event", "select_item", data);
+    });
+
+    // View Item List Event
+    document.getElementById('view_item').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'view_item';
+      gtag("event", "view_item", data);
+    });
+
+    // View Item List Event
+    document.getElementById('add_to_cart').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'add_to_cart';
+      gtag("event", "add_to_cart", data);
+    });
+
+    // View Item List Event
+    document.getElementById('view_cart').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'view_cart';
+      gtag("event", "view_cart", data);
+    });
+
+    // View Item List Event
+    document.getElementById('begin_checkout').addEventListener('click', function () {
+      var data = {
+        currency: "GBP",
+        value: 20.77,
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          }
+        ]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'begin_checkout';
+      gtag("event", "begin_checkout", data);
+    });
+
+    // View Item List Event
+    document.getElementById('purchase').addEventListener('click', function () {
+      var data = {
+        transaction_id: "T_12345",
+        value: 20.77,
+        tax: 4.90,
+        currency: "GBP",
+        items: [
+          {
+            item_id: "SKU_12345",
+            item_name: "Stan and Friends Tee",
+
+            item_brand: "Google",
+            item_category: "Apparel",
+            item_list_id: "dummy_products",
+            item_list_name: "Dummy products",
+            price: 9.99,
+            quantity: 1
+          },]
+      }
+      output.textContent = JSON.stringify(data, undefined, 2);
+      eventname.textContent = 'purchase';
+      gtag("event", "purchase", data);
+    });
+
+  
+  </script>
+  
+  UPDATE `catalog_eav_attribute` SET `is_visible` = '1' WHERE `catalog_eav_attribute`.`attribute_id` = YourAttributeId;
+  https://medium.com/nerd-for-tech/how-to-display-products-by-custom-attribute-in-magento-2-dc7d88de41f
+  
+  /var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/short_description.phtml
+  /var/www/html/durovinbathrooms/app/code/Codazon/QuickShop/view/frontend/templates/product/view/attribute.phtml
+  
+  echo $_product->getResource()->getAttribute('ankush')->getFrontend()->getValue($_product);
+  
+  
+  ---------------------------------------------------------
+  Views in Magento 
+  Block, Layout, Template
+  
+  
+  
+  
+  

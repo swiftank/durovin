@@ -1,0 +1,156 @@
+
+
+Product Categories Page 
+/var/www/html/durovinbathrooms/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/list.phtml -  Done
+
+
+Product Detail Page
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml - Done 
+
+Shopping Cart Page 
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Checkout/templates/cart.phtml - Done
+
+Detail Page Slider Items 
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml - 
+
+
+Chekout page 
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/view/frontend/templates/onepage.phtml - Done
+
+
+
+Purchase Page 
+/var/www/html/durovinbathrooms/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+
+
+/var/www/html/durovin/pub/errors/durovin/page.phtml
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Pixelpro/Helloworld/Controller/Index
+
+
+
+1. Pixelpro/Helloworld
+2. registration file 
+
+<?php
+\Magento\Framework\Component\ComponentRegistrar::register(
+   \Magento\Framework\Component\ComponentRegistrar::MODULE,
+   'Pixelpro_Helloworld',
+   __DIR__
+);
+
+3. etc/module.xml
+<?xml version="1.0"?>
+	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+	<module name="Pixelpro_Helloworld" setup_version="1.0.0"></module>
+</config>
+
+php bin/magento module:enable
+
+sudo chmod 777 -R ./
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+php bin/magento cache:clean
+php bin/magento cache:flush
+https://github.com/rubenpixelpro/magento2-modules/blob/master/Pixelpro/Helloworld/Setup/UpgradeSchema.php
+
+4. etc/frontend/routes.xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="helloworld" frontName="helloworld">
+            <module name="Pixelpro_Helloworld" />
+        </route>
+    </router>
+</config>
+
+5. Controller/Index/Test
+
+<?php
+
+namespace Pixelpro\Helloworld\Controller\Index;
+
+
+class Test extends \Magento\Framework\App\Action\Action
+{
+    /**
+     * @var \Magento\Framework\App\Action\Contex
+     */
+    protected $_pageFactory;
+    /**
+     * @param \Magento\Framework\App\Action\Context $context
+     */
+    public function __construct( \Magento\Framework\App\Action\Context $context, \Magento\Framework\View\Result\PageFactory $pageFactory) {
+        $this->_pageFactory  = $pageFactory;
+        return parent::__construct($context);
+    }
+    
+    public function execute()
+    {
+        echo 'hellow world';
+        exit;
+    }
+
+
+}
+
+
+php bin/magento cache:clean
+php bin/magento cache:flush
+php bin/magento sampledata:deploy
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+UPDATE admin_user SET password = CONCAT(SHA2('Admin@123456', 256), ':xxxxxxxx:1') WHERE username = 'admin';
+
+php bin/magento admin:user:create --admin-user ankush --admin-password Admin@123456 --admin-email ankushkumar.london@gmail.com --admin-firstname FIRSTNAME --admin-lastname LASTNAME
+
+UPDATE admin_user SET password = CONCAT(SHA2('xxxxxxxYourNewPassword', 256), ':xxxxxxx:1') WHERE username = 'admin';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				

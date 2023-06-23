@@ -50,6 +50,22 @@ Events on Pages
 		| purchase	
 		
 		
+		View Item List 
+			{
+				item_list_id: "Shower Enclosers",
+				item_list_name: "shower_enclosers",
+
+				items:[{
+					index: 0,
+					item_category: "Hinged & Pivot Shower Enclosures",
+					item_id: "Ravenna28 Frosted",
+					item_list_id: "Shower Enclosers",
+					item_list_name: "shower_enclosers",
+					item_name: "Frameless Frosted L Shape Rectangular Shower Enclosure With Frosted Shower Doors UK| Ravenna 28 Frosted",
+					price: 236.25,
+					quantity: 1,
+				}]
+			} 
 
 
 -----------------Category Page Data Layers ------------------
@@ -315,6 +331,23 @@ class Test extends \Magento\Framework\App\Action\Action
 
 php bin/magento cache:clean
 php bin/magento cache:flush
+
+
+
+{
+				item_list_id: "Shower Enclosers",
+				item_list_name: "shower_enclosers",
+
+				items:[{
+					item_category: "Hinged & Pivot Shower Enclosures",
+					item_id: "Ravenna28 Frosted",
+					item_lisEnct_id: "Shower losers",
+					item_list_name: "shower_enclosers",
+					item_name: "Frameless Frosted L Shape Rectangular Shower Enclosure With Frosted Shower Doors UK| Ravenna 28 Frosted",
+					price: 236.25,
+					quantity: 1,
+				}]
+			}
 
 
 
