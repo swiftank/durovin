@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="canonical" href="self.html" />
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <!-- Load AMP -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+<!-- google analytics -->
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+  "vars" : {
+    "gtag_id": "G-R9J8522NWQ",
+    "config" : {
+      "G-R9J8522NWQ": { "groups": "default" }
+    }
+  }
+}
+</script>
+</amp-analytics>
+
+  </head>
+  <body>
+
+
+
+   <!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9J8522NWQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R9J8522NWQ');
+</script> -->
+
+<!-- AMP Analytics -->
+<!-- <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script> -->
+
+
+</head>
+
+<body>
+
+<!-- Google Tag Manager -->
+<!-- <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-TMR3ZF7G&gtm.url=SOURCE_URL" data-credentials="include">
+
+   <script type="application/json">
+      {
+        "vars": {
+          "gtag_id": "G-R9J8522NWQ",
+          "config": {
+            "G-R9J8522NWQ": { "groups": "default" }
+          }
+        },
+        "triggers": {
+          "button": {
+            "selector": "#the-button",
+            "on": "click",
+            "vars": {
+              "event_name": "mobile_add_to_cart",
+              "method": "Google",
+              "product_item": "Shower tray",
+              "price": "25"
+            }
+          }
+        }
+      }
+    </script>
+</amp-analytics> -->
+
+   
+
+    <button  type="button" id="the-button">Add To Cart Event </button>
+</body>
+</html>

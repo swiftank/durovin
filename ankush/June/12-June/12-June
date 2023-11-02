@@ -37,3 +37,42 @@ File name: /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel
 G-DS1NM7C85V - New Property
 this is the property name 
 
+
+Backup google analutics
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98997695-1"></script>
+<script async>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-98997695-1');
+  gtag('config', 'G-XE0GMHMNXQ');
+</script>
+<!--End Global site tag (gtag.js) - Google Analytics -->
+
+
+Yesterday - Live analytics test 
+
+{
+    "transaction_id": "DB000006125",
+    "value": 10.29,
+    "tax": 1.72,
+    "currency": "GBP",
+    "items": [
+        {
+            "quantity": 1,
+            "item_name": "Chrome Filter Bathroom Basin Waste Plug - Unslotted",
+            "item_id": "A60",
+            "price": 10.29,
+            "item_category": "Accessories Category",
+            "item_list_id": "accessories",
+            "item_list_name": "Accessories"
+        }
+    ],
+    "enhanced_conversion_data": {
+        "email": "ankush@durovinbathrooms.co.uk"
+    }
+}
+
+IALPS1940A

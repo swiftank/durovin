@@ -1,0 +1,30 @@
+
+/var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Durovin_Payment/js/view/payment/method-renderer/stripe_payments.js
+/var/www/html/durovinbathrooms/vendor/magento/module-quote/Model/QuoteManagement.php
+
+        
+ 
+/var/www/vhosts/durovinbathrooms.com/httpdocs/vendor/magento/module-quote/Model
+/var/www/vhosts/durovinbathrooms.com/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Durovin_Payment/js/view/payment/method-renderer/stripe_payments.js
+
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/code/Durovin/Payment/view/frontend/web/js/view/payment/method-renderer
+ 
+ 
+       alertmagento({
+                        title: $.mage.__("Something's  went wrong"),
+                        content: $.mage.__('<div class="message message-error error" > <div>'+ result.error.message +' </div></div>'),
+                        modalClass: 'slow_internet_popup confirm',
+                        buttons: false,
+                        actions: {
+                            always: function(){
+                                 window.location.reload(1);
+                            }
+                        }
+                    });
+                    
+                      'Magento_Ui/js/modal/alert'
+                      alertmagento
+                      
+                      
+                      

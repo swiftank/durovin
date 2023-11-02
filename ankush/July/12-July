@@ -1,0 +1,23 @@
+/var/www/html/durovinbathrooms/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view
+/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/form.phtml
+
+/var/www/html/durovinbathrooms.com/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/addtocart.phtml
+
+allow 81.134.55.151;
+deny all;
+
+Please wait while Plesk finishes adding a DNS record with the following parameters:
+Record type: TXT
+Domain name: _acme-challenge.pofai.co.uk
+Record: pAGG7sekP_WWz6xZzleaK4iwNi_gMQG_XPuuhHN99bY
+
+To terminate and delete the existing certificate request, click "Cancel".
+
+Before clicking "Reload", make sure that the DNS record was added and can be resolved externally.
+
+Webiste and domain / apache and nginx
+
+
+

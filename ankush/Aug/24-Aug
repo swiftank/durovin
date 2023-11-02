@@ -1,0 +1,484 @@
+<?php 
+
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$productObject = $objectManager->get('Magento\Catalog\Model\Product');
+$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
+ 
+$itemsCollection = $cart->getQuote()->getItemsCollection();
+$itemsVisible = $cart->getQuote()->getAllVisibleItems();
+
+$items = $cart->getQuote()->getAllItems();
+
+
+
+
+
+
+
+
+?>
+
+<button id="button">
+    <span><?= $block->escapeHtml(__('Click me')) ?></span>
+</button>
+
+<div id="modal">
+    <div class="modal-body-content">
+        <h2><?= $block->escapeHtml(__('Title')) ?></h2>
+        <p><?= $block->escapeHtml(__('Content')) ?></p>
+    </div>
+</div>
+<script>
+document.getElementById('new ')
+</script>
+
+
+
+<style>
+.custom_product_modal {
+    display: flex;
+    background: #0000007d;
+    z-index: 902;
+    align-items: center
+}
+
+#custom_product_modal .modal-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 30px;
+}
+
+#custom_product_modal .modal_cutom_inner {
+    display: grid;
+    grid-template-columns: 200px 2fr;
+}
+
+#custom_product_modal .modal_cutom_inner h3 {
+    font-size: 15px;
+    padding-top: 20px;
+}
+
+#custom_product_modal .modal_cutom_inner2 {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+}
+
+#custom_product_modal .modal-content h2 {
+    padding-bottom: 0px;
+}
+
+.tright {
+    text-align: center;
+}
+
+.tcenter {
+    text-align: center;
+}
+
+#custom_product_modal .modal-inner-wrap {
+    max-width: 980px;
+}
+
+#custom_product_modal .image_section {
+    width: 200px;
+    padding-right: 10px;
+}
+
+#custom_product_modal .total_textl {
+    font-size: 16px;
+}
+
+#custom_product_modal .modal_cutom_inner2 {
+    padding-top: 10px;
+}
+
+#custom_product_modal .total_txt {
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#custom_product_modal .btnlinks {
+    padding-top: 30px;
+}
+
+#custom_product_modal .btnlinks a {
+    background: #282828;
+    border: 1px solid #282828;
+    color: #fff;
+    padding: 15px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#custom_product_modal .btnlinks a:hover {
+    background: #fff;
+    color: #282828;
+}
+
+#custom_product_modal .slider_outer_wrapper {
+    max-width: 940px;
+
+}
+
+#custom_product_modal .slider_title {
+    text-align: center;
+    padding: 5px 5px;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.txtcenterpr {
+    text-align: center;
+    color: #7d7d7d;
+}
+
+.bldtxt {
+    font-size: 15px;
+    color: #282828;
+
+}
+
+.add_to_cart_bt {
+    background: #282828;
+    border: 1px solid #282828;
+    color: #fff;
+    padding: 1px 10px;
+    color: #fff !important;
+    font-size: 15px;
+    text-decoration: none;
+
+}
+
+.add_to_cart_bt:hover {
+    background: #fff;
+    color: #282828 !important;
+    text-decoration: none;
+}
+
+/* @media only screen and (max-width: 768px){
+  
+} */
+
+
+@media (min-width:1025px) { 
+    #custom_product_modal .modal-content {
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr !important;
+    padding: 30px !important;
+    }
+    #custom_product_modal .modal-content.slider{
+        grid-template-columns:  1fr !important; 
+    }
+
+    #custom_product_modal .modal_cutom_inner {
+    display: grid !important;
+    grid-template-columns: 200px 2fr !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0px !important;
+    border-bottom: 0px !important;
+}
+#custom_product_modal .image_section {
+    width: 200px !important;
+    padding-right: 10px !important;
+}
+.tright{
+    text-align:center !important;
+}
+#custom_product_modal .total_txt {
+    padding-bottom: 5px !important;;
+    display: inline-block !important;;
+}
+#custom_product_modal .modal_cutom_inner2{
+    text-align:center !important;
+}
+#custom_product_modal .btnlinks {
+    padding-top: 30px !important;
+}
+#custom_product_modal .btnlinks a {
+    background: #282828;
+    border: 1px solid #282828;
+    color: #fff;
+    padding: 15px !important;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    display: initial !important;
+}
+#custom_product_modal .modal-inner-wrap{
+ width:980px !important;
+ height:auto !important;
+}
+#custom_product_modal .modal-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr !important;
+    padding: 30px;
+}
+#custom_product_modal .slider_outer_wrapper {
+    width: 100% !important;
+}
+ }
+
+
+@media (min-width:801px), (min-width:480px), (min-width:320px), (min-width:600px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .modal-popup.modal-slide {
+    left: 0;
+}  
+#custom_product_modal .modal-content {
+    grid-template-columns: 1fr;
+}
+#custom_product_modal .image_section {
+    width: 110px;
+    padding-right: 10px;
+}
+#custom_product_modal .btnlinks a{
+    display:block;
+    text-align: center;
+    padding: 5px;
+    margin-bottom:5px;
+}
+#custom_product_modal .btnlinks{
+    padding:0px;
+}
+#custom_product_modal .modal_cutom_inner2{
+    text-align: left;
+}
+
+#custom_product_modal .modal-content h2{
+    margin-bottom:0px;
+}
+#custom_product_modal .modal_cutom_inner {
+    display: grid;
+    grid-template-columns: 110px 2fr;
+    border-bottom:1px solid #ccc;
+    padding-top: 25px;
+    padding-bottom:20px;
+    margin-bottom:25px;
+}
+#custom_product_modal .modal_cutom_inner h3 {
+    font-size: 15px;
+    padding-top: 5px;
+}
+#custom_product_modal .tright{
+text-align: left;
+}
+
+#custom_product_modal .modal-inner-wrap {
+    max-width: 95%;
+    margin: auto;
+    height:80vh;
+}
+#custom_product_modal .slider_outer_wrapper{
+    max-width: 100%;
+    overflow: hidden;
+}
+
+}
+
+
+
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+</style>
+
+<?php if(isset( $_GET['product_id'] )):  ?>
+<?php   $product = $objectManager->create('Magento\Catalog\Model\Product')->load($_GET['product_id']);  ?>
+<aside id='custom_product_modal' role="dialog" class="modal-popup modal-slide custom_product_modal _show" tabindex="0">
+
+    <div class="modal-inner-wrap" data-role="focusable-scope">
+        <button class="action-close" id='close_modalbtn' data-role="closeBtn" type="button">
+            <span>Close</span>
+        </button>
+        <div class="modal-content" style='background:#f6f6f6' data-role="content">
+            <div>
+                <h2>Items was added to your basket</h2>
+
+                <div class='modal_cutom_inner'>
+
+                    <div class='image_section'>
+                        <img src="<?php echo $product->getMediaConfig()->getMediaUrl($product->getImage()) ;?>" alt="">
+                    </div>
+
+                    <div>
+                        <h3>
+                            <?php echo $product->getName(); ?>
+                        </h3>
+                        <h4> £<?php echo round($product->getFinalPrice(), 2); ?> </h4>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <h2 class='tright'>Your cart contains <span id='total_items'>0</span> items</h2>
+                <div class='modal_cutom_inner2'>
+                    <div> <span class='total_txt'> Total Amount including tax: </span>
+                        <h1> <span id='replace_price'>£0</span> </h1>
+                    </div>
+
+                    <div class='btnlinks'>
+                        <a href="javascript:;" id='continue_shopping'>Continue Shopping</a>
+                        <a href="/checkout/">View Shopping Cart</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <?php  if(count($product->getCrossSellProducts()) > 0):  ?>
+        <div class="modal-content slider" data-role="content">
+
+            <div class='slider_outer_wrapper'>
+                <div class="owl-carousel owl-theme">
+
+                    <?php
+                if ($currentProduct = $product) {
+
+                    $crossSellProducts = $currentProduct->getCrossSellProducts();
+
+                    if (!empty($crossSellProducts)) {
+ 
+                        foreach ($crossSellProducts as $crossSellProducts) { 
+       
+                        $crossProduct = $productObject->loadByAttribute('sku', $crossSellProducts->getSku()); 
+                    ?>
+
+                    <div class="item">
+                        <a href='/<?php echo $crossProduct->getUrlKey() ; ?>'>
+                            <img
+                                src="<?php echo $crossProduct->getMediaConfig()->getMediaUrl($crossProduct->getImage()); ?>">
+                            <h5 class='slider_title'>
+                                <?php echo $crossProduct->getName(); ?>
+                            </h5>
+                        </a>
+                        <h6 class='txtcenterpr'>As low as <b
+                                class='bldtxt'>£<?php echo bcadd(0, $crossProduct->getPrice(), 2); ?></b> </h6>
+
+                        <?php
+                        $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+
+                        $addToCartUrl =  $listBlock->getAddToCartUrl($crossProduct); ?>
+
+                        <form data-role="tocart-form" action="<?php echo $addToCartUrl; ?>" method="post">
+
+                            <?php echo $block->getBlockHtml('formkey')?>
+
+
+                        </form>
+                        <p class='tcenter'>
+                            <button type="submit" title="Add to Cart" class="action tocart primary">
+
+                                <span>Add to Cart</span>
+                            </button>
+                        </p>
+
+                    </div>
+
+                    <?php
+
+                    }
+                }
+                }
+                ?>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <?php  endif;  ?>
+
+
+    </div>
+    <div data-role="focusable-end" tabindex="0"></div>
+
+</aside>
+
+<?php 
+ $itemSlider = 4;
+ $item = 41;
+?>
+<script type="text/javascript">
+require(['jquery', 'cdz_slider'], function($) {
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        items: 5,
+        dots: false,
+        responsiveClass: true,
+        nav: true,
+        responsive:{
+            0:{
+            items:2,
+            nav:true
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            1000:{
+                items:5,
+                nav:true,
+                loop:false
+            }
+        }
+           
+    })
+})
+
+var cartItems = JSON.parse(localStorage.getItem("mage-cache-storage"));
+
+document.getElementById('replace_price').innerHTML = cartItems.cart.subtotal;
+document.getElementById('total_items').innerHTML = cartItems.cart.summary_count;
+document.getElementById('close_modalbtn').addEventListener('click', function() {
+    document.getElementById('custom_product_modal').classList.remove('_show');
+
+})
+document.getElementById('continue_shopping').addEventListener('click', function() {
+    document.getElementById('custom_product_modal').classList.remove('_show');
+
+})
+
+
+
+</script>
+
+
+
+
+<?php endif;  ?>
+
+
+
+
+---------------------------------------------
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product/Modal/view/frontend/templates
+
+
+
+
+
+                const url = new URL(window.location.href);
+                url.searchParams.set('product_id', $(this).attr('product-id'));
+                var checkInterval = setInterval(function() {
+                var dat = JSON.parse(localStorage.getItem('mage-cache-storage'));
+                
+                if (dat.cart) {
+                    clearInterval(checkInterval);
+                    window.location.href = url;
+                }
+            });
+
+
+
+
+
+            https://www.cloudways.com/blog/magento-2-modal-widget/

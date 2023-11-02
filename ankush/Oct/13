@@ -1,0 +1,44 @@
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-catalog/view/frontend/layout/amp_catalog_product_view.xml
+
+<VirtualHost *:80>
+ServerAdmin webmaster@localhost
+DocumentRoot /var/www/html/analytics
+ServerName eventschecker.com
+<Directory /var/www/html/analytics>
+AllowOverride all
+</Directory>
+</VirtualHost>
+
+
+
+<!--Google optimizer-->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5KSXWQM"></script>
+<!--End google optimizer code-->
+
+
+<!-- Event snippet for Add to cart conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-865745367/mAswCNit1_cCENfz6JwD',
+      'value': 1.0,
+      'currency': 'GBP',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/product
+/var/www/vhosts/durovinbathrooms.com/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view
+
+- findajob.dwp.gov.uk
+

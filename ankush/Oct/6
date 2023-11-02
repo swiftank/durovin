@@ -1,0 +1,108 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XE0GMHMNXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XE0GMHMNXQ');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WX47SRL');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-865745367"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-865745367'); </script>
+<!--End Google tag (gtag.js) -->
+ 
+<!-- addthis social share -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e8fdcf06e84734" async="async"></script>
+<!-- addthis social share -->
+
+
+<style>
+    .post-item .post-image {
+        width: 300px;
+    }
+
+    .post-item .post-description.clearfix {
+    display: none;
+    }
+
+    .products-grid .product-items:not(.owl-carousel) > .product-item{
+    height: 400px;
+    }
+.desc #low-mid p{
+ color:#fff; 
+}
+
+</style>
+
+<script>
+ document.addEventListener('DOMContentLoaded', (event) => {
+   var products = document.querySelectorAll('.product-item-link');
+   products .forEach(p => {
+       p.setAttribute('title', p.innerText);
+       if (p.innerText.length > 65) {
+           p.innerText = p.innerText.substring(0, 65) + "...";
+        } else {
+          p.innerText = p.innerText;
+       }
+  }) 
+
+
+var products_list = document.querySelectorAll('.product-item');
+
+ products_list .forEach(p => {
+ 
+     var ele = p.querySelectorAll('.product-reviews-summary');
+     console.log(ele.length);
+     if( ele.length == 0 ){
+        
+        //p.querySelectorAll('div.product-item-inner')[0].style.marginTop = '45px';
+     }
+   
+    
+ 
+ }) 
+
+   
+});
+</script>
+
+
+<!--Google optimizer-->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5KSXWQM"></script>
+<!--End google optimizer code-->
+
+
+
+<!--microsoft clarity-->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "gvna5sfizh");
+</script>
+<!--End microsoft clarity-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

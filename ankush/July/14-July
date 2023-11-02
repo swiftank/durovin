@@ -1,0 +1,1179 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list.phtml
+/var/www/html/durovinbathrooms/vendor/magefan/module-blog/Block/Index.php
+
+
+      <?php if (!$_postCollection->count()): ?>
+
+            <div class="message info empty">
+                <div><?php echo __('We can\'t find posts matching the selection.') ?></div>
+            </div>
+            <?php else: ?>
+				<?php $i = 0; ?>
+            <?php foreach ($_postCollection as $_post): ?>
+            <?php 
+				echo '<pre>';
+				print_r($_post->debug());
+				?>
+            <div class="post">
+                <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post['featured_img']; ?>"
+                    alt="">
+
+                <p class="title">
+                    <a href="">
+                      <?php echo $_post['title']; ?> 
+                    </a>
+                </p>
+                <p>
+				<?php echo $_post['meta_description']; ?>
+                </p>
+                <div class="post_footer">
+                    <span>16 June 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+            <?php  $i++;endforeach; ?>
+
+
+
+
+            <?php endif; ?>
+            
+            
+            
+            $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$request = $objectManager->get('\Magento\Framework\App\Request\Http');
+echo $request->getRouteName() . '<br />';           //customer
+echo $request->getModuleName() . '<br />';          //customer
+echo $request->getControllerName() . '<br />';      //account
+echo $request->getActionName() . '<br />';          //login
+echo $request->getFullActionName() . '<br />';      //customer_account_login
+echo $request->getControllerModule() . '<br />';    //Magento_Customer
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            https://www.ndtv.com/business/marketdata/fii-investments/sebi/jul-2022
+            
+            
+            
+            
+            
+            
+            
+            
+            <?php
+
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+use Magento\Framework\App\Action\Action;
+?>
+<?php
+/**
+ * Blog post list template
+ *
+ * @var $block \Magefan\Blog\Block\Post\PostList
+ */
+?>
+<?php
+$_postCollection = $block->getPostCollection();
+$_optionHelper = $this->helper('Codazon\ThemeOptions\Helper\Data');
+?>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.page-title-wrapper {
+    display: none;
+}
+
+.custom_blog {
+    padding-bottom: 30px;
+}
+
+.custom_blog .wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+
+.custom_blog .wrapper.posts img {
+    max-width: 100%;
+}
+
+.custom_blog .post {
+    background: #fff;
+    margin: 5px 10px 25px 10px;
+    padding-bottom: 20px;
+    width: 31%;
+}
+
+.custom_blog .title {
+    font-size: 18px !important;
+    margin: 0px;
+    padding: 15px 5px 5px 5px !important;
+    color: #505050;
+    line-height: 25px !important;
+    font-weight: 700 !important;
+}
+
+.custom_blog .post p {
+    padding: 0px 5px 0px 5px;
+    font-weight: 400;
+    color: #444444;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.custom_blog .title a {
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+.post_footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    border-top: 1px solid #c7c7c7;
+    margin: 0px 5px;
+    color: #737373;
+    margin-top: 30px;
+}
+
+.title a:hover {
+    color: #0a4882;
+}
+
+.custom_blog .wrapper.posts .title {
+    font-size: 18px !important;
+    margin: 0px;
+    padding: 5px 5px 0px 5px !important;
+    color: #505050;
+    line-height: 25px !important;
+    font-weight: 700 !important;
+    margin-bottom: 0px !important;
+}
+
+.custom_blog .wrapper.posts .post p {
+    padding: 0px 5px 0px 5px;
+    font-weight: 400;
+    color: #444444;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 10px 0px 15px 0px
+}
+
+.wrapper.posts .post_footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px 0px 0px;
+    border-top: 1px solid #c7c7c7;
+    margin: 0px 15px;
+    color: #737373
+}
+
+.divider {
+    overflow: hidden;
+    text-align: center;
+    /* width: 1550px; */
+    margin: auto;
+    padding: 40px 0px 80px 0px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444444;
+}
+
+.divider:before,
+.divider:after {
+    background-color: #c7c7c7;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.divider:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.divider:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+.catagories.wrapper {
+    padding-top: 45px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.catagories.wrapper .post {
+    width: 32.50%;
+    margin: 5px 2px 15px 2px;
+}
+
+.custom_blog .highlight img {
+    display: none;
+}
+
+.custom_blog .highlight {
+    background: #22a9ed
+}
+
+.custom_blog .highlight .title a {
+    color: #fff;
+    font-size: 32px;
+}
+
+.custom_blog .highlight p {
+    color: #fff;
+}
+
+.custom_blog .highlight .post_footer {
+    display: none;
+}
+
+.custom_blog .post img,
+.custom_blog .posts img {
+    max-width: 100%;
+    height: auto;
+}
+
+.categories_blog {
+    width: 500px;
+    padding: 20px 0px 50px 0px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.categories_blog li {
+    list-style: none;
+    padding: 5px 15px;
+    font-size: 18px;
+}
+
+.categories_blog li.active {
+    background: #0a4882;
+    color: #fff;
+}
+
+.categories_blog li:hover {
+    background: #0a4882;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 480px) {
+    .custom_blog .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .catagories.wrapper .post {
+        width: 100% !important;
+        margin: 5px 2px 15px 2px;
+    }
+
+    .custom_blog .post_footer {
+        margin: 0px 15px;
+    }
+
+    .custom_blog .post {
+        margin: 0px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .custom_blog .post p {
+        padding: 0px 15px 0px 15px;
+    }
+
+    .custom_blog .title {
+        padding: 15px 15px 0px 15px !important;
+    }
+
+    .custom_blog .post img,
+    .custom_blog .posts img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .custom_blog .wrapper.posts {
+        width: 90%;
+    }
+
+    .divider {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .custom_blog .wrapper {
+        grid-template-columns: 1fr;
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .custom_blog .post {
+        text-align: center;
+        width: 100%;
+    }
+
+    .custom_blog .wrapper.posts {
+        width: 90%;
+    }
+
+    .catagories.wrapper .post {
+        width: 100% !important;
+        margin: 5px 2px 15px 2px;
+    }
+
+    .custom_blog .post p {
+        text-align: left;
+    }
+
+    .divider {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="custom_blog">
+
+    <ul class="categories_blog">
+        <li class="active">Buying Guides</li>
+        <li>How To Guides</li>
+        <li>Latest News</li>
+        <li>Posts</li>
+    </ul>
+
+    <div class="wrapper">
+        <?php if (!$_postCollection->count()): ?>
+
+        <div class="message info empty">
+            <div><?php echo __('We can\'t find posts matching the selection.') ?></div>
+        </div>
+        <?php else: ?>
+        <?php $i = 0; ?>
+        <?php foreach ($_postCollection as $_post): ?>
+
+        <div class="post">
+		<a href="/news/post/<?php echo $_post['identifier'];?>">
+            <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post['featured_img']; ?>"
+                alt="">
+		</a>
+            <p class="title">
+			<a href="/news/post/<?php echo $_post['identifier'];?>">
+                    <?php echo $_post['title']; ?>
+                </a>
+            </p>
+            <p>
+                <?php echo $_post['meta_description']; ?>
+            </p>
+            <div class="post_footer">
+
+                <span></span>
+                <span>
+				<?php  
+				$dateValue = strtotime($_post['publish_time']);
+				echo date('d',$dateValue) . ' '.date('F',$dateValue) .' ' .   date('Y',$dateValue) ; ?>
+				</span>
+            </div>
+        </div>
+
+        <?php  $i++;endforeach; ?>
+
+
+
+
+        <?php endif; ?>
+
+    </div>
+
+
+    <!-- popular posts -->
+    <?php 
+	$popularPost = json_decode($block->getPopularPosts());
+	?>
+
+    <div class="divider">Popular Posts </div>
+
+    <div class="wrapper posts">
+
+
+        <?php foreach ($popularPost as $_post): ?>
+
+			
+        <div class="post">
+		<a href="/news/post/<?php echo $_post->identifier;?>">
+            <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post->featured_img; ?>"
+                alt="">
+				</a>	
+            <p class="title">
+                <a href="/news/post/<?php echo $_post->identifier;?>">
+                    <?php echo $_post->title; ?>
+                </a>
+            </p>
+            <p>
+                <?php echo $_post->meta_description; ?>
+            </p>
+
+            <div class="post_footer">
+                <span></span>
+                <span><?php  
+				$dateValue = strtotime($_post->publish_time);
+				echo date('d',$dateValue) . ' '.date('F',$dateValue) .' ' .   date('Y',$dateValue) ; ?></span>
+            </div>
+        </div>
+        <?php  endforeach; ?>
+
+
+    </div>
+
+
+
+
+    <div class="wrapper catagories">
+
+        <div class="post highlight">
+            <img src="https://www.drench.co.uk/media/2851/istock-1480852667.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                alt="">
+            <p class="title">
+                <a href="">
+                    Shower Enclosures
+                </a>
+            </p>
+            <p>
+                Have a look at this unusual trick that we recommend doing to cool down in a heatwave. It'll work, we
+                promise! Plus our top 5 tips for surviving the hot weather.
+            </p>
+            <div class="post_footer">
+                <span>16 June 2023</span>
+                <span>2 min Read</span>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="https://www.drench.co.uk/media/2822/sevenpalmtreehouse2.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                alt="">
+            <p class="title">
+                <a href="">
+                    Do This Unusual Bathroom Trick to Cool Down in a Heatwave
+                </a>
+            </p>
+            <p>
+                We collaborated with Ellie from @sevenpalmtreehouse to help her achieve this gorgeous bathroom
+                transformation. The beautiful bathroom features glorious pink tiles paired with Crosswater MPRO
+                brassware and layered with soft light wood touches.
+            </p>
+
+            <div class="post_footer">
+                <span>18 June 2023</span>
+                <span>2 min Read</span>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                alt="">
+            <p class="title">
+                <a href="">
+                    Do This Unusual Bathroom Trick to Cool Down in a Heatwave
+                </a>
+            </p>
+            <p>
+                We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                experience working with our 3D design team.
+            </p>
+            <div class="post_footer">
+                <span>10 July 2023</span>
+                <span>2 min Read</span>
+            </div>
+        </div>
+
+
+        <div class="post">
+            <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                alt="">
+            <p class="title">
+                <a href="">
+                    Do This Unusual Bathroom Trick to Cool Down in a Heatwave
+                </a>
+            </p>
+            <p>
+                We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                experience working with our 3D design team.
+            </p>
+            <div class="post_footer">
+                <span>10 July 2023</span>
+                <span>2 min Read</span>
+            </div>
+        </div>
+
+
+        <div class="post">
+            <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                alt="">
+            <p class="title">
+                <a href="">
+                    Do This Unusual Bathroom Trick to Cool Down in a Heatwave
+                </a>
+            </p>
+            <p>
+                We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                experience working with our 3D design team.
+            </p>
+            <div class="post_footer">
+                <span>10 July 2023</span>
+                <span>2 min Read</span>
+            </div>
+        </div>
+
+
+        <div class="post">
+            <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                alt="">
+            <p class="title">
+                <a href="">
+                    Do This Unusual Bathroom Trick to Cool Down in a Heatwave
+                </a>
+            </p>
+            <p>
+                We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                experience working with our 3D design team.
+            </p>
+            <div class="post_footer">
+                <span>10 July 2023</span>
+                <span>2 min Read</span>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    <?php  if( ($i % 4) == 0 ) : ?>
+        <div class="col-container  <?php echo ($i % 4) == 0 ? $i.'y': $i.'n'; ?>"> 
+    <?php  endif; ?>
+
+    <div class="col" style="background:orange <?php echo ($i % 4) == 0 ? $i.'y': $i.'n'; ?>">
+            <h2>   <?php echo $_post['title']; ?></h2>
+            <p> <?php echo $_post['meta_description'] ; ?></p>
+        </div>
+
+    <?php  if( ($i * $i % 3) == 0 ) : ?>
+        </div>
+     <?php  endif; ?>  
+            
+            
+            
+            
+            <?php foreach ($_postCollection as $_post): ?>
+
+     
+    <?php  if( ($i % 3) == 0 ) : ?>
+        <div class="col-container  <?php echo ($i % 4) == 0 ? $i.'y': $i.'n'; ?>"> 
+        <?php  endif; ?>
+
+        <div class="col <?php echo ($i % 4) == 0 ? $i.'y': $i.'n'; ?>"">
+        <a href="/news/post/<?php echo $_post['identifier'];?>">
+            <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post['featured_img']; ?>"
+                alt="">
+		</a>
+        <h2>This is Text <?php echo $i; ?> </h2>
+        <?php echo $_post['meta_description'] ; ?>
+        <div class="post_footer">
+
+        <span></span>
+        <span>
+        <?php  
+        $dateValue = strtotime($_post['publish_time']);
+        echo date('d',$dateValue) . ' '.date('F',$dateValue) .' ' .   date('Y',$dateValue) ; ?>
+        </span>
+        </div>
+        </div>
+        
+     
+       
+            
+   <?php $i++; ?>
+
+    <?php  if( ($i % 3) == 0 ) : ?>
+    </div>
+    <?php  endif; ?>     
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+            <?php
+
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+use Magento\Framework\App\Action\Action;
+?>
+<?php
+/**
+ * Blog post list template
+ *
+ * @var $block \Magefan\Blog\Block\Post\PostList
+ */
+?>
+<?php
+$_postCollection = $block->getPostCollection();
+$_optionHelper = $this->helper('Codazon\ThemeOptions\Helper\Data');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Lato', sans-serif;
+            box-sizing: border-box;
+            margin:0px;
+        }
+        .custom_blog{
+            padding-bottom:30px;
+        }
+
+        .custom_blog .wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: auto;
+            justify-content: space-between;
+        }
+
+        
+
+        .custom_blog .wrapper.posts img {
+            max-width: 100%;
+        }
+
+        .custom_blog .post {
+            background: #fff;
+           
+            padding-bottom: 20px;
+            width: 33%;
+        }
+
+        .custom_blog .title {
+            font-size: 24px !important;
+            margin: 0px;
+            padding: 30px 30px 0px 30px !important;
+            color: #505050;
+            line-height: 35px !important;
+            font-weight: 700 !important;
+        }
+
+        .custom_blog .post p {
+            padding: 0px 30px 0px 30px;
+            font-weight: 400;
+            color: #444444;
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        .custom_blog .title a {
+            color: #2d2d2d;
+            text-decoration: none;
+            height: 50px;
+            display: block;
+            overflow: hidden;
+        }
+
+        .post_footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
+            border-top: 1px solid #c7c7c7;
+            margin: 0px 30px;
+            color: #737373
+        }
+
+        .custom_blog .wrapper.posts .title {
+            font-size: 22px !important;
+            margin: 0px;
+            padding: 15px 15px 0px 15px !important;
+            color: #505050;
+            line-height: 28px !important;
+            font-weight: 700 !important;
+        }
+
+        .custom_blog .wrapper.posts .post p {
+            padding: 0px 15px 0px 15px;
+            font-weight: 400;
+            color: #444444;
+            font-size: 16px;
+            line-height: 25px;
+            margin: 10px 0px 15px 0px
+        }
+
+        .wrapper.posts .post_footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px 0px 0px;
+            border-top: 1px solid #c7c7c7;
+            margin: 0px 15px;
+            color: #737373
+        }
+
+        .divider {
+            overflow: hidden;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #444444;
+        }
+
+        .divider:before
+        {
+            background-color: #c7c7c7;
+            content: "";
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        .divider:before {
+            right: 0.5em;
+            
+        }
+
+     
+    
+     
+
+        .custom_blog  .highlight .post_footer{
+            display: none;
+        }
+        .custom_blog .post img , .custom_blog .posts img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .h1title{
+            padding-left:10px;
+            margin-top:10px;
+            display:flex;
+            justify-content:space-between;
+        }
+
+ 
+        
+
+    @media screen and (max-width: 480px) {
+        .custom_blog .wrapper {
+            grid-template-columns: repeat(1, 1fr);
+            width: 100%;
+            flex-direction: column;
+        }
+
+       
+
+        .custom_blog .post_footer{
+            margin: 0px 15px;
+        }
+
+        .custom_blog .post {
+            margin: 0px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .custom_blog .post p {
+            padding: 0px 15px 0px 15px;
+        }
+
+        .custom_blog .title {
+            padding: 15px 15px 0px 15px !important;
+        }
+
+        .custom_blog .post img , .custom_blog .posts img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .custom_blog .wrapper.posts {
+        width: 90%;
+    }
+    .divider{
+        width: 100%;
+    }
+        
+    }
+
+    @media screen and (max-width: 768px) {
+        .custom_blog .wrapper {
+                grid-template-columns: 1fr;
+                width: 90%;
+                flex-direction: column;
+            }
+
+            .custom_blog .post{
+                text-align: center;
+                width: 100%;
+            }
+
+        .custom_blog .wrapper.posts {
+           width: 90%;
+        }
+         .catagories.wrapper .post{
+            width: 100% !important;
+            margin: 5px 2px 15px 2px;
+        }
+
+            .custom_blog .post p {
+                text-align: left;
+            }
+
+            .divider{
+            width: 100%;
+        }
+    }
+    .page-title-wrapper{
+        display:none;
+    }
+    .see_more{
+        background: #282828;
+        border: 1px solid #282828;
+        color: #fff !important;
+        padding: 5px 25px;
+        font-size:16px !important;
+    }
+    
+    .seemore_p{
+    text-align: right;
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 35px;
+    }
+    .ph{
+        height:115px;
+    }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="custom_blog">
+
+        <!-- popular posts -->
+
+       
+        <h1 class="h1title">
+        <span>Popular Posts</span>
+     
+        
+        </h1>
+
+        <div class="wrapper posts">
+ 
+        <?php 
+            $popularPost = json_decode($block->getPopularPosts());
+        ?>
+
+
+<?php if(isset($popularPost)):  foreach ($popularPost as $_post): ?>
+
+			
+        <div class="post">
+        <a href="/news/post/<?php echo $_post->identifier;?>">
+            <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post->featured_img; ?>"
+                alt="">
+                </a>	
+            <p class="title">
+                <a href="/news/post/<?php echo $_post->identifier;?>">
+                    <?php echo $_post->title; ?>
+                </a>
+            </p>
+            <p class='ph'>
+                <?php echo $_post->meta_description; ?>
+            </p>
+
+            <div class="post_footer">
+                <span></span>
+                <span><?php  
+                $dateValue = strtotime($_post->publish_time);
+                echo date('d',$dateValue) . ' '.date('F',$dateValue) .' ' .   date('Y',$dateValue) ; ?></span>
+            </div>
+        </div>
+        <?php  endforeach; endif; ?>
+
+       
+
+            <p class='seemore_p'><a href="" class='see_more'> See All Popular Posts </a>  </p>
+             
+
+        </div>
+
+
+        <div class="divider"> </div>
+        <h1 class="h1title">BUYING GUIDES</h1>
+
+        <div class="wrapper posts">
+
+            <div class="post">
+                <img src="https://www.drench.co.uk/media/2822/sevenpalmtreehouse2.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                    alt="">
+                <p class="title">
+                    <a href="">
+                        Bathroom Storage Ideas
+                    </a>
+                </p>
+                <p>
+                    We collaborated with Ellie from @sevenpalmtreehouse to help her achieve this gorgeous bathroom
+                    transformation. The beautiful bathroom features glorious pink tiles paired with Crosswater MPRO
+                    brassware and layered with soft light wood touches.
+                </p>
+
+                <div class="post_footer">
+                    <span>18 June 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+          
+
+            <div class="post">
+                <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                    alt="">
+                <p class="title">
+                    <a href="">
+                        How to fit a shower screen
+                    </a>
+                </p>
+                <p>
+                    We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                    beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                    experience working with our 3D design team.
+                </p>
+                <div class="post_footer">
+                    <span>10 July 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                    alt="">
+                <p class="title">
+                    <a href="">
+                        How to choose bathrooms taps
+                    </a>
+                </p>
+                <p>
+                    We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                    beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                    experience working with our 3D design team.
+                </p>
+                <div class="post_footer">
+                    <span>10 July 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+            <p class='seemore_p'><a href="" class='see_more'> See All Buying Guides Posts </a>  </p>
+
+        </div>
+
+
+        <div class="divider"> </div>
+        <h1 class="h1title">HOW TO GUIDES POSTS</h1>
+
+        <div class="wrapper posts">
+
+            <div class="post">
+                <img src="https://www.drench.co.uk/media/2822/sevenpalmtreehouse2.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                    alt="">
+                <p class="title">
+                    <a href="">
+                        Bathroom Storage Ideas
+                    </a>
+                </p>
+                <p>
+                    We collaborated with Ellie from @sevenpalmtreehouse to help her achieve this gorgeous bathroom
+                    transformation. The beautiful bathroom features glorious pink tiles paired with Crosswater MPRO
+                    brassware and layered with soft light wood touches.
+                </p>
+
+                <div class="post_footer">
+                    <span>18 June 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+          
+
+            <div class="post">
+                <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                    alt="">
+                <p class="title">
+                    <a href="">
+                        How to fit a shower screen
+                    </a>
+                </p>
+                <p>
+                    We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                    beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                    experience working with our 3D design team.
+                </p>
+                <div class="post_footer">
+                    <span>10 July 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <img src="https://www.drench.co.uk/media/2801/pics.jpg?w=505&h=284&mode=crop&scale=both&format=webp&quality=80"
+                    alt="">
+                <p class="title">
+                    <a href="">
+                        How to choose bathrooms taps
+                    </a>
+                </p>
+                <p>
+                    We collaborated with Rosie from @rosieandthefarm to help design the bathroom of her dreams in a
+                    beautiful 19th century farmhouse. This blog delves into the design decisions, key DIY tasks and her
+                    experience working with our 3D design team.
+                </p>
+                <div class="post_footer">
+                    <span>10 July 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+            <p class='seemore_p'><a href="" class='see_more'> See All Howto Guides Posts </a>  </p>
+
+        </div>
+
+
+        <div class="divider"> </div>
+        <h1 class="h1title">LATEST POSTS</h1>
+
+        <div class="wrapper posts">
+        <?php if (!$_postCollection->count()): ?>
+
+        <div class="message info empty">
+            <div><?php echo __('We can\'t find posts matching the selection.') ?></div>
+        </div>
+        <?php else: ?>
+        <?php $i = 0; ?>
+        <?php foreach ($_postCollection as $_post): ?>
+
+        <div class="post">
+		<a href="/news/post/<?php echo $_post['identifier'];?>">
+            <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post['featured_img']; ?>"
+                alt="">
+		</a>
+            <p class="title">
+			<a href="/news/post/<?php echo $_post['identifier'];?>">
+                    <?php echo $_post['title']; ?>
+                </a>
+            </p>
+            <p class='ph'>
+                <?php echo $_post['meta_description']; ?>
+            </p>
+            <div class="post_footer">
+
+                <span></span>
+                <span>
+				<?php  
+				$dateValue = strtotime($_post['publish_time']);
+				echo date('d',$dateValue) . ' '.date('F',$dateValue) .' ' .   date('Y',$dateValue) ; ?>
+				</span>
+            </div>
+        </div>
+
+        <?php  $i++;endforeach; ?>
+
+
+
+
+        <?php endif; ?>
+
+    </div>
+  
+    <?php echo $block->getToolbarHtml()   ?>
+
+
+     
+    
+    </div>
+</body>
+
+</html>
+
+      
+            
+            
+            
+            
+            
+            

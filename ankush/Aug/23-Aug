@@ -1,0 +1,22 @@
+
+app/code/Etatvasoft/ProductLabel/view/frontend/templates/product/
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view
+
+
+   var  isSimple = $(this).find('.newAddToCart').attr('is-configurable');
+                if( isSimple == 'simple'){
+                    const url = new URL(window.location.href);
+                    url.searchParams.set('product_id', $(this).find('.newAddToCart').attr('product-id'));
+                    var checkInterval = setInterval(function() {
+                    var dat = JSON.parse(localStorage.getItem('mage-cache-storage'));
+                
+                if (dat.cart) {
+                    clearInterval(checkInterval);
+                    window.location.href = url;
+                }
+            });
+                }
+                
+    /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Magento_Theme/js 
+               
+               

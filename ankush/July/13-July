@@ -1,0 +1,42 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list.phtml
+
+
+
+      <?php if (!$_postCollection->count()): ?>
+
+            <div class="message info empty">
+                <div><?php echo __('We can\'t find posts matching the selection.') ?></div>
+            </div>
+            <?php else: ?>
+				<?php $i = 0; ?>
+            <?php foreach ($_postCollection as $_post): ?>
+            <?php 
+				echo '<pre>';
+				print_r($_post->debug());
+				?>
+            <div class="post">
+                <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post['featured_img']; ?>"
+                    alt="">
+
+                <p class="title">
+                    <a href="">
+                      <?php echo $_post['title']; ?> 
+                    </a>
+                </p>
+                <p>
+				<?php echo $_post['meta_description']; ?>
+                </p>
+                <div class="post_footer">
+                    <span>16 June 2023</span>
+                    <span>2 min Read</span>
+                </div>
+            </div>
+
+            <?php  $i++;endforeach; ?>
+
+
+
+
+            <?php endif; ?>

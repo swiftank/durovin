@@ -1,0 +1,1208 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product/Recommended
+
+https://www.youtube.com/watch?v=27UGBp5qkZY
+
+https://www.codextblog.com/magento-2/how-to-render-an-html-using-an-ajax-call-in-magento-2-module/
+
+https://magento.stackexchange.com/questions/192075/magento-2-error-404-on-ajax-request
+https://magento.stackexchange.com/questions/158541/magento-2-how-to-send-data-using-ajax-form-in-custom-form
+
+Etatvasoft/ProductLabel/view/frontend/templates/product/
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/products
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Ankush/Recommendationmodal/view/frontend/web/css
+
+
+
+
+<style>
+.custom_product_modal {
+    display: flex;
+    background: #0000007d;
+    z-index: 902;
+    align-items: center
+}
+
+#custom_product_modal .modal-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 30px;
+}
+
+#custom_product_modal .modal_cutom_inner {
+    display: grid;
+    grid-template-columns: 200px 2fr;
+}
+
+#custom_product_modal .modal_cutom_inner h3 {
+    font-size: 15px;
+    padding-top: 20px;
+}
+
+#custom_product_modal .modal_cutom_inner2 {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+}
+
+#custom_product_modal .modal-content h2 {
+    padding-bottom: 0px;
+}
+
+.tright {
+    text-align: center;
+}
+
+.tcenter {
+    text-align: center;
+}
+
+#custom_product_modal .modal-inner-wrap {
+    max-width: 980px;
+}
+
+#custom_product_modal .image_section {
+    width: 200px;
+    padding-right: 10px;
+}
+
+#custom_product_modal .total_textl {
+    font-size: 16px;
+}
+
+#custom_product_modal .modal_cutom_inner2 {
+    padding-top: 10px;
+}
+
+#custom_product_modal .total_txt {
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#custom_product_modal .btnlinks {
+    padding-top: 30px;
+}
+
+#custom_product_modal .btnlinks a {
+    background: #282828;
+    border: 1px solid #282828;
+    color: #fff;
+    padding: 15px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#custom_product_modal .btnlinks a:hover {
+    background: #fff;
+    color: #282828;
+}
+
+#custom_product_modal .slider_outer_wrapper {
+    max-width: 940px;
+
+}
+
+#custom_product_modal .slider_title {
+    text-align: center;
+    padding: 5px 5px;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.txtcenterpr {
+    text-align: center;
+    color: #7d7d7d;
+}
+
+.bldtxt {
+    font-size: 15px;
+    color: #282828;
+
+}
+
+.add_to_cart_bt {
+    background: #282828;
+    border: 1px solid #282828;
+    color: #fff;
+    padding: 1px 10px;
+    color: #fff !important;
+    font-size: 15px;
+    text-decoration: none;
+
+}
+
+.add_to_cart_bt:hover {
+    background: #fff;
+    color: #282828 !important;
+    text-decoration: none;
+}
+
+/* @media only screen and (max-width: 768px){
+  
+} */
+
+
+@media (min-width:1025px) {
+    #custom_product_modal .modal-content {
+        display: grid !important;
+        grid-template-columns: 1.5fr 1fr !important;
+        padding: 30px !important;
+    }
+
+    #custom_product_modal .modal-content.slider {
+        grid-template-columns: 1fr !important;
+    }
+
+    #custom_product_modal .modal_cutom_inner {
+        display: grid !important;
+        grid-template-columns: 200px 2fr !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0px !important;
+        border-bottom: 0px !important;
+    }
+
+    #custom_product_modal .image_section {
+        width: 200px !important;
+        padding-right: 10px !important;
+    }
+
+    .tright {
+        text-align: center !important;
+    }
+
+    #custom_product_modal .total_txt {
+        padding-bottom: 5px !important;
+        ;
+        display: inline-block !important;
+        ;
+    }
+
+    #custom_product_modal .modal_cutom_inner2 {
+        text-align: center !important;
+    }
+
+    #custom_product_modal .btnlinks {
+        padding-top: 30px !important;
+    }
+
+    #custom_product_modal .btnlinks a {
+        background: #282828;
+        border: 1px solid #282828;
+        color: #fff;
+        padding: 15px !important;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        display: initial !important;
+    }
+
+    #custom_product_modal .modal-inner-wrap {
+        width: 980px !important;
+        height: auto !important;
+    }
+
+    #custom_product_modal .modal-content {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr !important;
+        padding: 30px;
+    }
+
+    #custom_product_modal .slider_outer_wrapper {
+        width: 100% !important;
+    }
+}
+
+
+@media (min-width:801px),
+(min-width:480px),
+(min-width:320px),
+(min-width:600px) {
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .modal-popup.modal-slide {
+        left: 0;
+    }
+
+    #custom_product_modal .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    #custom_product_modal .image_section {
+        width: 110px;
+        padding-right: 10px;
+    }
+
+    #custom_product_modal .btnlinks a {
+        display: block;
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    #custom_product_modal .btnlinks {
+        padding: 0px;
+    }
+
+    #custom_product_modal .modal_cutom_inner2 {
+        text-align: left;
+    }
+
+    #custom_product_modal .modal-content h2 {
+        margin-bottom: 0px;
+    }
+
+    #custom_product_modal .modal_cutom_inner {
+        display: grid;
+        grid-template-columns: 110px 2fr;
+        border-bottom: 1px solid #ccc;
+        padding-top: 25px;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    #custom_product_modal .modal_cutom_inner h3 {
+        font-size: 15px;
+        padding-top: 5px;
+    }
+
+    #custom_product_modal .tright {
+        text-align: left;
+    }
+
+    #custom_product_modal .modal-inner-wrap {
+        max-width: 95%;
+        margin: auto;
+        height: 80vh;
+    }
+
+    #custom_product_modal .slider_outer_wrapper {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+}
+
+
+
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+}
+</style>
+
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->create('Magento\Catalog\Model\Product')->load(3889);
+
+$cartObj = $objectManager->get('\Magento\Checkout\Model\Cart');
+$subTotal = $cartObj->getQuote()->getSubtotal(); //Current Cart Subtotal
+$grandTotal = $cartObj->getQuote()->getGrandTotal(); //Cart Grand total
+$summaryCount = round($cartObj->getQuote()->getItemsQty());
+?>
+
+<div id="modal-content">
+    <?php //echo $block->getContent(); 
+    ?>
+
+    <div id='custom_product_modal'>
+        <div class="modal-content" style="background:#f6f6f6">
+            <div>
+                <h2>Items was added to your basket</h2>
+
+                <div class='modal_cutom_inner'>
+
+                    <div class='image_section'>
+                        <img src="<?php echo $product->getMediaConfig()->getMediaUrl($product->getImage()); ?>" alt="">
+                    </div>
+
+                    <div>
+                        <h3>
+                            <?php echo $product->getName(); ?>
+                        </h3>
+                        <h4> £<?php echo round($product->getFinalPrice(), 2); ?> </h4>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <h2 class='tright'>Your cart contains <span id='total_items'><?php echo $summaryCount; ?></span> items
+                </h2>
+                <div class='modal_cutom_inner2'>
+                    <div> <span class='total_txt'> Total Amount: </span>
+                        <h1> <span id='replace_price'>£<?php echo round($grandTotal, 2); ?></span> </h1>
+                    </div>
+
+                    <div class='btnlinks'>
+                        <a href="javascript:;" id='continue_shopping'>Continue Shopping</a>
+                        <a href="/checkout/">View Shopping Cart</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal-content slider" data-role="content">
+            <div class='slider_outer_wrapper'>
+                <div class="owl-carousel owl-theme">
+                    <?php $crossSellProducts = $product->getCrossSellProducts(); ?>
+                    <?php
+                    foreach ($crossSellProducts as $crossSellProducts) {
+                        $crossProduct = $product->loadByAttribute('sku', $crossSellProducts->getSku());
+                    ?>
+
+                    <div class="item">
+                        <a href='/<?php echo $crossProduct->getUrlKey(); ?>'>
+                            <img
+                                src="<?php echo $crossProduct->getMediaConfig()->getMediaUrl($crossProduct->getImage()); ?>">
+                            <h5 class='slider_title'>
+                                <?php echo $crossProduct->getName(); ?>
+                            </h5>
+                        </a>
+                        <h6 class='txtcenterpr'>As low as <b
+                                class='bldtxt'>£<?php echo bcadd(0, $crossProduct->getPrice(), 2); ?></b> </h6>
+
+                        <?php
+                            $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+                            $addToCartUrl =  $listBlock->getAddToCartUrl($crossProduct); ?>
+
+                        <?php
+                            if ($crossProduct->getTypeId() != 'configurable') { ?>
+                        <form data-role="tocart-form" action="<?php echo $addToCartUrl; ?>" method="post">
+
+                            <?php echo $block->getBlockHtml('formkey') ?>
+                            <p class='tcenter'>
+                                <button type="submit" title="Add to Cart" class="recommended_btn action tocart primary">
+
+                                    <span>Add to Cart</span>
+                                </button>
+                            </p>
+
+                        </form>
+                        <?php
+                            } else {
+                                ?>
+                        <p class='tcenter'>
+                            <a href="/<?php echo $crossProduct->getUrlKey(); ?>" title="More Details" class="action tocart primary">
+
+                                <span>More Details</span>
+                            </a>
+                        </p>
+                        <?php 
+                            }
+                            ?>
+
+                    </div>
+
+                    <?php
+
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<button id="example-modal-button" data-mage-init='{"recommended-modal": {"target": "#modal-content"}}'>
+    Open Modal <span id='modal_pid'>3889</span>
+</button>
+
+
+
+<script>
+require(
+    [
+        'jquery',
+        'Magento_Ui/js/modal/modal',
+        'cdz_slider'
+    ],
+    function(
+        $,
+        modal
+    ) {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            items: 5,
+            dots: false,
+            responsiveClass: true,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 2,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: true
+                }
+            }
+
+        });
+
+        $('.recommended_btn').on('click', function(e) {
+            e.preventDefault();
+
+            var checkInterval = setInterval(function() {
+                var dat = JSON.parse(localStorage.getItem('mage-cache-storage'));
+
+                if (dat.cart) {
+                    $('#total_items').text(dat.cart.summary_count);
+                    $('#replace_price').text('£' + dat.cart.subtotalAmount);
+                    clearInterval(checkInterval);
+
+                }
+            }, 1000);
+
+            $(this).parents('form').submit();
+        });
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
+            // title: 'Example Modal',
+            buttons: []
+            // buttons: [{
+            //     text: $.mage.__('OK'),
+            //     class: '',
+            //     click: function() {
+            //         this.closeModal();
+            //     }
+            // }]
+        };
+
+        var popup = modal(options, $('#modal-content'));
+        // $('#modal-content').modal('openModal');
+        // var popup = modal(options, $('#modal-content'));
+        // $("#example-modal-button").on('click', function() {
+        //     $('#total_items').text($('.counter-number').text());
+        //     $('#replace_price').text($('.price-label .price').text());
+        //     $("#modal-content").modal("openModal");
+        // });
+    }
+);
+</script>
+
+
+<button id="ajaxrequest">
+    Ajax Modal
+</button>
+
+<div id="ajaxresponse"></div>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Product_Recommended/js/ajax": {}
+            }
+        }
+</script>
+-------------------------------------------------------------------------------------------------------------------
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Etatvasoft/ProductLabel/view/frontend/templates/products
+
+ $.ajax({
+                url: "/ajax/blog/search",
+                data: {q: $(this).attr('product-id')},
+                dataType: 'json',
+                success: function(data, status, xhr) {
+                    $('#ajaxresponse').html(data.output);
+                    document.getElementById('custom_product_modal').classList.add('_show');
+                    var checkInterval = setInterval(function() {
+                        var dat = JSON.parse(localStorage.getItem(
+                        'mage-cache-storage'));
+
+                        if (dat.cart) {
+                            $('#total_items').text(dat.cart.summary_count);
+                            $('#replace_price').text('£' + dat.cart.subtotalAmount);
+                            clearInterval(checkInterval);
+
+                        }
+                    }, 1000)
+                
+                },
+                error: function () {
+                    // xhr, status, errorThrown - Params Error 
+                    console.log('Error happens. Try again.');
+                }
+            });
+
+
+
+-----------------------------------------------------------------------------------------
+
+ajax.phtml
+
+<?php
+$productData = $block->getData();
+$productId = $productData['data']['currentproductid'];
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->create('Magento\Catalog\Model\Product')->load($productId);
+
+$cartObj = $objectManager->get('\Magento\Checkout\Model\Cart');
+$subTotal = $cartObj->getQuote()->getSubtotal(); //Current Cart Subtotal
+$grandTotal = $cartObj->getQuote()->getGrandTotal(); //Cart Grand total
+$summaryCount = round($cartObj->getQuote()->getItemsQty());
+?>
+
+<div class="modal-content" style="background:#f6f6f6">
+
+    <div>
+        <h2>Items was added to your basket</h2>
+
+        <div class='modal_cutom_inner'>
+
+            <div class='image_section'>
+                <img src="<?php echo $product->getMediaConfig()->getMediaUrl($product->getImage()); ?>" alt="">
+            </div>
+
+            <div>
+                <h3>
+                    <?php echo $product->getName(); ?>
+                </h3>
+                <h4> £<?php echo round($product->getFinalPrice(), 2); ?> </h4>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <h2 class='tright'>Your cart contains <span id='total_items'><?php echo $summaryCount; ?></span> items
+        </h2>
+        <div class='modal_cutom_inner2'>
+            <div> <span class='total_txt'> Total Amount: </span>
+                <h1> <span id='replace_price'>£<?php echo round($grandTotal, 2); ?></span> </h1>
+            </div>
+
+            <div class='btnlinks'>
+                <a href="javascript:;" id='continue_shopping'>Continue Shopping</a>
+                <a href="/checkout/">View Shopping Cart</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal-content slider" data-role="content" style='background:#fff'>
+    <div class='slider_outer_wrapper'>
+        <div class="owl-carousel owl-theme">
+            <?php $crossSellProducts = $product->getCrossSellProducts(); ?>
+            <?php
+                    foreach ($crossSellProducts as $crossSellProducts) {
+                        $crossProduct = $product->loadByAttribute('sku', $crossSellProducts->getSku());
+                    ?>
+
+            <div class="item">
+                <a href='/<?php echo $crossProduct->getUrlKey(); ?>'>
+                    <img src="<?php echo $crossProduct->getMediaConfig()->getMediaUrl($crossProduct->getImage()); ?>">
+                    <h5 class='slider_title'>
+                        <?php echo $crossProduct->getName(); ?>
+                    </h5>
+                </a>
+                <h6 class='txtcenterpr'>As low as <b
+                        class='bldtxt'>£<?php echo bcadd(0, $crossProduct->getPrice(), 2); ?></b> </h6>
+
+                <?php
+                            $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+                            $addToCartUrl =  $listBlock->getAddToCartUrl($crossProduct); ?>
+
+                <?php
+                            if ($crossProduct->getTypeId() != 'configurable') { ?>
+                <form data-role="tocart-form" action="<?php echo $addToCartUrl; ?>" method="post">
+
+                    <?php echo $block->getBlockHtml('formkey') ?>
+                    <p class='tcenter'>
+                        <button type="submit" title="Add to Cart" class="recommended_btn action tocart primary">
+
+                            <span>Add to Cart</span>
+                        </button>
+                    </p>
+
+                </form>
+                <?php
+                            } else {
+                                ?>
+                <p class='tcenter'>
+                    <a href="/<?php echo $crossProduct->getUrlKey(); ?>" title="More Details"
+                        class="action tocart primary">
+
+                        <span>More Details</span>
+                    </a>
+                </p>
+                <?php 
+                            }
+                            ?>
+
+            </div>
+
+            <?php
+
+                    }
+                    ?>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+require(
+    [
+        'jquery',
+        'Magento_Ui/js/modal/modal',
+        'cdz_slider'
+    ],
+    function(
+        $,
+        modal
+    ) {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            items: 5,
+            dots: false,
+            responsiveClass: true,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 2,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: true
+                }
+            }
+
+        });
+
+        $('.recommended_btn').on('click', function(e) {
+            e.preventDefault();
+
+            ;
+
+            var form = $(this).parents('form:first');
+            var url = form.attr('action');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(),
+                success: function(data) {
+                    var checkInterval = setInterval(function() {
+                        var dat = JSON.parse(localStorage.getItem(
+                        'mage-cache-storage'));
+
+                        if (dat.cart) {
+                            $('#total_items').text(dat.cart.summary_count);
+                            $('#replace_price').text('£' + dat.cart.subtotalAmount);
+                            clearInterval(checkInterval);
+
+                        }
+                    }, 1000)
+                },
+                error: function(data) {
+
+                    // Some error in ajax call
+                    alert("some Error");
+                }
+            });
+
+            // $(this).parents('form').submit();
+        });
+
+
+
+    }
+);
+</script>
+
+
+------------------------------------------------------------------------------
+
+modal.phtml
+
+<style>
+.custom_product_modal {
+    display: flex;
+    background: #0000007d;
+    z-index: 902;
+    align-items: center
+}
+
+#custom_product_modal .modal-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 30px;
+}
+
+#custom_product_modal .modal_cutom_inner {
+    display: grid;
+    grid-template-columns: 200px 2fr;
+}
+
+#custom_product_modal .modal_cutom_inner h3 {
+    font-size: 15px;
+    padding-top: 20px;
+}
+
+#custom_product_modal .modal_cutom_inner2 {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+}
+
+#custom_product_modal .modal-content h2 {
+    padding-bottom: 0px;
+}
+
+.tright {
+    text-align: center;
+}
+
+.tcenter {
+    text-align: center;
+}
+
+#custom_product_modal .modal-inner-wrap {
+    max-width: 980px;
+}
+
+#custom_product_modal .image_section {
+    width: 200px;
+    padding-right: 10px;
+}
+
+#custom_product_modal .total_textl {
+    font-size: 16px;
+}
+
+#custom_product_modal .modal_cutom_inner2 {
+    padding-top: 10px;
+}
+
+#custom_product_modal .total_txt {
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#custom_product_modal .btnlinks {
+    padding-top: 30px;
+}
+
+#custom_product_modal .btnlinks a {
+    background: #282828;
+    border: 1px solid #282828;
+    color: #fff;
+    padding: 15px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#custom_product_modal .btnlinks a:hover {
+    background: #fff;
+    color: #282828;
+}
+
+#custom_product_modal .slider_outer_wrapper {
+    max-width: 940px;
+
+}
+
+#custom_product_modal .slider_title {
+    text-align: center;
+    padding: 5px 5px;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.txtcenterpr {
+    text-align: center;
+    color: #7d7d7d;
+}
+
+.bldtxt {
+    font-size: 15px;
+    color: #282828;
+
+}
+
+.add_to_cart_bt {
+    background: #282828;
+    border: 1px solid #282828;
+    color: #fff;
+    padding: 1px 10px;
+    color: #fff !important;
+    font-size: 15px;
+    text-decoration: none;
+
+}
+
+.add_to_cart_bt:hover {
+    background: #fff;
+    color: #282828 !important;
+    text-decoration: none;
+}
+
+/* @media only screen and (max-width: 768px){
+  
+} */
+
+
+@media (min-width:1025px) {
+    #custom_product_modal .modal-content {
+        display: grid !important;
+        grid-template-columns: 1.5fr 1fr !important;
+        padding: 30px !important;
+    }
+
+    #custom_product_modal .modal-content.slider {
+        grid-template-columns: 1fr !important;
+    }
+
+    #custom_product_modal .modal_cutom_inner {
+        display: grid !important;
+        grid-template-columns: 200px 2fr !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0px !important;
+        border-bottom: 0px !important;
+    }
+
+    #custom_product_modal .image_section {
+        width: 200px !important;
+        padding-right: 10px !important;
+    }
+
+    .tright {
+        text-align: center !important;
+    }
+
+    #custom_product_modal .total_txt {
+        padding-bottom: 5px !important;
+        ;
+        display: inline-block !important;
+        ;
+    }
+
+    #custom_product_modal .modal_cutom_inner2 {
+        text-align: center !important;
+    }
+
+    #custom_product_modal .btnlinks {
+        padding-top: 30px !important;
+    }
+
+    #custom_product_modal .btnlinks a {
+        background: #282828;
+        border: 1px solid #282828;
+        color: #fff;
+        padding: 15px !important;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        display: initial !important;
+    }
+
+    #custom_product_modal .modal-inner-wrap {
+        width: 980px !important;
+        height: auto !important;
+    }
+
+    #custom_product_modal .modal-content {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr !important;
+        padding: 30px;
+    }
+
+    #custom_product_modal .slider_outer_wrapper {
+        width: 100% !important;
+    }
+}
+
+
+@media (min-width:801px),
+(min-width:480px),
+(min-width:320px),
+(min-width:600px) {
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .modal-popup.modal-slide {
+        left: 0;
+    }
+
+    #custom_product_modal .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    #custom_product_modal .image_section {
+        width: 110px;
+        padding-right: 10px;
+    }
+
+    #custom_product_modal .btnlinks a {
+        display: block;
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    #custom_product_modal .btnlinks {
+        padding: 0px;
+    }
+
+    #custom_product_modal .modal_cutom_inner2 {
+        text-align: left;
+    }
+
+    #custom_product_modal .modal-content h2 {
+        margin-bottom: 0px;
+    }
+
+    #custom_product_modal .modal_cutom_inner {
+        display: grid;
+        grid-template-columns: 110px 2fr;
+        border-bottom: 1px solid #ccc;
+        padding-top: 25px;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    #custom_product_modal .modal_cutom_inner h3 {
+        font-size: 15px;
+        padding-top: 5px;
+    }
+
+    #custom_product_modal .tright {
+        text-align: left;
+    }
+
+    #custom_product_modal .modal-inner-wrap {
+        max-width: 95%;
+        margin: auto;
+        height: 80vh;
+    }
+
+    #custom_product_modal .slider_outer_wrapper {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+}
+
+
+.header.content {
+    z-index: 1 !important;
+}
+
+
+
+.custom_inner_modal {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+}
+
+.recommendation_modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background: #00000057;
+    z-index: 1000;
+    display: none;
+}
+
+.modal_show {
+    display: block;
+}
+
+
+</style>
+
+<!-- <div class='recommendation_modal' id='custom_product_modal'> -->
+<!-- <div class='custom_inner_modal modal-popup'>
+  
+        <div id='ajaxresponse'></div>
+    </div> -->
+
+<!-- <div class='modal-inner-wrap'>
+        <div class='modal-inner-wrap'>
+            <header class="modal-header">
+
+                <button class="action-close" data-role="closeBtn" type="button">
+                    <span>Close</span>
+                </button>
+            </header>
+        </div>
+    </div> -->
+<!-- </div> -->
+
+<aside id='custom_product_modal' style='background: #00000080' class="modal-popup">
+    <div class="modal-inner-wrap" data-role="focusable-scope">
+        <header class="modal-header">
+
+            <button class="recclosebtn action-close" data-role="closeBtn" type="button">
+                <span>Close</span>
+            </button>
+        </header>
+       
+        <div id='ajaxresponse'></div>
+      
+
+    </div>
+   
+</aside>
+
+
+<script>
+require(
+    [
+        'jquery',
+    ],
+    function(
+        $
+    ) {
+       $('.recclosebtn').on('click', function(){
+        $('#custom_product_modal').removeClass('_show');
+       });
+       
+    }
+);
+</script>
+
+
+<script>
+     document.getElementById('custom_product_modal').classList.remove('_show');
+</script>
+
+
+-----------------------------------------------------------------------------------------------------------------
+ Controller 
+ 
+ <?php
+
+namespace Product\Blogsearch\Controller\Blog;
+
+use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\Controller\Result\JsonFactory;
+use Magento\Framework\View\Result\PageFactory;
+
+class Search extends Action
+{
+ 
+    /**
+     * @var PageFactory
+     */
+    protected $_resultPageFactory;
+ 
+    /**
+     * @var JsonFactory
+     */
+    protected $_resultJsonFactory;
+ 
+ 
+    /**
+     * View constructor.
+     * @param Context $context
+     * @param PageFactory $resultPageFactory
+     * @param JsonFactory $resultJsonFactory
+     */
+    public function __construct(Context $context, PageFactory $resultPageFactory, JsonFactory $resultJsonFactory)
+    {
+ 
+        $this->_resultPageFactory = $resultPageFactory;
+        $this->_resultJsonFactory = $resultJsonFactory;
+ 
+        parent::__construct($context);
+    }
+ 
+ 
+    /**
+     * @return \Magento\Framework\Controller\Result\Json
+     */
+    public function execute()
+    {
+        $result = $this->_resultJsonFactory->create();
+        $resultPage = $this->_resultPageFactory->create();
+        $currentProductId = $this->getRequest()->getParam('q');
+
+        
+        
+ 
+        $data = array('currentproductid'=>$currentProductId);
+ 
+        $block = $resultPage->getLayout()
+                ->createBlock('Product\Recommended\Block\Modal')
+                ->setTemplate('Product_Recommended::ajax.phtml')
+                ->setData('data',$data)
+                ->toHtml();
+ 
+        $result->setData(['output' => $block]);
+        return $result;
+    }
+ 
+}
+
+
+----------------------------------------------
+
+<?php
+namespace Product\Recommended\Block;
+
+use \Magento\Framework\View\Element\Template\Context;
+
+use Magento\Framework\View\Element\Template;
+
+class Modal extends Template
+{
+  public function __construct(Template\Context $context, array $data = [])
+    {
+        parent::__construct($context, $data);
+    }
+ 
+  protected function _prepareLayout()
+    {
+        return parent::_prepareLayout(); // TODO: Change the autogenerated stub
+    }
+ 
+  public function getProducts($productId)
+  {
+     
+     return 'Ankush Ajax';
+  }
+}
+
+
+
+

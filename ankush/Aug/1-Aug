@@ -1,0 +1,5 @@
+
+
+/opt/plesk/php/7.4/bin/php -f /var/www/html/manmano/index.php >> /var/www/vhosts/durovinbathrooms.com/logs/manomano.log
+
+/opt/plesk/php/7.4/bin/php -f /var/www/html/manmano/index.php >> /var/www/vhosts/durovinbathrooms.com/logs/manomano.log

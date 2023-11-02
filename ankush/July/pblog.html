@@ -1,0 +1,208 @@
+<link rel="stylesheet" href="https://fullcalendar.io/releases/core/4.2.0/main.min.css">
+<link rel="stylesheet" href="https://fullcalendar.io/releases/daygrid/4.2.0/main.min.css">
+<link rel="stylesheet" href="https://fullcalendar.io/releases/timegrid/4.2.0/main.min.css">
+<link rel="stylesheet" href="https://fullcalendar.io/releases/list/4.2.0/main.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+<script src="https://fullcalendar.io/releases/core/4.2.0/main.min.js"></script>
+<script src="https://fullcalendar.io/releases/daygrid/4.2.0/main.min.js"></script>
+<script src="https://fullcalendar.io/releases/timegrid/4.2.0/main.min.js"></script>
+<script src="https://fullcalendar.io/releases/list/4.2.0/main.min.js"></script>
+
+<style>
+	.wrapper{
+		display: flex;
+	}
+	#desc{
+		padding-top:100px;
+		text-align: center;
+		padding-left:100px;
+	}
+</style>
+
+<div class="wrapper">
+	<div id="fullcalendar" style="width:50%; height:500px"></div>
+	<div id="desc">
+		<h3>Total Days: <span id="days"></span> </h3>
+		<h3>Profit: <span id="profit"></span> </h3>
+		<h3 id="">Loss:  <span id="loss"></span></h3>
+		<h3 id="">After:  <span id="totl"></span></h3>
+		<!-- <h3 id="">W/L Ratio:  <span id="wlr"></span></h3>
+		<h3 id="">L Ratio:  <span id="lr"></span></h3> -->
+	</div>
+</div>
+
+<script>
+	var events = [
+  { start: "2023-07-05", title: 423.32 },
+  { start: "2023-07-06", title: 142.68 },
+  { start: "2023-07-07", title: 556.01 },
+  { start: "2023-07-08", title: "Holiday",classNames: "warning"},
+  { start: "2023-07-09", title: "Holiday",classNames: "warning"},
+  { start: "2023-07-10", title: 637.31 },
+  { start: "2023-07-11", title: -479.60 ,classNames: "error"},
+  { start: "2023-07-12", title: 1016.36 },
+  { start: "2023-07-13", title: -721.90, classNames: "error"},
+  { start: "2023-07-14", title: 290.25 },
+  { start: "2023-07-15", title: "Holiday",classNames: "warning"},
+  { start: "2023-07-16", title: "Holiday" ,classNames: "warning" },
+  { start: "2023-07-17", title: 1961 },
+  { start: "2023-07-18", title: 500 },
+//   { start: "2020-06-02", title: "2h, 1 issue", classNames: "warning" },
+//   { start: "2020-06-03", title: "8h 0m, 1 issue" },
+//   { start: "2020-06-04", title: "8h 15m, 2 issues" },
+//   { start: "2020-06-05", title: "8h, 1 issue" },
+//start: '2020-06-06', title: '8h' },
+//start: '2020-06-07', title: '8h' },
+//   { start: "2020-06-08", title: "8h, 2 issues" },
+//   { start: "2020-06-09", title: "8h, 4 issues" },
+//   { start: "2020-06-10", title: "8h, 1 issue" },
+//   { start: "2020-06-11", title: "0h", classNames: "error" },
+// Multiple event on one day example
+//   { start: "2020-06-15", title: "2h", issueKey: "TAS-123" },
+//   { start: "2020-06-15", title: "2h", issueKey: "TT-456" },
+//   { start: "2020-06-15", title: "2h", issueKey: "IDT-123" },
+//   { start: "2020-06-15", title: "2h", issueKey: "IDT-124" },
+
+];
+
+var profit = 0;
+var loss = 0;
+var totalDays = 0;
+var wr = 0;
+var lr = 0;
+
+events.forEach(function (v, i) {
+	if(v.title > 0){
+		profit += v.title;
+		wr += 1;
+		
+	}
+
+	if(v.title < 0){
+		loss += v.title;
+		lr += 1;
+	}
+
+	if(typeof v.title == 'number'){
+		totalDays += 1;
+	}
+
+
+});
+
+totl = profit + (loss);
+wr = profit/totalDays;
+lr = loss/totalDays;
+
+document.getElementById('profit').innerHTML = profit;
+document.getElementById('loss').innerHTML = loss;
+document.getElementById('totl').innerHTML = totl.toFixed(2);
+document.getElementById('days').innerHTML = totalDays;
+// document.getElementById('wlr').innerHTML = wr + lr / totalDays;
+// document.getElementById('lr').innerHTML = lr;
+
+$(function () {
+  var calendarEl = document.getElementById("fullcalendar");
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    plugins: ["dayGrid", "timeGrid", "list", "interaction"],
+    timeZone: "UTC",
+    themeSystem: "standard",
+    eventOrder: "start,title,-duration",
+    header: {
+      //left: 'prevYear,prev, today next,nextYear',
+      left: "prev,next today",
+      center: "title",
+      //right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+      right: "dayGridMonth,listYear"
+    },
+    defaultDate: "2023-07-01",
+    firstDay: 1,
+    weekNumbers: true,
+    eventLimit: false, // allow "more" link when too many events
+    //events: 'https://fullcalendar.io/demo-events.json',
+    events: events,
+    //editable: true,
+    droppable: true,
+    eventResizableFromStart: true,
+    eventResizableFromEnd: true,
+    eventDurationEditable: true,
+    eventRender: function (info) {
+      if (info.view.type === "listMonth") {
+        return;
+      }
+
+      let eventEl = info.el.querySelector(".fc-content");
+      let eventID = info.event.extendedProps.issueKey;
+      if (!eventID || !eventEl) return;
+
+      let link = document.createElement("a");
+      link.innerHTML = eventID;
+      link.title = "Open in Jira";
+      link.href = "https://jira.dummyurl.com/browse/" + eventID;
+      link.classList.add("float-right");
+
+      eventEl.appendChild(link);
+    }
+  });
+
+  calendar.render();
+});
+
+</script>
+
+<style>
+	/*  Hide "all-day" texts from list view... */
+.fc-list-item-time {
+  display:none;
+}
+
+
+.fc-event {
+  background-color: #2aae2a;
+  border: none;
+}
+
+.fc-content {
+  padding: 3px;
+}
+
+.fc-event-dot {
+  background-color: #2aae2a;
+}
+
+.warning {
+  background-color: #ff6500;
+}
+.fc-list-item.warning {
+  background-color: rgba(255, 101, 0, 0.5);
+}
+
+.fc-list-item.warning .fc-event-dot {
+  background-color: #ff6500;
+}
+
+.error {
+  background-color: #ff0040;
+}
+
+.fc-list-item.error {
+  background-color: rgba(255, 0, 64, 0.4);
+}
+
+.fc-list-item.error .fc-event-dot {
+  background-color: #ff0040;
+}
+
+
+
+.float-right {
+  float: right;
+}
+
+a {
+  color: white;
+}
+</style>

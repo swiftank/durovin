@@ -1,0 +1,55 @@
+/var/www/html/durovinbathrooms/vendor/magento/module-inventory-in-store-pickup-frontend/view/frontend/templates/success.phtml
+
+<script>
+// Google Analytics Purchase Event
+// author: Ankush 
+var items = <?php echo $block->orderItems() ?>;
+
+gtag("event", "purchase", {
+    transaction_id: items.transaction_id,
+    value: items.value,
+    tax: items.tax,
+    currency: items.currency,
+    items: items.items
+});
+	// Google AD
+	dataLayer.push({
+	'event':'purchase',
+	'order_value':'<?php echo $order->getGrandTotal(); ?>',    // Fetch total value dynamically
+	'order_id':'<?php echo $block->getOrderId(); ?>',   // Fetch Order id dynamically
+	'enhanced_conversion_data': {
+		"email": "<?php echo $order->getCustomerEmail(); ?>"   // Fetch user email dynamically
+	}
+})
+//console.log('debug', items);
+</script>
+
+Stores Sales /Payment Methods
+
+{
+    "transaction_id": "DB000006123",
+    "affiliation": "Durovin Bathrooms",
+    "value": "7.27",
+    "tax": "1.21",
+    "shipping": "0.00",
+    "items": [
+        {
+            "item_id": "F01",
+            "item_name": "Basin Fixing Bolt Pack",
+            "price": "6.06",
+            "quantity": 1
+        }
+    ]
+}
+
+[
+    {
+        "quantity": 1,
+        "item_name": "Chrome Shower Waste Trap with Extendable Flexible Pipe 90mm Fitting",
+        "item_id": "B50",
+        "price": 13.34,
+        "item_category": "Accessories Category",
+        "item_list_id": "accessories",
+        "item_list_name": "Accessories"
+    }
+]

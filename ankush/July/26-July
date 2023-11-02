@@ -1,0 +1,34 @@
+
+        
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml   
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Theme/web/js     
+ 
+ /var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/westylefashion/Magento_Theme/layout/default.xml   
+ /var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Newsletter/templates/popup_subscribe.phtml 
+ 
+ /var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Theme/layout/default.xml  
+        
+
+
+<referenceContainer name="footer-container">
+     <block class="Magento\Newsletter\Block\Subscribe" name="my.file" template="popup_subscribe.phtml" after="copyright"/>
+ </referenceContainer>
+ 
+
+ /var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Magento_Theme/js
+ 
+ 
+  // trigger modal custom 
+    $('.newAddToCart , .close_custom_product_modal, #product-addtocart-button').on('click', function(e){
+        document.getElementById('custom_product_modal').classList.toggle('_show');
+    });
+    
+    
+    https://magento.stackexchange.com/questions/122348/how-to-add-a-custom-page-with-cross-sell-products
+    
+        $('.newAddToCart').on('click', function(){
+        console.log('debug', $('#custom_product_modal'));
+        $('#custom_product_modal').addClass('_show');
+    });
+

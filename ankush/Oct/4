@@ -1,0 +1,25 @@
+
+
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
+
+sudo chmod 777 -R ./
+php bin/magento setup:di:compile
+php bin/magento cache:clean
+php bin/magento cache:flush
+sudo chmod 777 -R ./
+
+
+
+https://www.pofai.co.uk/recommendproducts/index/product?product_id=3894
+
+
+{"cart":{"summary_count":2,"subtotalAmount":26.68,"subtotal":"<span class=\"price\">£26.68</span>","possible_onepage_checkout":true,"items":[{"product_type":"simple","options":[],"qty":2,"item_id":"34426","configure_url":"http://durovinnew.com/checkout/cart/configure/id/34426/product_id/3894/","is_visible_in_site_visibility":true,"product_id":"3894","product_name":"Chrome Shower Waste Trap with Extendable Flexible Pipe 90mm Fitting","product_sku":"B50","product_url":"http://durovinnew.com/shower-tray-waste-trap","product_has_url":true,"product_price":"\n    <span class=\"price-including-tax\" data-label=\"Incl.&#x20;Tax\">\n            <span class=\"minicart-price\">\n            <span class=\"price\">£13.34</span>        </span>\n\n        </span>\n\n","product_price_value":"13.3400","product_image":{"src":"http://durovinnew.com/pub/media/catalog/product/cache/0d555b7210b791e76c33d9aabba73fa7/0/0/00_77_11.jpg","alt":"Chrome Shower Waste Trap with Extendable Flexible Pipe 90mm Fitting","width":110,"height":110},"canApplyMsrp":false,"message":""}],"extra_actions":"","isGuestCheckoutAllowed":true,"website_id":"1","storeId":"1","subtotal_incl_tax":"<span class=\"price\">£26.68</span>","subtotal_excl_tax":"<span class=\"price\">£22.23</span>","data_id":1696338187}}
+
+
+magentodb
+4_67Cmn5g
+
+
+https://mocki.io/v1/23483a81-6b12-4e9d-8589-0d70fd9e5615

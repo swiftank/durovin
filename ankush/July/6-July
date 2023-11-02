@@ -1,0 +1,384 @@
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list.phtml
+
+
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list/item.phtml - partiuclar post layout
+
+block - block \Magefan\Blog\Block\Post\PostList
+/var/www/html/durovinbathrooms/vendor/magefan/module-blog/Block/Post/PostList.php
+
+
+
+https://magefan.com/magento2-blog-extension/custom-blog-homepage
+
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magefan/module-blog/Block/Index.php
+
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list.phtml
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product/Overrideblog/Block
+https://magemastery.net/courses/magento-2-beginner/introduction
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Mage/Module/
+----------------------------------------------
+
+registation.php . module.xml file is used to create module 
+enable command and setup upgrad
+
+grep Mage_Module app/etc/config.php
+
+--------------------------------------------------------------------------------
+
+Create Page in Magento
+
+etc/frontend/routes.xml
+1.
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="ankush" frontName="ankush">
+            <module name="Mage_Module" />
+        </route>
+    </router>
+</config>
+
+2. Create Controller to crete page 
+
+Module/Controller/Page/class.php
+
+<?php 
+
+namespace Mage\Module\Controller\Page;
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\Result\Json;
+
+class View extends Action{
+
+    public function execute(){
+        $json = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        $json->setData([
+            'meesage' => 'My First Page'
+        ]);
+
+        return $json;
+    }
+}
+
+php bin/magento cache:clean
+
+
+-------------------------------------------------------------------------
+https://magemastery.net/courses/magento-2-beginner/template-layout-rendering
+
+Create Template in magento.
+directory view/frontend/layout/routeid_controller_class.xml file
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- for magento catalog list overrider -->
+        <referenceContainer name="content">
+			<block class="Magento\Framework\View\Element\Template"
+                    name="ankush.page.view" 
+                    template="Mage_Module::view.phtml"
+            >
+            <!-- name is just unique reference  -->
+            <!-- ankush means route name, page is controller, view is a class  -->
+            </block>
+		</referenceContainer>          
+    </body>
+</page>
+
+ <!-- layout="2columns-left" -->
+ 
+ 2. Create .phtml file in view/frontend/templates/file_mention_in_layout.xml file
+ 
+ 
+ 
+ Get Data from conteroller
+ 
+ Controller file
+ public function execute(){
+        // $json = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        // $json->setData([
+        //     'meesage' => 'My First Page'
+        // ]);
+
+        // return $json;
+
+        $page = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        $block = $page->getLayout()->getBlock('ankush.page.view');
+        $block->setData('custom_parameter', 'Data from the controller');
+        return $page;
+    }
+    
+   .phtml file 
+    <h1> <?php  echo $block->getData('custom_parameter'); ?> </h1>
+    
+    
+    /var/www/vhosts/pofai.co.uk/httpdocs/app/code/Mage/Blog/etc
+    /var/www/vhosts/pofai.co.uk/httpdocs/var/log
+    ----------------------------------------------------------------------------------------------------------------------------
+    Create module in magento 
+    1. Create Mage dir in app/code and create Blog directory inside Mage directory
+    2. Create registration.php file in module and paset below code
+    <?php 
+	declare(strict_types=1);
+
+	use Magento\Framework\Component\ComponentRegistrar;
+
+	ComponentRegistrar::register(
+	    ComponentRegistrar::MODULE,
+	     'Mage_Blog', __DIR__);
+     3. Create module.xml file in etc folder and paset below code
+     <?xml version="1.0"?>
+	<!--
+	/**
+	 * Copyright © Magento, Inc. All rights reserved.
+	 * See COPYING.txt for license details.
+	 */
+	-->
+	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+	    <module name="Mage_Blog" />
+	</config>
+     4. php bin/magento module:enable Mage_Blog
+     5. run php bin/magento setup:upgrade
+     6. run grep Mage_Blog app/etc/config.php
+
+
+ ------------------------------------------------------------------------------------------------------
+ 1. Create db-schema.xml file in etc directory inside module and pase below code
+ 
+	 <?xml version="1.0"?>
+
+	<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	    <table name="mage_blog_post" resource="default" engine="innodb" comment="Mage Blog Post Table">
+		 <column xsi:type="smallint" name="post_id" unsigned="false" nullable="false" identity="true"
+		         comment="Entity ID"/>
+		 <column xsi:type="varchar" name="title" nullable="true" length="255" comment="Page Title"/>
+		 <column xsi:type="text" name="meta_keywords" nullable="true" comment="Page Meta Keywords"/>
+		 <column xsi:type="text" name="meta_description" nullable="true" comment="Page Meta Description"/>
+		 <column xsi:type="varchar" name="content_heading" nullable="true" length="255" comment="Page Content Heading"/>
+		 <column xsi:type="mediumtext" name="content" nullable="true" comment="Page Content"/>
+		 <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+		         comment="Page Creation Time"/>
+		 <column xsi:type="timestamp" name="update_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+		         comment="Page Modification Time"/>
+
+		 <column xsi:type="varchar" name="meta_title" nullable="true" length="255" comment="Page Meta Title"/>
+		 <constraint xsi:type="primary" referenceId="PRIMARY">
+		     <column name="post_id"/>
+		 </constraint>
+	    </table>
+	</schema>
+	
+	output 
+	CREATE TABLE `mage_blog_post` (
+	`post_id` smallint  NOT NULL  AUTO_INCREMENT COMMENT "Entity ID", 
+	`title` varchar(255) NULL  COMMENT "Page Title", 
+	`meta_keywords` text NULL COMMENT "Page Meta Keywords", 
+	`meta_description` text NULL COMMENT "Page Meta Description", 
+	`content_heading` varchar(255) NULL  COMMENT "Page Content Heading", 
+	`content` mediumtext NULL COMMENT "Page Content", 
+	`creation_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT "Page Creation Time", 
+	`update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT "Page Modification Time", 
+	`meta_title` varchar(255) NULL  COMMENT "Page Meta Title", 
+	CONSTRAINT  PRIMARY KEY (`post_id`)
+	) ENGINE=innodb DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_general_ci COMMENT="Mage Blog Post Table"
+   
+ 2. run php bin/magento setup:upgrade --dry-run=1   after this php bin/magento setup:upgrade
+ 
+ --------------------------------------------------------------------------------
+ 
+ 1.Create New Directory Model in module and create file inside Model dir name Post.php
+    <?php
+
+	declare(strict_types=1);
+
+	namespace Mage\Blog\Model;
+	use Magento\Framework\Model\AbstractModel;
+	use Mage\Blog\Model\ResourceModel\Post as PostResource;
+
+	class Post extends AbstractModel{
+
+	    protected function _construct(){
+		 $this->_init(PostResource::class); // Declare Resource Model 
+	    }
+
+	}
+	
+ 2. Create Resource Model dir and create class post.php
+	 <?php
+
+	declare(strict_types=1);
+
+	namespace Mage\Blog\Model\ResourceModel;
+	use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
+
+	class Post extends AbstractDb{
+
+	    private const TABLE_NAME = 'mage_blog_post';
+	    private const PRIMARY_KEY = 'post_id';
+
+	    protected function _construct(){
+		 $this->_init(self::TABLE_NAME, self::PRIMARY_KEY); 
+	    }
+
+	}
+
+3. Create post dir in Reource model dir and create collection class 	
+	<?php
+
+	declare(strict_types=1);
+
+	namespace Mage\Blog\Model\ResourceModel\Post;
+
+	use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+	use Mage\Blog\Model\Post;
+	use Mage\Blog\Model\ResourceModel\Post as PostResource;
+
+
+
+	class Collection extends AbstractCollection{
+
+	    protected function _construct(){
+		 $this->_init(Post::class, PostResource::class); 
+	    }
+
+	}
+---------------------------------------------------------------------------------
+
+Create admin Page 
+1. Create adminhtml in etc dir in module
+2. create menu.xml and routes.xml in adminhtml page
+routes.xml 
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="mage_blog" frontName="mage_blog">
+            <module name="Mage_Blog" before="Magento_Backend" />
+        </route>
+    </router>
+</config>
+3. menu.xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mage_Blog::content_elements" 
+        title="Mage Blog" 
+        translate="title" 
+        module="Mage_Blog" 
+        sortOrder="10" 
+        parent="Magento_Backend::content" 
+        resource="Magento_Backend::admin"/>
+         <add id="Mage_Blog::post" 
+        title="Posts" 
+        translate="title" 
+        module="Mage_Blog" 
+        sortOrder="0" 
+        parent="Mage_Blog::content_elements" 
+        action="mage_blog/post" 
+        resource="Magento_Backend::admin"/>
+    </menu>
+</config>
+php bin/magento cache:clean
+
+
+create dir controller/Adminhtml/Post in module dir and create index class
+
+<?php
+
+namespace Mage\Blog\Controller\Adminhtml\Post;
+
+use Magento\Backend\App\Action;
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\Controller\ResultFactory;
+
+class Index extends Action implements HttpGetActionInterface {
+
+    public function execute(): Page{
+
+        $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        $resultPage->setActiveMenu('Mage_Blog::post');
+        $resultPage->getConfig()->getTitle()->prepend(__('Manage Posts'));
+        return $resultPage;
+    }
+}
+
+
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view
+
+
+	
+
+ 
+ 
+ 
+ 
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+ 
+ 
+ 
+
+
+
+
+
+
+
+

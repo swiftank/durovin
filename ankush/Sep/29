@@ -1,0 +1,205 @@
+
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-theme/view/frontend/templates/root.phtml - root
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-configurable-product/view/frontend/templates/product/view/addtocart.phtml - Configrable
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-catalog/view/frontend/templates/product/view/addtocart.phtml - simple
+
+
+---------------------
+/var/www/html/durovinbathrooms2/app/design/frontend/Plumrocket/amp_durovin_theme/Plumrocket_AmpCatalog/templates/addtocart.phtml
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-catalog/view/frontend/layout/amp_catalog_product_view.xml
+
+
+
+text-align: center;
+    margin: 0px;
+    background: red;
+    color: #fff;
+    padding: 10px
+px
+;
+
+<p style="
+    text-align: center;
+    margin: 0px;
+    background: red;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+">Due to some technical issue, our phone line is temporary not working.<br> Please contact us through live chat or email.</p>
+
+app/design/frontend/base/default/template/page/html/notices.phtml
+
+
+
+/var/www/html/durovinbathrooms2/vendor/magento/module-theme/view/frontend/templates/html/notices.phtml
+
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magento/module-theme/view/frontend/templates/html
+
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magento/module-theme/view/frontend/templates/html
+
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/vendor/magento/module-theme/view/frontend/templates/html - live desktop
+/var/www/vhosts/durovinbathrooms.com/httpdocs/vendor/plumrocket/module-amp-theme/view/frontend/templates/root.phtml - mobile
+
+
+
+--------------------------------------------
+
+
+<?php
+/**
+ * @package     Plumrocket_Amp
+ * @copyright   Copyright (c) 2021 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+
+/** @var \Plumrocket\AmpCatalog\Block\Product\View\AddToCart $block */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php if ($_product->isSaleable()): ?>
+<div class="product-opt-bottom">
+    <?php if ($block->shouldRenderQuantity()): ?>
+        <div class="product-opt-bottom__qty">
+            <label for="qty-field"><?= $block->escapeHtml(__('Qty')) ?></label>
+            <input type="number"
+                   name="qty"
+                   on="input-debounced:AMP.setState({ inputValue: event.value })"
+                   id="qty"
+                   min="0"
+                   value="<?= $block->getProductDefaultQty() * 1 ?>"
+                   title="<?= $block->escapeHtmlAttr(__('Qty')) ?>"
+                   class="product-opt-bottom__input">
+        </div>
+    <?php endif; ?>
+    <button 
+            class="btn btn__primary product-opt-bottom__btn add_to_cart_simple"
+            style="position: relative;"
+            on="tap:player.show,playerbutton2.hide,playerbutton1.show"
+            title="<?= $block->escapeHtmlAttr($buttonTitle) ?>">
+        <?= $block->escapeHtml($buttonTitle) ?>
+        <div submitting class="btn btn__primary product-opt-bottom__btn loader_wrp">
+            <span class="loader_btn">
+                <span></span><span></span><span></span><span></span>
+            </span>
+        </div>
+    </button>
+    <?= $block->getChildHtml('', true) ?>
+</div>
+<?php endif; ?>
+
+<?php echo $_product->getName()  . '  <br>- Simplele Product -----Ankush ' ; ?>
+  <!-- Display the input value -->
+  <div [text]="inputValue"></div>
+
+  <input type="text" id='inputField' value='19'>
+
+  <?php echo $block->getProductDefaultQty() * 1; ?>
+  
+  <amp-state id="myState">
+        <script type="application/json">
+            {
+                "myVariable": "Hello, World!"
+            }
+        </script>
+    </amp-state>
+    
+<amp-analytics type="gtag" data-credentials="include">
+        <script type="application/json">
+        {
+        "vars" : {
+            "gtag_id": "G-R9J8522NWQ",
+            "config" : {
+            "G-R9J8522NWQ": { "groups": "default" }
+            }
+        },  "triggers": {
+    "button": {
+      "selector": ".add_to_cart_simple",
+      "on": "click",
+      "vars": {
+        "event_name": "view_item2",
+        "item": "<?php echo $_product->getName(); ?>",
+        "price": <?php echo $_product->getPrice(); ?>,
+        "qty": "<?php $block->getProductDefaultQty() * 1 ?>"
+        
+      }
+    }
+  }
+        }
+        </script>
+</amp-analytics>
+
+<script type="module">
+    alert()
+    function updatePHPVariable() {
+        alert('dd');
+            // Get the input field value
+            const inputValue = document.getElementById('inputField').value;
+            alert(inputValue);
+
+            // Create an AJAX request
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '', true); // Use the same PHP file
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Update the PHP variable value on the page
+                    document.getElementById('phpVariable').textContent = xhr.responseText;
+                }
+            };
+            xhr.send('inputValue=' + encodeURIComponent(inputValue));
+        }
+        updatePHPVariable()
+    </script>
+
+
+
+
+    <?php
+    // Check if the AJAX data has been received
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["inputValue"])) {
+        // Get the updated value from the AJAX request
+        $inputValue = $_POST["inputValue"];
+
+        // Update the PHP variable
+        $phpVariable = "Updated Value: " . $inputValue;
+
+        // Return the updated value to the JavaScript using AJAX
+        echo $phpVariable;
+        exit(); // Terminate the script after sending the response
+    }
+    ?>
+
+<!-- <input type="text" id="inputField" name="inputField" class="product-opt-bottom__input">
+<amp-script layout="fixed-height" height="0" script="alert-script.js">
+        <div id="amp-script-container"></div>
+    </amp-script>
+
+    <script type="module">
+        const container = document.getElementById('amp-script-container');
+        const inputField = document.getElementById('inputField');
+
+        inputField.addEventListener('input', function () {
+            const inputValue = inputField.value;
+            localStorage.setItem('add_to_cart_qty', inputValue )
+        });
+    </script> -->
+
+
+
+<!-- <button id="playerbutton1" type='button' class="button" hidden on="tap:player.hide,playerbutton1.hide,playerbutton2.show">hide me</button>
+<button id="playerbutton2" type='button' class="button" on="tap:player.show,playerbutton2.hide,playerbutton1.show">show me</button>    
+<div id="player" hidden>some content</div> -->
+
+
+
+<?php $a = 0; ?>
+
+
+
+
+
+
+

@@ -1,0 +1,621 @@
+https://www.traveljaunts.in/
+
+X)0y3LtwvvE4%c0X5sO!Ew$4
+
+
+
+no 1 - https://www.traveljaunts.in/tour-category/india-art-history-culture-tours-top-6/ - in all category pages, the description has to be below the tours. I updated the theme and something went wrong
+
+2. On homepage - popular tour packages , the full text is not coming- It is getting cut https://www.traveljaunts.in/
+
+Then I have added phone pe and razor pe but booking page is not working - https://www.traveljaunts.in/tour/khajuraho-worlds-finest-erotic-art-depicting-kama-sutra/ If you click on booking nothing happens, check out page is not coming and payment integration needs to be correctly done
+
+
+
+
+
+.traveltour-top-bar-background, .traveltour-header-style-plain .traveltour-header-background,.gdlr-core-page-builder-body [data-skin="Dark Search"] input[type="button"], .gdlr-core-page-builder-body [data-skin="Dark Search"] input[type="submit"],.traveltour-header-background, .traveltour-sticky-menu-placeholder, .traveltour-header-style-boxed.traveltour-fixed-navigation, .tourmaster-tour-search-wrap input.tourmaster-tour-search-submit[type="submit"],.gdlr-core-body .gdlr-core-load-more, .gdlr-core-body .gdlr-core-button, .traveltour-body .traveltour-button, .traveltour-body input[type="button"], .traveltour-body input[type="submit"],.gdlr-core-pagination a:hover, .gdlr-core-pagination a.gdlr-core-active, .gdlr-core-pagination span {
+	background-color:#02becc;
+}
+.traveltour-top-bar i, .textwidget i{
+	color:#ffff00 !important;
+}
+.traveltour-sticky-navigation.traveltour-fixed-navigation .traveltour-header-background{
+	background:rgba(2, 190, 204, 0.9);
+}
+.sf-menu > .traveltour-normal-menu li, .sf-menu > .traveltour-mega-menu > .sf-mega, .sf-vertical ul.sub-menu li, ul.sf-menu > .menu-item-language li{
+	background-color:#ffffff;
+}
+.traveltour-navigation .sf-menu > .traveltour-mega-menu .sf-mega-section-inner{
+	padding:15px;
+}
+.gdlr-core-page-builder-body [data-skin="Blue Column Service"] h1, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] h2, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] h3, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] h4, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] h5, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] h6, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] .gdlr-core-skin-title, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] .gdlr-core-skin-title a, .gdlr-core-page-builder-body [data-skin="Blue Column Service"] label{
+	color:#383838;
+}
+.traveltour-logo{
+	padding-top:12px;
+}
+.sf-menu > li > .sub-menu a, .sf-menu > .traveltour-mega-menu > .sf-mega a, .sf-vertical ul.sub-menu li a{
+	color:#4a4a4a;
+}
+.traveltour-footer-wrapper, .gdlr-core-flexslider.tourmaster-nav-style-rect .flex-direction-nav li a{
+	background-color:#02becc
+}
+.textwidget .logo{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+.traveltour-footer-wrapper{
+	color:#000000;
+}
+.tourmaster-thumbnail-ribbon{
+	background-color:#ffff00 !important;
+	color:#000000 !important;
+}
+.tourmaster-tour-rating i, .tourmaster-review-form .tourmaster-review-form-rating, .tourmaster-single-review-content .tourmaster-single-review-detail-rating i, .tourmaster-tour-review-item .tourmaster-tour-review-item-rating i, .tourmaster-tour-search-field-rating .tourmaster-rating-select{
+	color:#ffff00;
+}
+.tourmaster-tour-item .tourmaster-tour-grid .tourmaster-tour-discount-price, .tourmaster-tour-item .tourmaster-tour-grid .tourmaster-tour-price .tourmaster-tail, .tourmaster-tour-info-wrap .tourmaster-tour-info i, .icon_pin_alt, .tourmaster-tour-category-grid.tourmaster-with-thumbnail .tourmaster-tour-category-count, .tourmaster-body .tourmaster-tour-category-grid .tourmaster-tour-category-head-link, .fa, .gdlr-core-title-item-link,.gdlr-core-icon-list-content, .gdlr-core-blog-info-wrapper a{
+	color:#02becc !important;
+}
+.TestimonialS .gdlr-core-container{
+	padding-left:0;
+	padding-right:0;
+}
+.searchboxBG label{
+	color:#ffffff !important;
+}
+.gdlr-core-pbf-column-content-margin{
+	margin:0 !important;
+}
+.whybookwithus h3, .whybookwithus p{
+	color:#000 !important;
+}
+.black_clr h3{color:#02becc !important;}
+.gdlr-core-testimonial-item-title, .WWR h3{
+	padding-top:30px;
+}
+.traveltour-main-menu-search i{
+	color:#ffffff !important;
+} 
+.traveltour-sidebar-area{
+	padding-right:60px;
+	padding-left:60px;
+}
+li .gdlr-core-icon-list-content, li .gdlr-core-icon-list-icon-wrap i{
+	color:#202020 !important;
+}
+i.fa.gdlr-core-skin-e-background.gdlr-core-skin-e-content {
+    color: #ffffff !important;
+}
+.cus_image .gdlr-core-pbf-wrapper-container{
+	display:flex;
+}
+.cus_image .gdlr-core-pbf-wrapper-container .gdlr-core-pbf-column{
+	flex:1;
+}
+.cus_image .gdlr-core-pbf-wrapper-container .gdlr-core-pbf-column{
+	
+}
+.first-image{
+	background:url(https://www.traveljaunts.in/wp-content/uploads/2019/06/tiger.jpg);
+	    background-size: cover;
+}
+.second-image{
+	background:url(https://www.traveljaunts.in/wp-content/uploads/2019/06/tower.jpg);
+	    background-size: cover;
+}
+.third-image{
+	background:url(https://www.traveljaunts.in/wp-content/uploads/2019/06/familyfd.png);
+	    background-size: cover;
+	    background-position: top right;
+}
+.first-image, .second-image, .third-image  {
+    display: flex;
+    height: 100%;
+ 
+}
+
+.gdlr-core-divider-item-normal .gdlr-core-divider-line{
+	padding-top:1px;
+}
+.widget_search .search-form input.search-field{
+	background-color:#02becc;
+	color:#ffffff;
+}
+.widget_search .search-form input.search-field::placeholder, .widget_search form:after{
+	color:#ffffff;
+}
+#text-16 p{
+	text-align:justify;
+	color:#ffffff;
+}
+.packageBG li img {
+	height:220px !important;
+}
+.DestiBlog .tourmaster-tour-category-grid img{
+	height:303px !important;
+}
+.TBloG .gdlr-core-blog-thumbnail img{
+	height:235px;
+}
+#newsletterwidget-2{
+	background-color:#02becc;
+	padding:10px 15px;
+	color:#ffffff;
+}
+#newsletterwidget-2 .traveltour-widget-head-text{
+	color:#383838
+}
+.postcontentImage img{
+	height:218px;
+}
+.gdlr-core-blog-item .gdlr-core-blog-full .gdlr-core-blog-thumbnail img{
+	height:308px;
+	object-fit:cover;
+}
+.sonuclass img{
+	height:680px !important;
+	width:680px !important;
+}
+.tourmaster-single-header{
+	height:644px;
+}
+.tourmaster-tour-thumbnail a img{
+	width:100%;
+	height:210px;
+}
+.tourmaster-recent-tour-widget 
+.tourmaster-tour-thumbnail a img{
+	height:75px;
+}
+.tourmaster-tour-grid.tourmaster-tour-frame .tourmaster-tour-content-wrap{
+	height:180px;
+}
+.tourmaster-with-sidebar .tourmaster-template-wrapper .tourmaster-tour-booking-bar-wrap .gdlr-core-widget-box-shortcode{
+	color: #ffffff;
+	background-color:rgba(2, 190, 204, 0.6)
+}
+.tourmaster-tour-grid .tourmaster-tour-discount-price, .tourmaster-tour-grid .tourmaster-tour-price{
+	font-size:16px;
+}
+/*landing page*/
+.padding_zero{padding:0px!important;}
+.internatinal_cus {
+    padding-top: 251px;
+}
+/*landing page*/
+
+.slider-area {
+    position: relative;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.slide-upper {
+    position: inherit;
+    top: 0;
+    padding-top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+.s-heading {
+    position: absolute;
+    right: 25px;
+    text-align: right;
+    width: 50%;
+}
+.s-heading h3 {
+    font-size: 23px;
+    font-weight: 500;
+    float: right;
+    padding-top: 10px;
+}
+.form-area, .refer-area {
+    float: right;
+    padding: 15px;
+    
+    width: 300px;
+    text-align: center;
+    color: #fff;
+    background: rgba(169,169,169,0.5);
+    box-sizing: border-box;
+    margin-right: 25px;
+}
+.form-area h2, .refer-area h2 {
+    font-size: 30px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.form-area h3, .refer-area h3 {
+    font-size: 17px;
+    color: #000;
+	text-align:center;
+font-family: 'Arimo', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.blue-area {
+    background: #03becd;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.days, .flight {
+    float: left;
+    width: 34%;
+	    padding: 0 10px;
+    padding: 5px 10px;
+    text-align: right;
+    border: 2px solid #000;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.3;
+}
+.flight{
+	text-align:left;
+}
+input.cf7mls_back {
+    display: none;
+}
+.win {
+    float: left;
+    width: 66%;
+    text-align: left;
+    padding: 10px;
+    color: #000;
+	margin-top:4px;
+    font-size: 16px;
+    line-height: 1.3;
+    padding-top: 0;
+}
+.traveltour-body div.wpcf7-response-output{font-size:12px!important;}
+.win b{
+    font-size: 11px;
+    display: block;
+	font-weight:500;
+}
+.refer-area .win{
+	text-align:right;
+}
+.stay h2 {
+    font-weight: 300;
+}
+.s-heading h3 b {
+
+    font-weight: 500;
+ 
+}
+.stay h5 {
+    font-weight: 600;
+	font-size:16px;
+   margin-bottom: 10px;
+}
+.stay .wpcf7-form-control-wrap input[type=text], .stay .wpcf7-form-control-wrap input[type=email]  {
+    font-size: 13px;
+    padding: 15px 22px;
+    width: 100%;
+    border: 2px solid #222 !important;
+    display: block;
+    background: transparent !important;
+	color:#000;
+	margin-bottom:10px;
+    height: 30px !important;
+}
+.stay input.wpcf7-form-control.wpcf7-submit {
+    padding: 10px;
+    line-height: 1;
+    font-weight: 600;
+}
+.notes {
+    float: left;
+    text-align: left;
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+}
+.full.stay {
+    float: left;
+    width: 100%;
+}
+b.cross {
+	display:none;
+    position: absolute;
+    right: 35px;
+	margin-top:-5px;
+    border: 1.5px solid #000;
+    border-radius: 50%;
+    padding: 0px 8px;
+	    cursor: pointer;
+}
+b.cross i {
+    color: #000 !important;
+}
+
+.full.s-bottom {
+    bottom: 107px;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    color: #000;
+    background: rgba(196,196,188,0.8);
+    padding: 0px 10px;
+    font-size: 25px;
+    font-weight: 400;
+	text-align:right;
+    padding-right: 25px;
+}
+.full.s-bottom b {
+    background: #6c6c6a;
+    padding: 5px 10px;
+    font-weight: 500;
+    margin-left: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 360px;
+    display: inline-block;
+	text-align:right;
+}
+form.wpcf7-form p {
+    margin-bottom:0px;
+	line-height:17px;
+}
+
+.refer-area{
+	display:none;
+}
+.cf7mls_next.action-button, .cf7mls_back.action-button{
+	background:#03becd;
+	    padding: 10px;
+    line-height: 1;
+    font-weight: 600;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000;
+}
+::-moz-placeholder { /* Firefox 19+ */
+ color: #000;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #000;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #000;
+}
+.notes p{
+	margin-bottom:-1px;
+}
+.cus_image img{width:100%;}
+.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+    background: #02becc;
+    border: 0;
+    margin-bottom: 10px;
+}
+.custom_dv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    height: 100%;
+    min-height: 400px;
+}
+.top_wrapper{position:absolute;}
+.slider-area img {
+    width: 100%;
+}
+.slider-area {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.top_wrapper {
+    width: 100%;
+   position:relative;
+    z-index: 99999;
+}
+.days span {
+    display: block;
+}
+.full.stay h2{font-size:17px;text-align:center;}
+.top_travel img {
+       width: 220px!important;
+    height: auto!important;
+}
+.map_text{text-align:center;}
+.map_text span{color:#3facb1;}
+.black_clr p{color:#000!important;}
+.white{
+	margin-bottom:5px!important;
+	color:#fff !important;
+}
+.text-areass {
+    padding-left: 28px;
+}
+.box {
+   
+	background-image: url('https://www.traveljaunts.in/wp-content/uploads/2019/06/timelinemarker1.png');
+
+background-repeat: no-repeat;
+
+background-position: bottom;
+
+height: 49px;
+
+position: relative;
+
+text-align: center;
+
+display: inline-block;
+
+width: 8%;
+
+vertical-align: top;
+}
+.banner-wrapper {
+    background: url(https://www.traveljaunts.in/wp-content/uploads/2019/06/new.jpg) no-repeat;
+    background-position: 0 0;
+    float: left;
+    background-size:cover;
+    width: 100%;
+    padding: 30px 0 !important;
+    overflow: hidden;
+
+}
+.banner-wrapper .slider-area div {
+    min-height: initial;
+}
+.timeLine {
+    width: 100%;
+    height: 49px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(3,190,205);
+    padding: 10px 5px;
+}
+.timeLine h1 {
+   
+    font-size: 12px;
+   
+    color: rgba(3,190,205,0.6);
+}
+.timeLine > div ul {
+
+    padding: 20px 5px 10px 0px;
+    display: none;
+    cursor: default;
+    position: absolute;
+    top: 48px;
+    left: 2px;
+
+}
+.timeLine > div ul li {
+    padding: 5px 0;
+    width: 90px;
+    text-align: left;
+    list-style: none;
+	font-weight:normal;
+    font-size: 13px;
+    color: rgba(3,190,205,0.6);
+    letter-spacing: 1px;
+}
+.timeLine > div ul li a {
+
+    display: block;
+
+}
+
+.box:hover ul{
+	display:block !important;
+}
+.timeLine > div:hover {
+
+    background-image: url('https://www.traveljaunts.in/wp-content/uploads/2019/06/timelinemarker2.png');
+
+}
+.timeLine > div:hover h1 {
+
+   
+    color: rgba(3,190,205,1);
+
+}
+.tiger_background{background-image:url('https://www.traveljaunts.in/wp-content/uploads/2019/06/tiger.jpg');}
+.col-container {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+}
+.mobile{
+		display:none;
+	}
+@media screen and (max-width:2000px){.banner-wrapper{padding: 30px 0 150px 0px !important;}}
+@media screen and (max-width:1500px){.banner-wrapper{padding: 30px 0px !important;}}
+@media screen and (max-width:1366px){
+.s-heading h3 {
+	font-size: 18px;}
+	
+	
+}
+@media screen and (max-width:1199px){.slide-upper{    padding-top: 40px;}
+	.box{
+		width:7.8%;
+	}
+}
+@media screen and (max-width:1023px){
+	.timeLine{
+		display:none;
+	}
+}
+@media screen and (max-width:768px){
+	.slide-upper {
+    padding-top: 0;
+}
+	.form-area, .refer-area {
+    float: right;
+    padding: 15px;
+    width: 92%;
+    text-align: center;
+    color: #fff;
+    background: rgba(169,169,169,0.5);
+    box-sizing: border-box;
+    margin: 15px;
+}
+	.cus_image .gdlr-core-pbf-wrapper-container {
+    display: block;
+}
+	.first-image, .second-image, .third-image {
+    display: block;
+		height: 420px;
+  
+}
+	.cus_image .gdlr-core-pbf-background{
+	
+		    height: 420px !important;
+	}
+	.desk{
+		display:none;
+	}
+	.mobile{
+		display:block
+	}
+	.custom_dv{
+		min-height:initial;
+	}
+}
+@media screen and (max-width:767px){
+	.gdlr-core-pbf-wrapper-full-no-space {
+    max-width: 100%;
+}
+}
+
+@media screen and (max-width:480px){
+	.top_travel img {
+    width: 100%;
+}
+	.top_travel {text-align:center!important;}
+	
+}
+
+
+
+traveljaunts
+
+ii35FdjtqVjY2bA
+
+
+
+
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-theme/view/frontend/templates/root.phtml
+
+
+
+
+
+

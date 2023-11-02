@@ -1,0 +1,55 @@
+https://magento.stackexchange.com/questions/163709/how-can-i-prevent-my-cart-form-being-empty-after-checkout-payment-failure?rq=1
+
+
+https://magento.stackexchange.com/questions/180042/prevent-magento-2-from-empty-the-cart-after-cancel-fail-payments?rq=1
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $_checkoutSession = $objectManager->create('\Magento\Checkout\Model\Session');
+    $_quoteFactory = $objectManager->create('\Magento\Quote\Model\QuoteFactory');
+    
+    $order = $_checkoutSession->getLastRealOrder();
+    $quote = $_quoteFactory->create()->loadByIdWithoutStore($order->getQuoteId());
+    if ($quote->getId()) {
+        $quote->setIsActive(1)->setReservedOrderId(null)->save();
+        $_checkoutSession->replaceQuote($quote);
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('checkout/cart');
+        //$this->messageManager->addWarningMessage('Payment Failed.');
+        return $resultRedirect;
+    }
+    
+    
+    <a href="https://www.instamojo.com/@infoovlo/" rel="im-checkout" data-text="Pay" data-css-style="color:#ffffff; background:#75c26a; width:300px; border-radius:4px"   data-layout="vertical"></a>
+<script src="https://js.instamojo.com/v1/button.js"></script>
+
+
+
+
+/var/www/html/durovinbathrooms/app/code/Codazon/AjaxCartPro/Controller/Cart/Add.php
+/var/www/html/durovinbathrooms/app/code/Codazon/AjaxCartPro/Controller/Product/Wishlist/Moveallfromcart.php
+/var/www/html/durovinbathrooms/app/code/Codazon/AjaxCartPro/Controller/Product/Wishlist/Fromcart.php
+/var/www/html/durovinbathrooms/app/code/Codazon/OneStepCheckout/Plugin/Checkout/Controller/Index/Index.php
+/var/www/html/durovinbathrooms/app/code/Codazon/OneStepCheckout/Helper/Data.php
+/var/www/html/durovinbathrooms/app/code/Codazon/ShippingCostCalculator/Controller/Index/Index.php
+
+/var/www/html/durovinbathrooms/app/code/Magebird/Model/Plugin.php
+/var/www/html/durovinbathrooms/app/code/Magebird/Observer/Updatesession.php
+/var/www/html/durovinbathrooms/app/code/Mageplaza/Smtp/Block/AbandonedCart.php
+
+
+
+
+
+
+
+
+
+
+https://stackoverflow.com/questions/14325745/magento-1-7-0-2-cart-gets-empty-when-canceling-payment-on-paypal-page
+https://stackoverflow.com/questions/36789133/get-shopping-cart-details-in-magento2
+
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/Controller/Onepage/SaveOrder.php
+
+
+/var/www/html/durovinbathrooms/vendor/magento/module-quote/Model/QuoteManagement.php
+https://www.pofai.co.uk/rest/default/V1/stripe/payments/restore_quote

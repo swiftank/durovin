@@ -1,0 +1,20 @@
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/view/frontend/templates/onepage/failure.phtml
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/Block/Onepage/Failure.php
+/var/www/html/durovinbathrooms/app/code/Codazon/OneStepCheckout/Plugin/Checkout/Controller/Index/Index.php
+
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/Controller/Onepage/Failure.php
+
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/Block/Cart.php
+
+
+
+     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $quotefactory = $objectManager->get('Magento\Quote\Model\QuoteFactory');
+        $quote = $quotefactory->create()->load('your_quote_id');
+        $quote->setIsActive(true);
+        $quote->save();
+        
+        
+        
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$model = $objectManager->create('\Namespace\Modulename\Model\Modulename');

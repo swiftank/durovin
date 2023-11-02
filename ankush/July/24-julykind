@@ -1,0 +1,91 @@
+magefan_blog_post
+magefan_blog_post_categories
+magefan_blog_post
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list.phtml
+/var/www/html/durovinbathrooms/vendor/magefan/module-blog/Block/Index.php
+/var/www/html/durovinbathrooms/vendor/magefan/module-blog/view/frontend/templates/tag/info.phtml
+/var/www/html/durovinbathrooms/vendor/magefan/module-blog/Block/Tag/Info.php
+
+SELECT
+  student.first_name,
+  student.last_name,
+  course.name
+FROM student
+JOIN student_course
+  ON student.id = student_course.student_id
+JOIN course
+  ON course.id = student_course.course_id;
+  
+
+
+SELECT  magefan_blog_post.title, magefan_blog_post.publish_time,magefan_blog_post.identifier, magefan_blog_post.featured_img, magefan_blog_post_category.post_id, magefan_blog_post.meta_description, magefan_blog_category.title,magefan_blog_category.category_id FROM magefan_blog_category
+RIGHT JOIN magefan_blog_post_category ON magefan_blog_category.category_id  = magefan_blog_post_category.category_id
+RIGHT JOIN magefan_blog_post ON magefan_blog_post_category.post_id  = magefan_blog_post.post_id WHERE magefan_blog_post.post_id = 122;
+
+
+
+	<?php  foreach ($popularPost->buyers_guides as $_post): ?>
+        <div class="post">
+			<a href="/news/post/<?php echo $_post->identifier;?>">
+                <img src="https://www.durovinbathrooms.com/pub/media/blog/cache/400x/<?php echo $_post->featured_img; ?>"
+                    alt="">
+            </a>	
+            <p class="title">
+                <a href="/news/post/<?php echo $_post->identifier;?>">
+                    <?php echo $_post->title; ?>
+                </a>
+            </p>
+            <p class='ph'>
+                <?php echo $_post->meta_description; ?>
+            </p>
+
+            <div class="post_footer">
+                <span></span>
+                <span><?php  
+                $dateValue = strtotime($_post->publish_time);
+                echo date('d',$dateValue) . ' '.date('F',$dateValue) .' ' .   date('Y',$dateValue) ; ?></span>
+            </div>
+        </div>
+		<?php  endforeach; ?>
+		
+		$popularposts = $connection->fetchAll("SELECT identifier, title, meta_description, publish_time, featured_img FROM magefan_blog_post where  post_id IN (111,89,78) AND is_active = 1 ORDER BY post_id DESC"); 
+		
+		 calculate candle high low 100 points and next target 100 point 
+		 1. Wait till the candle high low breaks
+		 2. 100 points profit and second target is height of first candle
+		 3. No breakout avoid
+		 
+	
+		  		
+		  		
+		 
+		 	
+		 	
+		 
+		 
+		 
+		  $objectManager =   \Magento\Framework\App\ObjectManager::getInstance();
+        $connection = $objectManager->get('Magento\Framework\App\ResourceConnection')->getConnection('\Magento\Framework\App\ResourceConnection::DEFAULT_CONNECTION'); 
+        $buyers_guide = $connection->fetchAll("SELECT identifier, title, meta_description, publish_time, featured_img FROM magefan_blog_post where  post_id IN (118,120,94) AND is_active = 1 ORDER BY post_id DESC"); 
+        $general_guide = $connection->fetchAll("SELECT identifier, title, meta_description, publish_time, featured_img FROM magefan_blog_post where  post_id IN (97,112,82) AND is_active = 1 ORDER BY post_id DESC"); 
+        $newjack = $connection->fetchAll("SELECT identifier, title, meta_description, publish_time, featured_img FROM magefan_blog_post where  post_id IN (170,146,92) AND is_active = 1 ORDER BY post_id DESC"); 
+        $popularposts = $connection->fetchAll("SELECT identifier, title, meta_description, publish_time, featured_img FROM magefan_blog_post where  post_id IN (111,89,78) AND is_active = 1 ORDER BY post_id DESC"); 
+        $arr = [ 'buyers_guides' => $buyers_guide ,'general_guides' => $general_guide ,'news_jack' => $newjack,  'popular_posts' => $popularposts ];
+        
+        
+        https://read.amazon.co.uk/kindle-library
+        return $arr; 
+        
+        1 
+        
+        
+        
+        
+
+        
+        
+        
+        

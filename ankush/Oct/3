@@ -1,0 +1,41 @@
+
+<!-- <amp-analytics type="gtag" data-credentials="include">
+        <script type="application/json">
+        {
+        "vars" : {
+            "gtag_id": "G-R9J8522NWQ",
+            "config" : {
+            "G-R9J8522NWQ": { "groups": "default" }
+            }
+        },  "triggers": {
+    "button": {
+      "selector": ".product-opt-bottom__btn",
+      "on": "click",
+      "vars": {
+        "event_name": "add_to_cart",
+        "item": "<?php //echo $_product->getName(); ?>",
+        "price": <?php //echo $_product->getPrice(); ?>
+      }
+    }
+  }
+        }
+        </script>
+</amp-analytics> -->
+
+<!-- <button id="playerbutton1" type='button' class="button" hidden on="tap:player.hide,playerbutton1.hide,playerbutton2.show">hide me</button>
+<button id="playerbutton2" type='button' class="button" on="tap:player.show,playerbutton2.hide,playerbutton1.show">show me</button>    
+<div id="player" hidden>some content</div> -->
+
+
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
+
+sudo chmod 777 -R ./
+php bin/magento setup:di:compile
+php bin/magento cache:clean
+php bin/magento cache:flush
+sudo chmod 777 -R ./
+
+
+

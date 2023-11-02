@@ -1,0 +1,37 @@
+
+        
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/list/items.phtml   
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/fashion/Magento_Theme/web/js     
+ 
+ /var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/westylefashion/Magento_Theme/layout/default.xml   
+ /var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Newsletter/templates/popup_subscribe.phtml   
+        
+
+
+<referenceContainer name="footer-container">
+     <block class="Magento\Newsletter\Block\Subscribe" name="my.file" template="popup_subscribe.phtml" after="copyright"/>
+ </referenceContainer>
+ 
+ domainconnect.123-reg.co.uk
+ 
+ 217.160.90.186
+ 
+ 109.228.40.52
+ 
+ 
+ {
+   A91 :[
+	0: [f,b,v]
+	1: [f,b,v] 
+	2: [f,b,v] 
+   ],
+   
+   A90 :[
+	0: [f,b,v]
+	1: [f,b,v] 
+	2: [f,b,v] 
+   ],
+   
+ }
+ 

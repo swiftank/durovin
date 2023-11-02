@@ -1,0 +1,24 @@
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/app/design/frontend/Plumrocket/amp_durovin_theme/Plumrocket_AmpCatalog/layout
+
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/app/design/frontend/Plumrocket/amp_durovin_theme/Plumrocket_AmpCatalog/layout
+Created new .xml file 
+	amp_catalog_product_view.xml
+	
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/app/design/frontend/Plumrocket/amp_durovin_theme/Plumrocket_AmpCatalog/templates
+Created new footer.phtml file and add_to_cart.phtml
+
+
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/app/code/Ankush/Recommendationmodal/Controller/Index
+Product.php
+
+
+
+
+chown -R pofai:psacln .
+find ./var/cache -type f -exec chmod 777 {} \;
+
+
+
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-configurable-product/view/frontend/templates/product/view/addtocart.phtml - Configrable
+
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/vendor/plumrocket/module-amp-configurable-product/view/frontend/templates/product/view

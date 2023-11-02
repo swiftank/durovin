@@ -1,0 +1,14 @@
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Checkout/templates/onepage.phtml
+
+
+
+require(['jquery', 'loader'], function($) {
+    var checkPageload = setInterval(function(){
+    stripeElement =  $('#checkout-payment-method-load').height();
+    if(stripeElement > 300){
+        document.getElementById('custom_container_loader').classList.add('loader_hide');
+        clearInterval(stripeElement);
+    }
+  }, 1000);
+
+});

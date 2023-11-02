@@ -1,0 +1,18 @@
+  <amp-analytics type="gtag" data-credentials="include">
+        <script type="application/json">
+        {
+        "vars" : {
+            "gtag_id": "G-R9J8522NWQ",
+            "config" : {
+            "G-R9J8522NWQ": { "groups": "default" }
+            }
+        }
+        }
+        </script>
+</amp-analytics>
+
+
+
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-theme/view/frontend/templates/root.phtml
+
+/var/www/vhosts/durovinbathrooms.com/httpdocs/vendor/plumrocket/module-amp-theme/view/frontend/templates

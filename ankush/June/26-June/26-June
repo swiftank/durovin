@@ -1,0 +1,6 @@
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/short_description.phtml
+
+product_description_heading_tw
+product_description_heading_on
+
+$_product->getResource()->getAttribute('product_description_heading_tw')->getFrontendLabel()

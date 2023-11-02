@@ -1,0 +1,23 @@
+
+https://stackoverflow.com/questions/14325745/magento-1-7-0-2-cart-gets-empty-when-canceling-payment-on-paypal-page
+https://stackoverflow.com/questions/36789133/get-shopping-cart-details-in-magento2
+
+/var/www/html/durovinbathrooms/vendor/magento/module-checkout/Controller/Onepage/SaveOrder.php
+
+
+/var/www/html/durovinbathrooms/vendor/magento/module-quote/Model/QuoteManagement.php
+https://www.pofai.co.uk/rest/default/V1/stripe/payments/restore_quote
+Zerodha, python, maths
+
+
+Quote Item Collection 
+
+ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $quoteItemCollection = $objectManager->create('\Magento\Quote\Model\ResourceModel\Quote\Item\Collection');
+
+        foreach ($quoteItemCollection as $quoteItem) 
+        {
+            echo $quoteItem->getName();
+            echo $quoteItem->getProductId();
+           
+        }

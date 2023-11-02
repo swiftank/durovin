@@ -1,0 +1,48 @@
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/fashion/Magento_Catalog/templates/product/view/short_description.phtml
+
+product_description_heading_tw
+product_description_heading_on
+
+$_product->getResource()->getAttribute('product_description_heading_tw')->getFrontendLabel()
+
+
+
+
+items: [
+          {
+            item_id: "SKU_walkin",
+            item_name: "Compact D Shape Wall Mounted & Counter Top Stone Resin Basin | Colossum 811",
+            item_category: "Walk In Shower Screens Category",
+            item_list_id: "walk_in_shower_screens",
+            item_list_name: "Walk In Shower Screens",
+            price: 20,
+            quantity: 1
+          }
+        ]
+
+items: [
+		{
+			item_category: "Glass Door Canopies Category",
+			item_id: "E74&D55&D55&D59",
+			item_list_id: "glass_door_canopies",
+			item_list_name: "Glass Door Canopies",
+			item_name: "Glass Over Door Canopy for Porch Shelter | Stainless Canopy Brackets Steel & 13mm Thick Grey Safety Glass",
+			price: 364,
+			quantity: 1,
+		},
+		{
+			item_category: "Toilets and Toilet Pans Category",
+			item_id: "H14&H15",
+			item_list_id: "toilets_and_toilet_pans",
+			item_list_name: "Toilets and Toilet Pans",
+			item_name: "Close Coupled Toilet With Sink in Cistern | Aachen 179WB",
+			price: 224.65,
+			quantity: 1,
+		}
+		
+	]
+
+
+
+
+

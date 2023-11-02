@@ -1,0 +1,78 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Ankush/Recommendationmodal/Controller/Index
+/var/www/html/durovinbathroom3/app/design/frontend/Plumrocket/amp_durovin_theme/Plumrocket_AmpCatalog/templates/footer.phtml
+
+/var/www/html/durovinbathrooms3/app/design/frontend/Plumrocket/amp_durovin_theme/Plumrocket_AmpCatalog/templates/addtocart.phtml
+
+
+
+
+<form action="process_payment.php" method="POST">
+    <label for="cardNumber">Card Number:</label>
+    <input type="text" id="cardNumber" name="cardNumber" required>
+    
+    <label for="expDate">Expiration Date (MM/YY):</label>
+    <input type="text" id="expDate" name="expDate" required>
+    
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv" required>
+    
+    <input type="submit" value="Submit Payment">
+</form>
+
+
+<?php
+require 'cybersource-php/autoload.php';
+
+// Initialize the CyberSource SDK with your credentials
+CyberSource\Configuration::setEnvironment('sandbox'); // Change to 'production' in a live environment
+CyberSource\Configuration::setMerchantConfig(
+    new CyberSource\MerchantConfiguration(
+        'YOUR_MERCHANT_ID',
+        'YOUR_API_KEY',
+        'YOUR_SECRET_KEY'
+    )
+);
+
+// Collect form data
+$cardNumber = $_POST['cardNumber'];
+$expDate = $_POST['expDate'];
+$cvv = $_POST['cvv'];
+
+// Create a payment request
+$payment = new CyberSource\Model\PtsPaymentsCreatePaymentRequest();
+$payment->clientReferenceInformation = new CyberSource\Model\Ptsv2paymentsClientReferenceInformation();
+$payment->clientReferenceInformation->code = "123456";
+
+$payment->paymentInformation = new CyberSource\Model\PtsPaymentsPaymentInformation();
+$payment->paymentInformation->card = new CyberSource\Model\PtsPaymentsPaymentInformationCard();
+$payment->paymentInformation->card->number = $cardNumber;
+$payment->paymentInformation->card->expirationMonth = substr($expDate, 0, 2);
+$payment->paymentInformation->card->expirationYear = substr($expDate, 3, 2);
+$payment->paymentInformation->card->cvv = $cvv;
+
+// Process the payment
+$api_instance = new CyberSource\Api\PaymentsApi();
+try {
+    $response = $api_instance->createPayment($payment);
+    echo "Payment Successful. Transaction ID: " . $response['id'];
+} catch (Exception $e) {
+    echo "Payment Error: " . $e->getMessage();
+}
+?>
+
+
+
+
+
+
+
+sudo chmod 777 -R ./
+php bin/magento setup:di:compile
+php bin/magento cache:clean
+php bin/magento cache:flush
+sudo chmod 777 -R ./
+
+
+
+
+

@@ -1,0 +1,239 @@
+<style>
+	.wrapper {
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: column;
+	}
+
+	.wrapper .innerWrapper canvas {
+		width: 50% !important;
+		height: 50% !important;
+		padding: 30px;
+	}
+
+	.innerWrapper div {
+		width: 50%;
+	}
+
+	.innerWrapper {
+		display: flex;
+	}
+</style>
+<div class="wrapper">
+	<div class="innerWrapper">
+		<canvas id="myChart"></canvas>
+		<canvas id="lineBarChart"></canvas>
+
+	</div>
+	<div class="innerWrapper">
+		<canvas id="barOrders"></canvas>
+		<canvas id="piechart" width="200" height="200"></canvas>
+	</div>
+	<div class="innerWrapper">
+		
+		<div class="desc" style="text-align: center;">
+			<br> <br>
+			Capital N Profit: <strong class="totalCaptalBar"> </strong><br> <br>
+			Profit: <strong class="totalBar"> </strong> <br> <br>
+			Loss: <strong class="totalLossBar"> </strong> <br> <br>
+			<span style="display: none;"> Brokerage: <strong class="totalbroker"></strong></span></strong> <br> <br>
+
+		</div>
+	</div>
+
+
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+	var initialAmt = 5000;
+	var amt = 0;
+	var amtLoss = 0;
+	var barPnl = [];
+	var labels = [
+		'5 July',
+		'5 July',
+		'6 July',
+		'7 July',
+		'10 July',
+		'11 July',
+		'12 July',
+		'13 July',
+		'14 July',
+		'15 July',
+		'16 July',
+		'17 July',
+		'18 July',
+		'19 July',
+		'20 July',
+		'21 July',
+		'22 July',
+		'23 July',
+		'24 July',
+		'25 July',
+		'26 July',
+		'27 July',
+		'28 July',
+		'29 July',
+		'30 July',
+		'31 July',
+	];
+
+	var pnl = [
+		318.71, // 5 July
+		423.32, // 5 July
+		142.68, // 6 July
+		556.01,	// 7 July
+		637.31,	// 10 July
+		-479,	// 11 July
+		950, 	// 12 July
+	];
+
+	var arrColor = [];
+	pnl.forEach(function (v, i) {
+		amt += v;
+
+		if (v < 0) {
+			arrColor.push('#F84F31');
+			amtLoss -= v;
+		} else {
+			arrColor.push('#23C552');
+		}
+		console.log(i);
+
+		if (i > 0) {
+			barPnl.push(v + barPnl[barPnl.length - 1]);
+		} else {
+			barPnl.push(5000);
+			barPnl.push(v + barPnl[0]);
+		}
+		console.log('i' + i + ' - ' + v);
+		console.log(barPnl);
+
+
+
+	});
+
+	document.querySelector('.totalBar').innerHTML = amt.toFixed(2);
+	document.querySelector('.totalCaptalBar').innerHTML = amt + initialAmt;
+	document.querySelector('.totalLossBar').innerHTML = amtLoss.toFixed(2);
+
+
+	// Profit and Loss
+	new Chart(document.getElementById('myChart'), {
+		type: 'bar',
+		data: {
+			labels: labels,
+			datasets: [{
+				label: 'Profit and Loss',
+				data: pnl,
+				backgroundColor: arrColor,
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true
+				}
+			}
+		}
+	});
+
+
+	// Portfolio
+	new Chart(document.getElementById("lineBarChart"), {
+		type: 'line',
+		data: {
+			labels: labels,
+			datasets: [
+				{
+					data: barPnl,
+					label: "Portfolio",
+					borderColor: "#3cba9f",
+					fill: false,
+					backgroundColor: "rgba(0,0,255,1.0)",
+					borderColor: "rgba(0 0 255 / 25%)",
+					tension: 0.1
+				}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: 'Chart JS Line Chart Example'
+			},
+		}
+	});
+
+	// Orders
+	var orders = [
+		'7 Orders',
+		'12 Orders',
+		'2 Orders',
+		'4 Orders 1 Rejected',
+		'',
+		'17 Orders'
+
+	];
+	var charges = [
+		164,
+		304,
+		57,
+		97,
+		479,
+		500
+
+	];
+	document.querySelector('.totalbroker').innerHTML = eval(charges.join('+')).toFixed(2);
+
+	new Chart(document.getElementById('barOrders'), {
+		type: 'bar',
+		data: {
+			labels: orders,
+			datasets: [{
+				label: 'Orders & Brokerage Charges',
+				data: charges,
+				backgroundColor: '#1c89ef',
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true
+				}
+			}
+		}
+	});
+
+	// pie chart
+
+	new Chart(document.getElementById("piechart"), {
+		type: 'pie',
+		data: {
+			labels: ["Profit", "Loss", "Brokerage"],
+			datasets: [{
+				backgroundColor: ['#23C552', '#F84F31', "#1c89ef", 'lightgrey'],
+				data: [
+				amt, // Profit 
+				amtLoss.toFixed(2), //Loss 
+				eval(charges.join('+')).toFixed(2) //Brokerage
+				]
+			}]
+		},
+		options: {
+			aspectRatio: 2.5,
+			title: {
+				display: true,
+				text: 'Chart JS Pie Chart Example'
+			},
+		},
+	
+        });
+
+
+
+</script>

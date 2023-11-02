@@ -1,0 +1,83 @@
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list.phtml
+
+
+/var/www/html/durovinbathrooms/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list/item.phtml - partiuclar post layout
+
+block - block \Magefan\Blog\Block\Post\PostList
+/var/www/html/durovinbathrooms/vendor/magefan/module-blog/Block/Post/PostList.php
+
+
+
+https://magefan.com/magento2-blog-extension/custom-blog-homepage
+
+/var/www/vhosts/pofai.co.uk/httpdocs/vendor/magefan/module-blog/Block/Index.php
+
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/design/frontend/Codazon/fastest/westylefashion/Magefan_Blog/templates/post/list.phtml
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Product/Overrideblog/Block
+https://magemastery.net/courses/magento-2-beginner/introduction
+
+
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Mage/Module/
+----------------------------------------------
+
+registation.php . module.xml file is used to create module 
+enable command and setup upgrad
+
+grep Mage_Module app/etc/config.php
+
+--------------------------------------------------------------------------------
+
+Create Page in Magento
+
+etc/frontend/routes.xml
+1.
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="ankush" frontName="ankush">
+            <module name="Mage_Module" />
+        </route>
+    </router>
+</config>
+
+2. Create Controller to crete page 
+
+Module/Controller/Page/class.php
+
+<?php 
+
+namespace Mage\Module\Controller\Page;
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\Result\Json;
+
+class View extends Action{
+
+    public function execute(){
+        $json = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        $json->setData([
+            'meesage' => 'My First Page'
+        ]);
+
+        return $json;
+    }
+}
+
+php bin/magento cache:clean
+
+
+-------------------------------------------------------------------------
+https://magemastery.net/courses/magento-2-beginner/template-layout-rendering
+Create Template in magento
+
+
+/home/python_scripts/email
+
+
+
+
+

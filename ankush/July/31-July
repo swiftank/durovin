@@ -1,0 +1,64 @@
+    $('.newAddToCart').on('click', function(){
+        console.log('debug', $('#custom_product_modal'));
+        $('#custom_product_modal').addClass('_show');
+    });
+
+
+
+
+
+    $('.newAddToCart').on('click', function(){
+        var checkingCart =  setInterval(function(){
+        var cartItems = JSON.parse(localStorage.getItem("mage-cache-storage"));
+       
+            if(cartItems?.cart?.items){
+                clearInterval(checkingCart);
+                 const query = new URL(window.location);
+                 query.searchParams.append('product_id', 3889);
+                 window.location = query;
+               
+            }
+        }, 1000);    
+      
+    });
+    
+    
+      $('.newAddToCart').on('click', function(){
+       var clckbtn =  $(this);
+        var checkingCart =  setInterval(function(){
+        var cartItems = JSON.parse(localStorage.getItem("mage-cache-storage"));
+       
+            if(cartItems?.cart?.items){
+                clearInterval(checkingCart);
+                if(clckbtn.attr('is-configurable') == 'simple'){
+                    localStorage.setItem('addbtnclicked', true);
+                    window.location.reload();
+                }
+               
+            }
+        }, 1000);    
+      
+    });
+    
+    use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory; 
+
+public function __construct(
+    ....
+    CollectionFactory $productCollectionFactory
+    ....
+) {
+    $this->products = $productCollectionFactory;
+}
+
+public function getConfigurableProductPrice()
+{
+    $products = $this->products->create();
+    foreach($products as $product) {
+        if ($product->getTypeId() != 'simple') {
+            $specialPrice = $product->getSpecialPrice();
+            $finalPrice=$_product->getFinalPrice();
+            $savePercent = 100 - round(($finalPrice / 
+            $specialPrice)*100);
+            echo $savePercent.'% Off';
+        }
+    }

@@ -1,0 +1,28 @@
+
+/var/www/vhosts/pofai.co.uk/httpdocs/pub/static/frontend/Codazon/fastest_westylefashion/en_GB/Durovin_Payment/js/view/payment/method-renderer/stripe_payments.js
+/var/www/html/durovinbathrooms/vendor/magento/module-quote/Model/QuoteManagement.php
+
+        
+ 
+ .checkout-index-index .modal-popup.stripe_erro_modal .modal-inner-wrap{
+ 	margin-left: -245px;
+	width: 440px;
+	left: 50%;       
+ }
+ 
+ 
+ 
+       alertmagento({
+                        title: $.mage.__("Something's  went wrong"),
+                        content: $.mage.__('<div class="message message-error error" > <div>'+ result.error.message +' </div></div>'),
+                        modalClass: 'slow_internet_popup confirm',
+                        buttons: false,
+                        actions: {
+                            always: function(){
+                                 window.location.reload(1);
+                            }
+                        }
+                    });
+                    
+                      'Magento_Ui/js/modal/alert'
+                      alertmagento

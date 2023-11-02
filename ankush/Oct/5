@@ -1,0 +1,26 @@
+Veeqo
+
+	sarah@durovinbathrooms.co.uk
+	Mcinerney@85225
+
+Magento
+	sarah
+	Mcinerney654456
+	
+Email
+	sarah@durovinbathrooms.co.uk
+	durovin@sarahMcinerney
+	
+	
+	
+	admin_pofai		
+	
+	GRANT ALL PRIVILEGES ON pofai_new.* TO 'admin_pofai'@'%' IDENTIFIED BY 'admin_pofai';
+	
+mysql -u magentodb -p magento < new_backup.sql
+	
+548#yT0sa
+
+
+mysql -u admin_pofai -p admin_pofai --set-gtid-purged=OFF > new_backup.sql
+

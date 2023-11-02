@@ -1,0 +1,265 @@
+/var/www/vhosts/pofai.co.uk/httpdocs/app/code/Ankush/Recommendationmodal/Block
+
+
+
+<?php
+$productData = $block->getData();
+$productId = $productData['data']['currentproductid'];
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->create('Magento\Catalog\Model\Product')->load($productId);
+
+$cartObj = $objectManager->get('\Magento\Checkout\Model\Cart');
+$subTotal = $cartObj->getQuote()->getSubtotal(); //Current Cart Subtotal
+$grandTotal = $cartObj->getQuote()->getGrandTotal(); //Cart Grand total
+$summaryCount = round($cartObj->getQuote()->getItemsQty());
+
+   
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+// $productRepository = $objectManager->get('\Magento\Catalog\Model\ProductRepository');
+
+
+
+// // get product by product sku 
+// $product = $productRepository->get('A60');
+
+// echo $product->getEntityId() . '<br>';
+// echo $product->getName() . '<br>';
+// echo $product->getSKU() . '<br>';
+// echo $product->getPrice() . '<br>';
+// echo $product->getSpecialPrice() . '<br>';
+// echo $product->getTypeId() . '<br>';
+// echo $product->getProductUrl() . '<br>';
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$productObject = $objectManager->get('Magento\Catalog\Model\Product');
+$product = $productObject->loadByAttribute('sku', $sku);
+echo $product->getName();
+
+?>
+
+
+
+<div class="modal-content" style="background:#f6f6f6" data-sku='<?php echo $product->getSku(); ?>'>
+
+    <div>
+        <h2>Items was added to your basket</h2>
+
+        <div class='modal_cutom_inner'>
+
+            <div class='image_section'>
+                <img src="<?php echo $product->getMediaConfig()->getMediaUrl($product->getImage()); ?>" alt="">
+            </div>
+
+            <div>
+                <h3>
+                    <?php echo $product->getName(); ?>
+                </h3>
+                <h4 class='modal-price-rec'> £<?php echo round($product->getFinalPrice(), 2); ?> </h4>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <h2 class='tright'>Your cart contains <span id='total_items'><?php echo $summaryCount; ?></span> items
+        </h2>
+        <div class='modal_cutom_inner2'>
+            <div> <span class='total_txt'> Total Amount: </span>
+                <h1> <span id='replace_price'>£<?php echo round($grandTotal, 2); ?></span> </h1>
+            </div>
+
+            <div class='btnlinks'>
+                <a href="javascript:;" id='continue_shopping'>Continue Shopping</a>
+                <a href="/checkout/cart">View Shopping Cart</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<?php  print_r($productObj);  ?>
+<?php $crossSellProducts = $product->getCrossSellProducts(); ?>
+<?php if (count($crossSellProducts) > 0) : ?>
+<div class="modal-content slider" data-role="content" style='background:#fff; <?php ?>'>
+   
+<?php print_r($block->getRecomendations($product->getSku())); ?>
+    
+        <br>
+        <h2>We recommend the following necessary products</h2>
+        <br>
+ 
+
+    <div class='slider_outer_wrapper'>
+        <div class="owl-carousel owl-theme">
+
+            <?php
+            foreach ($crossSellProducts as $crossSellProducts) {
+                $crossProduct = $product->loadByAttribute('sku', $crossSellProducts->getSku());
+
+            ?>
+                <?php if ($crossProduct->isSaleable()) : ?>
+                    <div class="item">
+                        <a href='/<?php echo $crossProduct->getUrlKey(); ?>'>
+                            <img src="<?php echo $crossProduct->getMediaConfig()->getMediaUrl($crossProduct->getImage()); ?>">
+                            <h5 class='slider_title'>
+                                <?php echo $crossProduct->getName(); ?>
+                            </h5>
+                        </a>
+                        <h6 class='txtcenterpr'>As low as <b class='bldtxt'>£<?php echo bcadd(0, $crossProduct->getPrice(), 2); ?></b> </h6>
+
+                        <?php
+                        $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+                        $addToCartUrl =  $listBlock->getAddToCartUrl($crossProduct); ?>
+
+                        <?php
+                        if ($crossProduct->getTypeId() != 'configurable') { ?>
+                            <form data-role="tocart-form" action="<?php echo $addToCartUrl; ?>" method="post">
+
+                                <?php echo $block->getBlockHtml('formkey') ?>
+                                <p class='tcenter'>
+                                    <button type="submit" title="Add to Cart" data-type='<?php echo $crossProduct->getTypeId(); ?>' class="recommended_btn action tocart primary">
+
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </p>
+
+                            </form>
+                        <?php
+                        } else {
+                        ?>
+                            <p class='tcenter'>
+                                <a href="/<?php echo $crossProduct->getUrlKey(); ?>" title="More Details" class="action tocart primary">
+
+                                    <span>More Details</span>
+                                </a>
+                            </p>
+                        <?php
+                        }
+
+                        ?>
+
+                    </div>
+                <?php endif; ?>
+
+            <?php
+
+            }
+            ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
+
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal',
+            'cdz_slider'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                items: 5,
+                dots: false,
+                responsiveClass: true,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 2,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 5,
+                        nav: true,
+                        loop: true
+                    }
+                }
+
+            });
+
+            $('.recommended_btn').on('click', function(e) {
+                e.preventDefault();
+
+                var form = $(this).parents('form:first');
+                var url = form.attr('action');
+                var btnthis = $(this);
+                btnthis.text('Adding...');
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: form.serialize(),
+                    success: function(data) {
+
+                        if (data.backUrl) {
+                            window.location.href = data.backUrl;
+                            $('#custom_product_modal').removeClass('_show');
+                        }
+
+                        var checkInterval = setInterval(function() {
+                            var dat = JSON.parse(localStorage.getItem(
+                                'mage-cache-storage'));
+
+                            if (dat.cart) {
+                                $('#total_items').text(dat.cart.summary_count);
+                                $('#replace_price').text('£' + dat.cart.subtotalAmount);
+                                clearInterval(checkInterval);
+                                btnthis.text('ADD TO CART');
+
+                            }
+                        }, 1000)
+
+
+
+                    },
+                    error: function(data) {
+                        alert("Something Went Wrong in A Module!");
+                    }
+                });
+            });
+
+            $('#continue_shopping').on('click', function() {
+                $('#custom_product_modal').removeClass('_show');
+            });
+
+
+
+        }
+    );
+</script>
+
+
+
+
+-------------------------------------------------
+
+select 
+  parent.type_id as parent_product_type, parent.sku as parent_sk, 
+  child.type_id as child_product_type, child.sku child_sku
+from magento.catalog_product_entity as parent
+join magento.catalog_product_relation as link 
+     on link.parent_id = parent.entity_id
+join magento.catalog_product_entity as child 
+     on child.entity_id = link.child_id;
+     
+     
+     CREATE VIEW parentchilddata AS
+select 
+  parent.type_id as parent_product_type, parent.sku as parent_sk, 
+  child.type_id as child_product_type, child.sku child_sku
+from magento.catalog_product_entity as parent
+join magento.catalog_product_relation as link 
+     on link.parent_id = parent.entity_id
+join magento.catalog_product_entity as child 
+     on child.entity_id = link.child_id;

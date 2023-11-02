@@ -1,0 +1,35 @@
+https://themezee.com/2022/08/meet-our-new-business-themes/
+
+<amp-lightbox id="modalbox" layout="nodisplay">
+    <div class="modalbox">
+      <div class="modal_box slideInDown">
+        <div class="warn">
+          <h4>Modal Info Title</h4>
+          <hr/>
+          <p>
+            This is a amp modal dialog example with google amp project. <br>
+            <br> The amp-lightbox component defines child elements that display in a full-viewport overlay/modal. When the user taps or clicks an element (e.g., a button), the amp-lightbox ID referenced in the clicked element's on attribute triggers the lightbox to take up the full viewport and displays the child elements of the amp-lightbox.<br>
+            <br> Pressing the escape key on the keyboard closes the lightbox. Alternatively, setting the on attribute on one or more elements within the lightbox and setting its method to close closes the lightbox when the element is tapped or clicked.
+          </p>
+          <p class="txt-r">
+          <button class='done_modalbox' type='button' on='tap:modalbox.close' role='button' tabindex='0' title='Tamam'>CLOSE</button>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </amp-lightbox>
+  
+  
+      <button type="button"
+    on="tap:modalbox"
+            class="btn btn__primary product-opt-bottom__btn"
+            style="position: relative;"
+            title="<?= $block->escapeHtmlAttr($buttonTitle) ?>">
+        <?= $block->escapeHtml($buttonTitle) ?>
+        <div submitting class="btn btn__primary product-opt-bottom__btn loader_wrp">
+            <span class="loader_btn">
+                <span></span><span></span><span></span><span></span>
+            </span>
+        </div>
+    </button>

@@ -1,0 +1,12 @@
+  'StripeIntegration_Payments/template/payment/element.html':
+                'Durovin_Payment/template/payment/element.html',
+            'StripeIntegration_Payments/js/view/payment/method-renderer/stripe_payments':
+                'Durovin_Payment/js/view/payment/method-renderer/stripe_payments'
+                
+    /var/www/html/durovinbathrooms/app/code/Durovin/Payment/view/frontend/web/js/view/payment/method-renderer/stripe_payments.js 
+    
+    /var/www/html/durovinbathrooms/vendor/stripe/module-payments/Controller/Payment/Index.php
+    
+    
+    /var/www/html/durovinbathrooms/app/code/Codazon/AjaxCartPro/view/frontend/templates/config.phtml
+    /var/www/html/durovinbathrooms/app/code/Codazon/AjaxCartPro/view/frontend/web/js/ajaxcart.js
