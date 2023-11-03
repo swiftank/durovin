@@ -539,6 +539,11 @@ php bin/magento cache:clean
 php bin/magento cache:flush
 php bin/magento maintenance:disable
 
+Pofai permission issue when root user 
+
+chown -R pofai:psacln .
+find ./var/cache -type f -exec chmod 777 {} \;
+
 
 </pre>
 </td>

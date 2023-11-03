@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        tr:nth-child(odd) {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        tr:nth-child(even) {
+            display: none;
+            padding: 20px;
+        }
+        
+        .fntfm {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #myInput {
+            background-image: url('https://www.w3schools.com/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+        
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+        
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(odd) :hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        
+        .wrapper {
+            width: 99%;
+            margin: auto;
+        }
+        
+        .active {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+<h2 class="fntfm">Durovin Website</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Type in a name">
+
+<table id="myTable">
+
+<tr>
+<td>2 November</td>
+</tr>
+<tr>
+<td>
+<pre lang="html">
+Plumrocket Path     
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/app/design/frontend/Plumrocket/amp_durovin_theme/Plumrocket_AmpCatalog/
+
+Recomendation Mobile Path Api File 
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/app/code/Ankush/Recommendationmodal/Controller/Mobile/Product.php
+
+Configrable Product Amp Detail Page add to cart file path
+/var/www/html/durovinbathrooms2/vendor/plumrocket/module-amp-configurable-product/view/frontend/templates/product/view/addtocart.phtml - Configrable
+/var/www/vhosts/durovinbathrooms.com/testing.durovinbathrooms.com/vendor/plumrocket/module-amp-configurable-product/view/frontend/templates/product/view
+
+
+
+</pre>
+
+
+
+</td>
+</tr>
+
+</table>
+</div>
+
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        var tds = document.querySelectorAll("tr:nth-child(odd)");
+        var tdeven = document.querySelectorAll("tr:nth-child(even)");
+        tds.forEach(function(item, idx) {
+            item.addEventListener('click', function() {
+                hideAllRows(tdeven, tds);
+                tds[idx].nextElementSibling.style.display = 'block';
+                tds[idx].classList.add('active');
+
+            });
+        });
+
+        function hideAllRows(rows, rows2) {
+            rows.forEach(function(item, idx) {
+                item.style.display = 'none';
+            });
+            rows2.forEach(function(item, idx) {
+                item.classList.remove('active');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
